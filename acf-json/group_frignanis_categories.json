@@ -1,0 +1,50 @@
+{
+  "key": "group_frignanis_categories",
+  "title": "Categories Page Settings",
+  "fields": [
+    {
+      "key": "field_cat_hero_eyebrow",
+      "label": "Hero Eyebrow Text",
+      "name": "cat_hero_eyebrow",
+      "type": "text",
+      "default_value": "— 02 · CATEGORIES"
+    },
+    {
+      "key": "field_cat_hero_title_lead",
+      "label": "Hero Title Lead Line",
+      "name": "cat_hero_title_lead",
+      "type": "text",
+      "default_value": "What we"
+    },
+    {
+      "key": "field_cat_hero_title_highlight",
+      "label": "Hero Title Highlight (Italic Gold)",
+      "name": "cat_hero_title_highlight",
+      "type": "text",
+      "default_value": "export"
+    },
+    {
+      "key": "field_cat_hero_description",
+      "label": "Hero Description",
+      "name": "cat_hero_description",
+      "type": "textarea",
+      "rows": 3,
+      "default_value": "Five categories of Italian excellence — selected, documented, and delivered to the world's most discerning buyers. We communicate by category, never by individual supplier or producer name."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-categories.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true
+}

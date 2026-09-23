@@ -1,0 +1,114 @@
+{
+    "key": "group_frignanis_contact",
+    "title": "Contact Page Settings",
+    "fields": [
+        {
+            "key": "field_contact_hero_eyebrow",
+            "label": "Hero Eyebrow",
+            "name": "contact_hero_eyebrow",
+            "type": "text",
+            "default_value": "04 / CONTACT"
+        },
+        {
+            "key": "field_contact_hero_title_lead",
+            "label": "Hero Title Lead",
+            "name": "contact_hero_title_lead",
+            "type": "text",
+            "default_value": "Let's talk"
+        },
+        {
+            "key": "field_contact_hero_title_highlight",
+            "label": "Hero Title Highlight (Italic Gold)",
+            "name": "contact_hero_title_highlight",
+            "type": "text",
+            "default_value": "trade."
+        },
+        {
+            "key": "field_contact_hero_desc",
+            "label": "Hero Lead Description",
+            "name": "contact_hero_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "For import & export enquiries, partnership proposals, or any question about our categories — we're here."
+        },
+        {
+            "key": "field_contact_email_label",
+            "label": "Email Label",
+            "name": "contact_email_label",
+            "type": "text",
+            "default_value": "EMAIL"
+        },
+        {
+            "key": "field_contact_email_address",
+            "label": "Email Address",
+            "name": "contact_email_address",
+            "type": "text",
+            "default_value": "info@frignanis.com"
+        },
+        {
+            "key": "field_contact_insta_label",
+            "label": "Instagram Label",
+            "name": "contact_insta_label",
+            "type": "text",
+            "default_value": "INSTAGRAM"
+        },
+        {
+            "key": "field_contact_insta_handle",
+            "label": "Instagram Handle",
+            "name": "contact_insta_handle",
+            "type": "text",
+            "default_value": "@frignanisgourmet"
+        },
+        {
+            "key": "field_contact_insta_url",
+            "label": "Instagram URL",
+            "name": "contact_insta_url",
+            "type": "url",
+            "default_value": "https://instagram.com/frignanisgourmet"
+        },
+        {
+            "key": "field_contact_insta_subtext",
+            "label": "Instagram Subtext",
+            "name": "contact_insta_subtext",
+            "type": "text",
+            "default_value": "Instagram is our primary direct contact channel."
+        },
+        {
+            "key": "field_contact_sla_label",
+            "label": "Response Time Label",
+            "name": "contact_sla_label",
+            "type": "text",
+            "default_value": "RESPONSE TIME"
+        },
+        {
+            "key": "field_contact_sla_text",
+            "label": "Response Time Text",
+            "name": "contact_sla_text",
+            "type": "text",
+            "default_value": "Within 2 working days for all trade enquiries."
+        },
+        {
+            "key": "field_contact_form_btn_text",
+            "label": "Form Submit Button Text",
+            "name": "contact_form_btn_text",
+            "type": "text",
+            "default_value": "SEND MESSAGE"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-contact.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-contato.php"
+            }
+        ]
+    ]
+}

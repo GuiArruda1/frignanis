@@ -1,0 +1,6 @@
+.DS_Store
+*.zip
+*.tar.gz
+*.log
+assets/images/drive-download*
+docker-compose.yml

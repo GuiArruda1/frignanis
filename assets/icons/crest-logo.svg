@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" width="120" height="130" fill="none" role="img" aria-label="Frignani's Coat of Arms">
+  <!-- Coronet / Crown Top -->
+  <path d="M42 32L45 22L52 28L60 16L68 28L75 22L78 32H42Z" fill="#C89736" stroke="#E5BA6A" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="45" cy="20" r="2.5" fill="#F4D389"/>
+  <circle cx="60" cy="14" r="3" fill="#F4D389"/>
+  <circle cx="75" cy="20" r="2.5" fill="#F4D389"/>
+  <rect x="42" y="32" width="36" height="4" rx="1" fill="#C89736"/>
+  
+  <!-- Flourishes / Acanthus Leaves (Left & Right) -->
+  <path d="M38 38C26 40 18 52 20 66C21 73 25 79 30 83C25 81 20 74 21 65C22 55 30 46 39 44L38 38Z" fill="#A87A24"/>
+  <path d="M82 38C94 40 102 52 100 66C99 73 95 79 90 83C95 81 100 74 99 65C98 55 90 46 81 44L82 38Z" fill="#A87A24"/>
+  
+  <path d="M28 50C16 56 12 72 17 84C21 94 30 99 37 101C31 98 25 91 24 82C22 71 27 60 36 55L28 50Z" fill="#C89736" opacity="0.85"/>
+  <path d="M92 50C104 56 108 72 103 84C99 94 90 99 83 101C89 98 95 91 96 82C98 71 93 60 84 55L92 50Z" fill="#C89736" opacity="0.85"/>
+
+  <!-- Heraldic Shield -->
+  <path d="M38 38H82V68C82 86 64 98 60 102C56 98 38 86 38 68V38Z" fill="#141B2B" stroke="#C89736" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Shield Inner Border -->
+  <path d="M42 42H78V67C78 82 63 93 60 96C57 93 42 82 42 67V42Z" fill="none" stroke="#E5BA6A" stroke-width="1" stroke-dasharray="3 2" opacity="0.7"/>
+
+  <!-- Shield Charge: Italian Eagle / Griffin / Wheat & Grapevine motif -->
+  <path d="M60 48L64 56H56L60 48Z" fill="#D4A346"/>
+  <path d="M52 57C54 55 58 55 60 58C62 55 66 55 68 57C67 62 63 65 60 67C57 65 53 62 52 57Z" fill="#D4A346"/>
+  <path d="M48 68C53 66 57 68 60 72C63 68 67 66 72 68C68 76 63 80 60 84C57 80 52 76 48 68Z" fill="#C89736"/>
+  <line x1="60" y1="48" x2="60" y2="86" stroke="#E5BA6A" stroke-width="1.2"/>
+  <line x1="46" y1="62" x2="74" y2="62" stroke="#E5BA6A" stroke-width="1"/>
+
+  <!-- Banner / Brand Name Ribbon -->
+  <path d="M22 110L28 104H92L98 110L92 116H28L22 110Z" fill="#182236" stroke="#C89736" stroke-width="1.5"/>
+  <text x="60" y="113" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="9" font-weight="700" letter-spacing="1.5" fill="#EAD29A">FRIGNANI'S</text>
+</svg>

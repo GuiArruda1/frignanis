@@ -1,0 +1,80 @@
+{
+  "key": "group_frignanis_hero",
+  "title": "Hero Section Settings",
+  "fields": [
+    {
+      "key": "field_hero_eyebrow",
+      "label": "Eyebrow Text",
+      "name": "hero_eyebrow",
+      "type": "text",
+      "default_value": "ITALIAN EXCELLENCE · INTERNATIONAL TRADE"
+    },
+    {
+      "key": "field_hero_title_lead",
+      "label": "Title Lead Line",
+      "name": "hero_title_lead",
+      "type": "text",
+      "default_value": "Italian"
+    },
+    {
+      "key": "field_hero_title_highlight",
+      "label": "Title Highlighted Word (Italic Gold)",
+      "name": "hero_title_highlight",
+      "type": "text",
+      "default_value": "Excellence"
+    },
+    {
+      "key": "field_hero_title_end",
+      "label": "Title Trailing Line",
+      "name": "hero_title_end",
+      "type": "text",
+      "default_value": "International Trade"
+    },
+    {
+      "key": "field_hero_description",
+      "label": "Hero Description",
+      "name": "hero_description",
+      "type": "textarea",
+      "rows": 3,
+      "default_value": "We connect Italian producers directly to international professionals — promoting Italian culinary culture and heritage around the world, through direct import & export transactions."
+    },
+    {
+      "key": "field_hero_primary_btn_text",
+      "label": "Primary Button Text",
+      "name": "hero_primary_btn_text",
+      "type": "text",
+      "default_value": "EXPLORE CATEGORIES"
+    },
+    {
+      "key": "field_hero_primary_btn_url",
+      "label": "Primary Button Link",
+      "name": "hero_primary_btn_url",
+      "type": "url",
+      "default_value": "#categories"
+    },
+    {
+      "key": "field_hero_secondary_btn_text",
+      "label": "Secondary Button Text",
+      "name": "hero_secondary_btn_text",
+      "type": "text",
+      "default_value": "GET IN TOUCH"
+    },
+    {
+      "key": "field_hero_secondary_btn_url",
+      "label": "Secondary Button Link",
+      "name": "hero_secondary_btn_url",
+      "type": "url",
+      "default_value": "#footer"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "front-page.php"
+      }
+    ]
+  ],
+  "active": true
+}

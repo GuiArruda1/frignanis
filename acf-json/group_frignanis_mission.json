@@ -1,0 +1,73 @@
+{
+  "key": "group_frignanis_mission",
+  "title": "Mission Section Settings",
+  "fields": [
+    {
+      "key": "field_mission_eyebrow",
+      "label": "Eyebrow Text",
+      "name": "mission_eyebrow",
+      "type": "text",
+      "default_value": "OUR MISSION"
+    },
+    {
+      "key": "field_mission_title_lead",
+      "label": "Title Lead Text",
+      "name": "mission_title_lead",
+      "type": "text",
+      "default_value": "A bridge between Italy and the"
+    },
+    {
+      "key": "field_mission_title_highlight",
+      "label": "Title Highlighted Word (Italic Gold)",
+      "name": "mission_title_highlight",
+      "type": "text",
+      "default_value": "world"
+    },
+    {
+      "key": "field_mission_body",
+      "label": "Mission Narrative",
+      "name": "mission_body",
+      "type": "textarea",
+      "rows": 5,
+      "default_value": "Frignani's was founded on a simple belief: that the finest Italian products deserve a direct path to international markets. We work exclusively with Italian producers, operating through transparent import & export transactions that honour their craft."
+    },
+    {
+      "key": "field_mission_btn_text",
+      "label": "Button Text",
+      "name": "mission_btn_text",
+      "type": "text",
+      "default_value": "OUR STORY"
+    },
+    {
+      "key": "field_mission_btn_url",
+      "label": "Button URL",
+      "name": "mission_btn_url",
+      "type": "url",
+      "default_value": "#story"
+    },
+    {
+      "key": "field_mission_image_primary",
+      "label": "Primary Image (e.g. Olive Oil Jar)",
+      "name": "mission_image_primary",
+      "type": "image",
+      "return_format": "array"
+    },
+    {
+      "key": "field_mission_image_secondary",
+      "label": "Secondary Image (e.g. Italian Craftsman)",
+      "name": "mission_image_secondary",
+      "type": "image",
+      "return_format": "array"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "front-page.php"
+      }
+    ]
+  ],
+  "active": true
+}

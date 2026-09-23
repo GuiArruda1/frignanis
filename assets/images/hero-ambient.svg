@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" fill="none">
+  <defs>
+    <radialGradient id="bokeh1" cx="65%" cy="35%" r="45%">
+      <stop offset="0%" stop-color="#D4A346" stop-opacity="0.14"/>
+      <stop offset="60%" stop-color="#D4A346" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#111625" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bokeh2" cx="80%" cy="55%" r="35%">
+      <stop offset="0%" stop-color="#D4A346" stop-opacity="0.10"/>
+      <stop offset="70%" stop-color="#D4A346" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#111625" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bokeh3" cx="50%" cy="40%" r="30%">
+      <stop offset="0%" stop-color="#3A4768" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#111625" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="900" fill="#111625"/>
+  <circle cx="1020" cy="360" r="380" fill="url(#bokeh1)"/>
+  <circle cx="1180" cy="520" r="300" fill="url(#bokeh2)"/>
+  <circle cx="700" cy="340" r="280" fill="url(#bokeh3)"/>
+</svg>

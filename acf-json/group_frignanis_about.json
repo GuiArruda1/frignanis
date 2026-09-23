@@ -1,0 +1,163 @@
+{
+    "key": "group_frignanis_about",
+    "title": "About Page Settings",
+    "fields": [
+        {
+            "key": "field_about_hero_eyebrow",
+            "label": "Hero Eyebrow",
+            "name": "about_hero_eyebrow",
+            "type": "text",
+            "default_value": "02 / ABOUT US"
+        },
+        {
+            "key": "field_about_hero_title_lead",
+            "label": "Hero Title Lead",
+            "name": "about_hero_title_lead",
+            "type": "text",
+            "default_value": "A family legacy,"
+        },
+        {
+            "key": "field_about_hero_title_highlight",
+            "label": "Hero Title Highlight (Italic Gold)",
+            "name": "about_hero_title_highlight",
+            "type": "text",
+            "default_value": "shared with the world."
+        },
+        {
+            "key": "field_about_story_eyebrow",
+            "label": "Story Eyebrow",
+            "name": "about_story_eyebrow",
+            "type": "text",
+            "default_value": "ALL STORY"
+        },
+        {
+            "key": "field_about_story_heading",
+            "label": "Story Heading",
+            "name": "about_story_heading",
+            "type": "text",
+            "default_value": "Italian excellence, carried forward."
+        },
+        {
+            "key": "field_about_story_p1",
+            "label": "Story Paragraph 1",
+            "name": "about_story_p1",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Frignani’s was born from a deep love of Italian culture — its food, its wine, its craftsmanship, and the people behind it all. At the heart of our story is a tribute to Sabrina Frignani's grandmother, whose passion for Italian tradition and her belief in the power of sharing it with the world became the founding spirit of this house."
+        },
+        {
+            "key": "field_about_story_p2",
+            "label": "Story Paragraph 2",
+            "name": "about_story_p2",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Her kitchen was a place of ceremony — where ingredients mattered, where provenance was everything, and where the table was always set for anyone who appreciated quality. That spirit is what we carry into every transaction, every partnership, every shipment."
+        },
+        {
+            "key": "field_about_story_p3",
+            "label": "Story Paragraph 3",
+            "name": "about_story_p3",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Today, Frignani’s operates as a direct import & export house, connecting Italy’s finest producers — in wine, food, and luxury lifestyle — with international professionals who share our standards. We are not brokers of anonymous goods. We are custodians of a living heritage."
+        },
+        {
+            "key": "field_about_story_image",
+            "label": "Story Image",
+            "name": "about_story_image",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_about_tribute_eyebrow",
+            "label": "Tribute Eyebrow",
+            "name": "about_tribute_eyebrow",
+            "type": "text",
+            "default_value": "A TRIBUTE"
+        },
+        {
+            "key": "field_about_tribute_quote",
+            "label": "Tribute Quote",
+            "name": "about_tribute_quote",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "She believed that the finest things in life were meant to be shared — not kept, not hoarded, but given generously to those who truly appreciate them."
+        },
+        {
+            "key": "field_about_tribute_body",
+            "label": "Tribute Body Text",
+            "name": "about_tribute_body",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "This house exists in honour of that belief. Every category we curate, every producer we partner with, every order we fulfill — it is all done in the spirit of Sabrina's grandmother, who showed us that Italian excellence is not a commodity, but a culture worth protecting and sharing with the world."
+        },
+        {
+            "key": "field_about_tribute_author",
+            "label": "Tribute Author / Title",
+            "name": "about_tribute_author",
+            "type": "text",
+            "default_value": "SABRINA FRIGNANI, OWNER & MANAGER"
+        },
+        {
+            "key": "field_about_values_heading",
+            "label": "Values Heading",
+            "name": "about_values_heading",
+            "type": "text",
+            "default_value": "What we stand for"
+        },
+        {
+            "key": "field_about_val1_title",
+            "label": "Value 1 Title",
+            "name": "about_val1_title",
+            "type": "text",
+            "default_value": "Provenance"
+        },
+        {
+            "key": "field_about_val1_desc",
+            "label": "Value 1 Description",
+            "name": "about_val1_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "We know the origin of every product we export. Provenance is not a marketing term for us — it is a contractual standard."
+        },
+        {
+            "key": "field_about_val2_title",
+            "label": "Value 2 Title",
+            "name": "about_val2_title",
+            "type": "text",
+            "default_value": "Directness"
+        },
+        {
+            "key": "field_about_val2_desc",
+            "label": "Value 2 Description",
+            "name": "about_val2_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "We operate through direct import & export transactions. No intermediaries. No anonymous supply chains. A clear line from producer to buyer."
+        },
+        {
+            "key": "field_about_val3_title",
+            "label": "Value 3 Title",
+            "name": "about_val3_title",
+            "type": "text",
+            "default_value": "Heritage"
+        },
+        {
+            "key": "field_about_val3_desc",
+            "label": "Value 3 Description",
+            "name": "about_val3_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Italian culinary culture is a living heritage. We exist to promote it, protect it, and share it with the world's most discerning professionals."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-about.php"
+            }
+        ]
+    ]
+}
