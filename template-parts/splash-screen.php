@@ -2,9 +2,9 @@
 /**
  * Template Part: Luxury Splash Screen / Welcome Curtain
  *
- * Displays an intro splash screen on the homepage inspired by the
- * Italian wine harvest, golden crest logo, tricolor ribbon, and
- * the calligraphy tagline "Una passione ... Mille Sapori".
+ * An elevated welcoming animation centered on the noble Frignani's Crest,
+ * with subtle breathing radiance, Italian tricolor, and an elegant
+ * "Italy · Luxembourg" trade axis loader that gracefully bridges the two worlds.
  *
  * @package Frignanis
  */
@@ -21,10 +21,6 @@ $splash_tagline_1 = function_exists( 'get_field' ) && get_field( 'splash_tagline
 $splash_tagline_2 = function_exists( 'get_field' ) && get_field( 'splash_tagline_line2' )
 	? get_field( 'splash_tagline_line2' )
 	: esc_html__( '... Mille Sapori', 'frignanis' );
-
-$splash_image = function_exists( 'get_field' ) && get_field( 'splash_image' )
-	? get_field( 'splash_image' )
-	: get_template_directory_uri() . '/assets/images/splash-wine-inspiration.jpg';
 ?>
 
 <!-- ==========================================
@@ -32,62 +28,124 @@ $splash_image = function_exists( 'get_field' ) && get_field( 'splash_image' )
      ========================================== -->
 <div id="splash-screen" class="splash-screen" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( "Benvenuti a Frignani's", 'frignanis' ); ?>">
 	
-	<!-- Ambient Background Glow & Shimmer -->
-	<div class="splash-screen__backdrop"></div>
+	<!-- Ambient Background Glow & Celestial Shimmer -->
+	<div class="splash-screen__backdrop">
+		<div class="splash-screen__radial-glow"></div>
+		<div class="splash-screen__ambient-ring"></div>
+	</div>
 
 	<div class="splash-screen__content">
 		
-		<!-- 1. Header Branding & Italian Flag -->
-		<header class="splash-screen__header">
+		<!-- 1. Central Hero Emblem & Logo Animation -->
+		<div class="splash-screen__emblem-stage">
+			<div class="splash-screen__halo" aria-hidden="true"></div>
+			
 			<div class="splash-screen__logo-wrap">
 				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/logo-fundo-escuro-web.png' ); ?>" 
 					 alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" 
 					 class="splash-screen__logo" 
-					 width="96" 
-					 height="122" />
+					 width="600" 
+					 height="760" />
 			</div>
-			
+
+			<!-- Italian Tricolor Ribbon Accent -->
 			<div class="splash-screen__flag" aria-label="<?php esc_attr_e( 'Italian Origin Flag', 'frignanis' ); ?>">
 				<span class="splash-screen__flag-color splash-screen__flag-color--green"></span>
 				<span class="splash-screen__flag-color splash-screen__flag-color--white"></span>
 				<span class="splash-screen__flag-color splash-screen__flag-color--red"></span>
 			</div>
-		</header>
+		</div>
 
-		<!-- 2. Arched Luxury Wine & Harvest Visual -->
-		<div class="splash-screen__visual">
-			<div class="splash-screen__arch-frame">
-				<!-- Gold accent arch curve -->
-				<div class="splash-screen__gold-arc" aria-hidden="true"></div>
-				
-				<img src="<?php echo esc_url( $splash_image ); ?>" 
-					 alt="<?php esc_attr_e( 'Fine Italian Wine and Vineyard Harvest', 'frignanis' ); ?>" 
-					 class="splash-screen__img" />
-				
-				<div class="splash-screen__img-overlay" aria-hidden="true"></div>
+		<!-- 2. Italy <-> Luxembourg Geographic Map Axis Dynamic Loader -->
+		<div class="splash-screen__axis" aria-label="<?php esc_attr_e( 'Connecting Italy and Luxembourg', 'frignanis' ); ?>">
+			
+			<!-- Italy Geographical Map Card & Origin Node -->
+			<div class="splash-screen__map-card splash-screen__map-card--italy">
+				<div class="splash-screen__map-frame">
+					<!-- Italy High-Fidelity Geographic Map Silhouette -->
+					<svg class="splash-screen__country-map splash-screen__country-map--italy" viewBox="0 0 100 135" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Mappa d'Italia">
+						<!-- Continental North + Apennine Peninsula / Boot + Apulia Heel + Calabria Toe -->
+						<path class="splash-screen__map-shape" d="M 8 20 C 13 13, 27 10, 42 12 C 55 13, 68 15, 78 20 C 76 25, 68 28, 58 29 C 55 33, 53 38, 55 43 C 58 48, 62 53, 66 58 C 70 63, 73 68, 70 73 C 65 73, 59 69, 56 66 C 53 70, 56 77, 60 84 C 64 90, 72 95, 82 96 C 87 97, 89 101, 84 103 C 76 104, 69 99, 66 94 C 62 96, 60 102, 62 107 C 65 112, 68 114, 66 116 C 62 118, 56 112, 52 105 C 48 99, 50 90, 50 84 C 48 81, 43 83, 41 87 C 39 94, 43 100, 45 106 C 44 109, 39 109, 35 106 C 33 99, 34 92, 38 85 C 41 77, 43 68, 41 61 C 39 55, 34 51, 30 49 C 25 47, 21 48, 17 45 C 13 42, 9 35, 10 30 C 11 25, 17 23, 20 22 C 16 19, 10 19, 8 20 Z" />
+						
+						<!-- Sicily (Trinacria) with accurate triangle/boot-toe positioning -->
+						<path class="splash-screen__map-island" d="M 28 112 C 35 109, 47 113, 50 119 C 47 123, 39 127, 31 125 C 25 124, 22 118, 28 112 Z" />
+						
+						<!-- Sardinia with accurate east/west coastline and Bonifácio strait separation -->
+						<path class="splash-screen__map-island" d="M 12 58 C 18 58, 22 62, 22 70 C 21 79, 22 89, 18 95 C 12 95, 11 86, 12 78 C 11 70, 10 63, 12 58 Z" />
+						
+						<!-- Po Valley & Adriatic Cartographic Indication lines -->
+						<path class="splash-screen__map-cantons" d="M 16 28 C 30 27, 46 27, 60 29 M 42 12 L 56 31" />
 
-				<!-- 3. Italian Script Tagline: "Una passione ... Mille Sapori" -->
-				<div class="splash-screen__tagline-wrap">
-					<p class="splash-screen__tagline-text splash-screen__tagline-text--1">
-						<?php echo esc_html( $splash_tagline_1 ); ?>
-					</p>
-					<p class="splash-screen__tagline-text splash-screen__tagline-text--2">
-						<?php echo esc_html( $splash_tagline_2 ); ?>
-					</p>
+						<!-- Ferrara / Origin Geographic Beacon Point (Po Delta / Emilia-Romagna) -->
+						<circle class="splash-screen__geo-beacon splash-screen__geo-beacon--ferrara" cx="56" cy="30" r="3.5" />
+						<circle class="splash-screen__geo-beacon-pulse" cx="56" cy="30" r="7" />
+					</svg>
+					<span class="splash-screen__map-radar" aria-hidden="true"></span>
+				</div>
+				<div class="splash-screen__node-meta">
+					<span class="splash-screen__node-label">ITALIA</span>
+					<span class="splash-screen__node-sub">Origine · Ferrara</span>
 				</div>
 			</div>
+
+			<!-- Glowing Dynamic Trade Bridge & Particle Flow -->
+			<div class="splash-screen__bridge-line">
+				<svg class="splash-screen__arc-svg" viewBox="0 0 180 50" fill="none" preserveAspectRatio="none">
+					<path class="splash-screen__arc-track" d="M15 38 C 55 8, 125 8, 165 38" />
+					<path class="splash-screen__arc-pulse" d="M15 38 C 55 8, 125 8, 165 38" />
+				</svg>
+				<span class="splash-screen__bridge-dot"></span>
+				<div class="splash-screen__trade-badge">
+					<span class="splash-screen__trade-badge-text">IMPORT & EXPORT</span>
+				</div>
+			</div>
+
+			<!-- Luxembourg Geographical Map Card & Headquarters Node -->
+			<div class="splash-screen__map-card splash-screen__map-card--luxembourg">
+				<div class="splash-screen__map-frame">
+					<!-- Luxembourg High-Fidelity Geographic Map Silhouette & Cantons -->
+					<svg class="splash-screen__country-map splash-screen__country-map--lux" viewBox="0 0 100 135" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Carte officielle du Luxembourg">
+						<!-- Accurate Luxembourg Perimeter Contour -->
+						<path class="splash-screen__map-shape" d="M 44 8 C 48 8, 51 12, 53 17 C 55 21, 58 27, 56 31 C 54 35, 60 40, 63 46 C 65 50, 71 54, 73 59 C 75 64, 79 69, 81 74 C 82 78, 79 83, 76 87 C 73 91, 74 97, 72 101 C 70 105, 68 111, 64 116 C 60 120, 53 124, 46 123 C 39 122, 34 118, 30 114 C 27 110, 24 105, 23 99 C 22 93, 25 87, 24 81 C 23 75, 17 71, 15 65 C 13 60, 16 54, 20 49 C 24 44, 28 38, 31 32 C 34 26, 38 18, 41 12 Z" />
+						
+						<!-- Authentic Regional & Canton Internal Border Outlines (Clervaux, Wiltz, Diekirch, Mersch, etc.) -->
+						<path class="splash-screen__map-cantons" d="M 31 32 C 41 33, 49 28, 56 31 M 20 49 C 32 46, 42 51, 52 48 C 58 46, 63 46, 63 46 M 15 65 C 26 66, 36 62, 46 64 C 58 66, 66 60, 73 59 M 24 81 C 34 78, 46 80, 56 76 C 66 73, 75 78, 81 74 M 30 114 C 40 106, 50 110, 60 105 C 66 102, 72 101, 72 101 M 46 64 L 47 108" />
+						
+						<!-- Luxembourg Ville / Capital Beacon Point -->
+						<circle class="splash-screen__geo-beacon splash-screen__geo-beacon--lux" cx="48" cy="88" r="3.5" />
+						<circle class="splash-screen__geo-beacon-pulse" cx="48" cy="88" r="7" />
+					</svg>
+					<span class="splash-screen__map-radar" aria-hidden="true"></span>
+				</div>
+				<div class="splash-screen__node-meta">
+					<span class="splash-screen__node-label">LUXEMBOURG</span>
+					<span class="splash-screen__node-sub">Siège · Europe</span>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- 3. Italian Script Tagline & Noble Heritage Signature -->
+		<div class="splash-screen__tagline-wrap">
+			<p class="splash-screen__tagline-text">
+				<span class="splash-screen__tagline-text--1"><?php echo esc_html( $splash_tagline_1 ); ?></span>
+				<span class="splash-screen__tagline-text--2"><?php echo esc_html( $splash_tagline_2 ); ?></span>
+			</p>
+			<p class="splash-screen__motto">
+				<?php esc_html_e( 'A ponte entre a Itália e o mundo', 'frignanis' ); ?>
+			</p>
 		</div>
 
 		<!-- 4. Enter / Skip Button -->
 		<footer class="splash-screen__footer">
 			<button type="button" id="splash-enter-btn" class="splash-screen__btn" aria-label="<?php esc_attr_e( 'Enter website', 'frignanis' ); ?>">
-				<span><?php esc_html_e( 'Entrar', 'frignanis' ); ?></span>
+				<span><?php esc_html_e( 'Enter', 'frignanis' ); ?></span>
 				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 					<line x1="5" y1="12" x2="19" y2="12"></line>
 					<polyline points="12 5 19 12 12 19"></polyline>
 				</svg>
 			</button>
-			<span class="splash-screen__hint"><?php esc_html_e( 'Clique em qualquer lugar para continuar', 'frignanis' ); ?></span>
+			<span class="splash-screen__hint"><?php esc_html_e( 'Click anywhere to continue', 'frignanis' ); ?></span>
 		</footer>
 
 	</div>

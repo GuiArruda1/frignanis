@@ -19,74 +19,74 @@ get_header();
 // ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
 $hero_eyebrow = function_exists( 'get_field' ) && get_field( 'cat_hero_eyebrow' )
 	? get_field( 'cat_hero_eyebrow' )
-	: esc_html__( '— 02 · CATEGORIES', 'frignanis' );
+	: esc_html__( '— 02 · CATEGORIES & CURATION', 'frignanis' );
 
 $hero_title_lead = function_exists( 'get_field' ) && get_field( 'cat_hero_title_lead' )
 	? get_field( 'cat_hero_title_lead' )
-	: esc_html__( 'What we', 'frignanis' );
+	: esc_html__( 'Italian Excellence Across', 'frignanis' );
 
 $hero_title_highlight = function_exists( 'get_field' ) && get_field( 'cat_hero_title_highlight' )
 	? get_field( 'cat_hero_title_highlight' )
-	: esc_html__( 'export', 'frignanis' );
+	: esc_html__( 'Three Management Pillars', 'frignanis' );
 
 $hero_description = function_exists( 'get_field' ) && get_field( 'cat_hero_description' )
 	? get_field( 'cat_hero_description' )
-	: esc_html__( 'Five categories of Italian excellence — selected, documented, and delivered to the world\'s most discerning buyers. We communicate by category, never by individual supplier or producer name.', 'frignanis' );
+	: esc_html__( 'Terroir wines and prosecco, gourmet and organic delicacies from traditional producers, and art décor pieces for high-end kitchens and dining (Cooking Supreme). We communicate exclusively by categories of excellence and guaranteed provenance.', 'frignanis' );
 
-// Default Category Rows matching Figma 1440x3559
+// Default Category Rows matching Official Briefing (Sept 2026)
 $categories_data = array(
 	array(
-		'id'          => 'wines-prosecco',
+		'id'          => 'vinhos',
 		'num'         => 'I',
-		'tags'        => esc_html__( 'DOC · DOCG · SPUMANTE', 'frignanis' ),
-		'title'       => esc_html__( 'Wines & Prosecco', 'frignanis' ),
-		'desc'        => esc_html__( 'From the rolling hills of Veneto to the volcanic soils of Sicily, our wine selection spans the full breadth of Italian viticulture. We specialise in Prosecco DOC and DOCG, alongside still and sparkling wines curated for the international professional buyer.', 'frignanis' ),
+		'tags'        => esc_html__( 'DOC · DOCG · VALDOBBIADENE · FRANCIACORTA', 'frignanis' ),
+		'title'       => esc_html__( 'Terroir Wines & Prosecco', 'frignanis' ),
+		'desc'        => esc_html__( 'Terroir wines and prosecco from selected Italian wineries. From the mineral elegance of the north to the noble reds of the center and south, we connect exclusive vintages and traditional method sparkling wines directly to gastronomic wine lists, importers, and distributors.', 'frignanis' ),
 		'image'       => get_template_directory_uri() . '/assets/images/category-wine.jpg',
-		'image_alt'   => esc_attr__( 'Italian Vineyards and Rolling Hills in Tuscany and Veneto', 'frignanis' ),
+		'image_alt'   => esc_attr__( 'Italian Vineyards and Noble Terroir', 'frignanis' ),
 		'layout'      => 'image-left',
 		'badge'       => '',
 	),
 	array(
-		'id'          => 'olive-oil',
+		'id'          => 'gourmet',
 		'num'         => 'II',
-		'tags'        => esc_html__( 'ITALIAN & BIOLOGICAL', 'frignanis' ),
-		'title'       => esc_html__( 'Olive Oil', 'frignanis' ),
-		'desc'        => esc_html__( 'Extra virgin olive oil of Italian origin, available in both conventional and certified biological varieties. Biological products are identified by our green designation — a commitment to traceability and organic farming practices.', 'frignanis' ),
+		'tags'        => esc_html__( 'OLIVE OIL · ORGANIC & EXTRA VIRGIN', 'frignanis' ),
+		'title'       => esc_html__( 'Italian & Organic Olive Oil', 'frignanis' ),
+		'desc'        => esc_html__( 'Extra virgin olive oil of verified Italian origin, available in conventional and certified organic lines. The organic line is identified by the green seal of traceability and sustainable agriculture.', 'frignanis' ),
 		'image'       => get_template_directory_uri() . '/assets/images/mission-olive-oil.jpg',
-		'image_alt'   => esc_attr__( 'Extra Virgin Olive Oil of Italian Origin', 'frignanis' ),
+		'image_alt'   => esc_attr__( 'Certified Organic Extra Virgin Italian Olive Oil', 'frignanis' ),
 		'layout'      => 'image-right',
-		'badge'       => esc_html__( 'BIOLOGICAL', 'frignanis' ),
+		'badge'       => esc_html__( 'CERTIFIED ORGANIC', 'frignanis' ),
 	),
 	array(
-		'id'          => 'truffle',
+		'id'          => 'trufas',
 		'num'         => 'III',
-		'tags'        => esc_html__( 'TARTUFO · SEASONAL HARVEST', 'frignanis' ),
-		'title'       => esc_html__( 'Truffle', 'frignanis' ),
-		'desc'        => esc_html__( 'The truffle — Tartufo — is among Italy\'s most prized culinary treasures. We source seasonal harvests from certified Italian regions, offering both fresh and preserved formats for restaurants, delicatessens, and luxury food distributors worldwide.', 'frignanis' ),
+		'tags'        => esc_html__( 'TARTUFO · SEASONAL ITALIAN HARVESTS', 'frignanis' ),
+		'title'       => esc_html__( 'Truffles & Truffle Condiments', 'frignanis' ),
+		'desc'        => esc_html__( 'The tartufo is one of Italy\'s greatest gastronomic treasures. We represent fresh seasonal harvests and preserved products of high aromatic density for fine dining restaurants, gourmet emporiums, and diplomatic events.', 'frignanis' ),
 		'image'       => get_template_directory_uri() . '/assets/images/category-truffle.jpg',
-		'image_alt'   => esc_attr__( 'Italian Truffle Tartufo Harvest', 'frignanis' ),
+		'image_alt'   => esc_attr__( 'Fresh and Preserved Italian Truffles', 'frignanis' ),
 		'layout'      => 'image-left',
 		'badge'       => '',
 	),
 	array(
-		'id'          => 'organic-biological',
+		'id'          => 'organicos',
 		'num'         => 'IV',
-		'tags'        => esc_html__( 'CERTIFIED ORGANIC PRODUCTS', 'frignanis' ),
-		'title'       => esc_html__( 'Organic / Biological', 'frignanis' ),
-		'desc'        => esc_html__( 'A growing selection of certified organic Italian products — from grains and legumes to condiments and preserves. All biological products carry the official EU organic certification and are identified by our green designation across the catalog.', 'frignanis' ),
+		'tags'        => esc_html__( 'EU CERTIFIED ORGANIC PRODUCTS', 'frignanis' ),
+		'title'       => esc_html__( 'Gourmet Delicacies & Organic Products', 'frignanis' ),
+		'desc'        => esc_html__( 'Special selection of organic and biological products from traditional producers — grains, pulses, artisanal sauces, and preserves that honor health, biodiversity, and European standard certification procedures.', 'frignanis' ),
 		'image'       => get_template_directory_uri() . '/assets/images/category-organic-bio.jpg',
-		'image_alt'   => esc_attr__( 'Certified Organic Italian Biological Products and Pantry Provisions', 'frignanis' ),
+		'image_alt'   => esc_attr__( 'Certified Italian Organic and Biological Delicacies', 'frignanis' ),
 		'layout'      => 'image-right',
-		'badge'       => esc_html__( 'BIOLOGICAL', 'frignanis' ),
+		'badge'       => esc_html__( 'CERTIFIED ORGANIC', 'frignanis' ),
 	),
 	array(
-		'id'          => 'luxury-kitchen-lifestyle',
+		'id'          => 'cooking-supreme',
 		'num'         => 'V',
-		'tags'        => esc_html__( 'LAMPS · CERAMICS · LIFESTYLE ARTICLES', 'frignanis' ),
-		'title'       => esc_html__( 'Luxury European Kitchen & Lifestyle', 'frignanis' ),
-		'desc'        => esc_html__( 'Beyond food and wine, Frignani\'s curates a selection of luxury European articles for the kitchen and restaurant environment — handcrafted ceramics, artisan lighting, and bespoke lifestyle accessories that bring Italian and European craftsmanship to the table.', 'frignanis' ),
+		'tags'        => esc_html__( 'COOKING SUPREME · LIFESTYLE & ART DE LA TABLE', 'frignanis' ),
+		'title'       => esc_html__( 'Art Décor · Cooking Supreme Line', 'frignanis' ),
+		'desc'        => esc_html__( 'Art décor for high-end kitchens and dining. High-level artisanal European ceramics, ambient lighting, and exclusive pieces that transform dining into a memorable experience of hospitality and style.', 'frignanis' ),
 		'image'       => get_template_directory_uri() . '/assets/images/mission-craftsman.jpg',
-		'image_alt'   => esc_attr__( 'Handcrafted European Ceramics and Artisan Craftsmanship', 'frignanis' ),
+		'image_alt'   => esc_attr__( 'Handcrafted European Ceramics and Tableware', 'frignanis' ),
 		'layout'      => 'image-left',
 		'badge'       => '',
 	),
@@ -107,6 +107,12 @@ $categories_data = array(
 				<?php echo esc_html( $hero_title_lead ); ?><br />
 				<span class="cat-page-hero__highlight"><?php echo esc_html( $hero_title_highlight ); ?></span>
 			</h1>
+
+			<div class="italian-flag-stripe" aria-hidden="true">
+				<span class="italian-flag-stripe__green"></span>
+				<span class="italian-flag-stripe__white"></span>
+				<span class="italian-flag-stripe__red"></span>
+			</div>
 
 			<p class="cat-page-hero__desc">
 				<?php echo esc_html( $hero_description ); ?>
@@ -150,6 +156,11 @@ $categories_data = array(
 						</div>
 						<h2 class="cat-row__title"><?php echo esc_html( $cat['title'] ); ?></h2>
 						<p class="cat-row__desc"><?php echo esc_html( $cat['desc'] ); ?></p>
+						<div style="margin-top: 1.5rem;">
+							<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+								<?php esc_html_e( 'REQUEST PRESENTATION FOR THIS CATEGORY', 'frignanis' ); ?>
+							</a>
+						</div>
 					</div>
 				</div>
 
@@ -163,6 +174,11 @@ $categories_data = array(
 						</div>
 						<h2 class="cat-row__title"><?php echo esc_html( $cat['title'] ); ?></h2>
 						<p class="cat-row__desc"><?php echo esc_html( $cat['desc'] ); ?></p>
+						<div style="margin-top: 1.5rem;">
+							<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+								<?php esc_html_e( 'REQUEST PRESENTATION FOR THIS CATEGORY', 'frignanis' ); ?>
+							</a>
+						</div>
 					</div>
 				</div>
 
@@ -185,6 +201,23 @@ $categories_data = array(
 
 		</article>
 	<?php endforeach; ?>
+
+	<!-- Folder Download Banner inside Categories -->
+	<div class="site-container" style="margin-top: 3rem;">
+		<div class="folder-download-banner">
+			<div class="folder-download-banner__content">
+				<span class="folder-download-banner__eyebrow"><?php esc_html_e( 'OFFICIAL CATALOGUE & FOLDER', 'frignanis' ); ?></span>
+				<h3 class="folder-download-banner__title"><?php esc_html_e( 'Frignani’s Institutional PDF Folder', 'frignanis' ); ?></h3>
+				<p class="folder-download-banner__desc">
+					<?php esc_html_e( 'Request our complete executive presentation with operational guidelines, packaging specifications, and standard import procedures.', 'frignanis' ); ?>
+				</p>
+			</div>
+			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn-folder-download">
+				<span>📥</span>
+				<span><?php esc_html_e( 'REQUEST PDF FOLDER', 'frignanis' ); ?></span>
+			</a>
+		</div>
+	</div>
 </section>
 
 <?php

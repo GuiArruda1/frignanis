@@ -75,7 +75,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						)
 					);
 				} else {
-					$is_about   = is_page( 'about' ) || is_page( 'sobre-nos' ) || is_page_template( 'page-about.php' );
+					$is_mission = is_page( 'mission-and-services' ) || is_page( 'mission-services' ) || is_page( 'missao-e-servicos' ) || is_page( 'missao-servicos' ) || is_page_template( 'page-mission-and-services.php' ) || is_page_template( 'page-mission-services.php' ) || is_page_template( 'page-missao-e-servicos.php' ) || is_page_template( 'page-missao-servicos.php' );
+					$is_about   = is_page( 'about' ) || is_page( 'sobre-nos' ) || is_page( 'quem-somos' ) || is_page_template( 'page-about.php' ) || is_page_template( 'page-sobre-nos.php' );
 					$is_contact = is_page( 'contact' ) || is_page( 'contato' ) || is_page_template( 'page-contact.php' ) || is_page_template( 'page-contato.php' );
 					?>
 					<ul class="site-header__nav-list">
@@ -84,9 +85,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<?php esc_html_e( 'Home', 'frignanis' ); ?>
 							</a>
 						</li>
-						<?php /* Categories temporarily disabled per request */ ?>
 						<li class="site-header__nav-item">
-							<a href="<?php echo esc_url( home_url( '/sobre-nos/' ) ); ?>" class="site-header__nav-link <?php echo $is_about ? 'is-active' : ''; ?>">
+							<a href="<?php echo esc_url( home_url( '/mission-and-services/' ) ); ?>" class="site-header__nav-link <?php echo $is_mission ? 'is-active' : ''; ?>">
+								<?php esc_html_e( 'Mission & Services', 'frignanis' ); ?>
+							</a>
+						</li>
+						<li class="site-header__nav-item">
+							<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="site-header__nav-link <?php echo $is_about ? 'is-active' : ''; ?>">
 								<?php esc_html_e( 'About Us', 'frignanis' ); ?>
 							</a>
 						</li>
@@ -101,10 +106,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
 			</nav>
 
+			<!-- Language Switcher -->
+			<div class="site-header__lang notranslate" aria-label="<?php esc_attr_e( 'Select language', 'frignanis' ); ?>">
+				<select class="lang-select notranslate" aria-label="<?php esc_attr_e( 'Language selector', 'frignanis' ); ?>">
+					<option value="en" selected>EN</option>
+					<option value="pt">PT</option>
+					<option value="fr">FR</option>
+					<option value="it">IT</option>
+					<option value="es">ES</option>
+					<option value="de">DE</option>
+				</select>
+			</div>
+
 			<!-- Header Action Button -->
 			<div class="site-header__action">
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-header-contact">
-					<?php esc_html_e( 'CONTACT US', 'frignanis' ); ?>
+					<?php esc_html_e( 'REQUEST A PRESENTATION', 'frignanis' ); ?>
 				</a>
 			</div>
 

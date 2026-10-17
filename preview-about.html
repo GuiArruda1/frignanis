@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — FRIGNANI'S (Maison of International Trade)</title>
+  <title>About Us — FRIGNANI'S | A Story Spanning Generations</title>
   
   <!-- Preconnect & Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Theme Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -28,7 +28,7 @@
           </a>
         </div>
 
-        <button class="site-header__nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open Menu">
+        <button class="site-header__nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -36,13 +36,13 @@
           </svg>
         </button>
 
-        <nav id="primary-navigation" class="site-header__nav" role="navigation" aria-label="Main Navigation">
+        <nav id="primary-navigation" class="site-header__nav" role="navigation" aria-label="Main Menu">
           <ul class="site-header__nav-list">
             <li class="site-header__nav-item">
               <a href="preview.html" class="site-header__nav-link">Home</a>
             </li>
             <li class="site-header__nav-item">
-              <a href="preview.html#categories" class="site-header__nav-link">Categories</a>
+              <a href="preview-mission-services.html" class="site-header__nav-link">Mission &amp; Services</a>
             </li>
             <li class="site-header__nav-item">
               <a href="preview-about.html" class="site-header__nav-link is-active">About Us</a>
@@ -53,9 +53,19 @@
           </ul>
         </nav>
 
-        <!-- Header Action Button -->
+        <div class="site-header__lang notranslate">
+          <select class="lang-select notranslate" aria-label="Select language">
+            <option value="en" selected>EN</option>
+            <option value="pt">PT</option>
+            <option value="fr">FR</option>
+            <option value="it">IT</option>
+            <option value="es">ES</option>
+            <option value="de">DE</option>
+          </select>
+        </div>
+
         <div class="site-header__action">
-          <a href="#footer" class="btn btn-header-contact">CONTACT US</a>
+          <a href="#footer" class="btn btn-header-contact">REQUEST A PRESENTATION</a>
         </div>
 
       </div>
@@ -64,480 +74,279 @@
 
   <main id="primary-content" class="site-main" role="main">
 
-    <!-- ==========================================
-         HERO SECTION: ABOUT US
-         ========================================== -->
-    <section class="about-hero" aria-labelledby="about-title">
-      <img src="assets/images/hero-ambient.svg" alt="" class="about-hero__ambient" width="1440" height="900" aria-hidden="true">
+    <div class="about-page-editorial">
 
-      <div class="site-container">
-        <div class="about-hero__content">
-          <div class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            — 03 . ABOUT US · HERITAGE & VISION
+      <!-- ==========================================
+           HERO HEADER: ABOUT US
+           ========================================== -->
+      <section class="about-hero about-hero--editorial" aria-labelledby="about-hero-title">
+        <img src="assets/images/hero-ambient.svg" alt="" class="about-hero__ambient" width="1440" height="900" aria-hidden="true">
+
+        <div class="site-container">
+          <div class="about-hero__inner about-hero__inner--editorial">
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              ABOUT US · A FAMILY HISTORY &amp; INTERNATIONAL VISION
+            </div>
+
+            <h1 id="about-hero-title" class="about-hero__title">
+              A story spanning generations,<br>
+              <span class="text-gold italic-serif">continents and flavours.</span>
+            </h1>
+
+            <!-- Italian Flag Ribbon Accent -->
+            <div class="italian-flag-stripe" aria-hidden="true">
+              <span class="italian-flag-stripe__green"></span>
+              <span class="italian-flag-stripe__white"></span>
+              <span class="italian-flag-stripe__red"></span>
+            </div>
           </div>
-
-          <h1 id="about-title" class="about-hero__title">
-            A family legacy,<br>
-            <span class="text-gold italic-serif">shared with the world.</span>
-          </h1>
-
-          <div class="ornament-divider" aria-hidden="true">
-            <span class="ornament-divider__symbol">❖</span>
-          </div>
-
-          <p class="about-hero__lead">
-            FRIGNANI'S is an international trade maison based in Luxembourg, with authentic Italian origins and identity — connecting prestigious Italian producers and European partners directly to international professionals.
-          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==========================================
-         PHILOSOPHICAL QUOTE BANNER
-         ========================================== -->
-    <section class="about-quote-banner" aria-label="Vision & Philosophy">
-      <div class="site-container">
-        <div class="about-quote-banner__inner">
-          <blockquote class="about-quote-banner__text">
-            « We do not seek indiscriminate volumes; we cultivate terroirs, honour centuries of tradition, and build lasting relationships of mutual trust. »
-          </blockquote>
-          <div class="ornament-divider" aria-hidden="true">
-            <span class="ornament-divider__symbol">❖</span>
-          </div>
-          <cite class="about-quote-banner__cite">
-            FRIGNANI'S · MAISON OF INTERNATIONAL TRADE
-          </cite>
+      <!-- ==========================================
+           MAIN EDITORIAL ARTICLE (CENTERED WITH BREATHING ROOM)
+           ========================================== -->
+      <article class="about-editorial" id="about-story" aria-label="Our History and Heritage">
+        <div class="site-container site-container--wide">
+
+          <!-- ----------------------------------------
+               FEATURED SHOWCASE: OUR ITALIAN HERITAGE
+               ---------------------------------------- -->
+          <section class="about-heritage-showcase" aria-labelledby="heritage-showcase-title">
+            <!-- Gold Leaf Texture Accent Bar -->
+            <div class="about-heritage-showcase__gold-bar" aria-hidden="true"></div>
+
+            <div class="about-heritage-showcase__inner">
+              
+              <!-- Left Narrative Column -->
+              <div class="about-heritage-showcase__content">
+                <div class="about-heritage-showcase__pill-row">
+                  <span class="about-heritage-showcase__pill">ABOUT US</span>
+                  <span class="about-heritage-showcase__pill-line" aria-hidden="true"></span>
+                </div>
+
+                <h2 id="heritage-showcase-title" class="about-heritage-showcase__title">
+                  Our Italian heritage
+                </h2>
+
+                <div class="about-heritage-showcase__text">
+                  <p>
+                    Rooted in Ferrara, Italy, the Frignani family carried its culinary traditions to Brazil, passing a love of Italian culture from one generation to the next.
+                  </p>
+                  <p>
+                    Raised in Vitória, Espírito Santo, Sabrina Frignani brings this family heritage and her international experience to a new chapter of the Frignani story.
+                  </p>
+                </div>
+
+                <!-- Discreet Grandmother Tribute (Gentila Frignani) -->
+                <div class="about-heritage-tribute" aria-label="Tribute to Gentila Frignani">
+                  <div class="about-heritage-tribute__arch">
+                    <img src="assets/images/gentila-frignani-portrait.png" 
+                         alt="Gentila Frignani" 
+                         class="about-heritage-tribute__img" 
+                         width="250" 
+                         height="300" 
+                         loading="lazy">
+                  </div>
+                  <div class="about-heritage-tribute__info">
+                    <span class="about-heritage-tribute__intro">In amorevole ricordo di</span>
+                    <h3 class="about-heritage-tribute__name">Gentila Frignani</h3>
+                    <p class="about-heritage-tribute__dedication">Le nostre radici, sempre nel cuore.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Architectural Arch Window & Navy Block -->
+              <div class="about-heritage-showcase__visual" aria-hidden="true">
+                <div class="about-heritage-showcase__navy-block"></div>
+                <div class="about-heritage-showcase__arch-frame">
+                  <img src="assets/images/about-ferrara-estate-arch.jpg" 
+                       alt="Italian terroir and architectural heritage of Ferrara" 
+                       class="about-heritage-showcase__arch-img" 
+                       width="1179" 
+                       height="1105" 
+                       loading="lazy">
+                </div>
+              </div>
+
+            </div>
+          </section>
+
         </div>
-      </div>
-    </section>
 
-    <!-- ==========================================
-         SECTION 1: 3 PILLARS & OUR GLOBAL REACH
-         ========================================== -->
-    <section class="about-pillars" id="pillars" aria-labelledby="pillars-heading">
-      <div class="site-container">
-        <div class="about-pillars__layout">
+        <div class="about-editorial__container">
 
-          <!-- Narrative Column -->
-          <div class="about-pillars__info">
-            <div class="eyebrow">OUR GLOBAL REACH</div>
-            <h2 id="pillars-heading" class="section-title">
-              Three Pillars of Excellence Serving Demanding Markets
+          <!-- ----------------------------------------
+               SECTION 1: NOBLE HISTORICAL LINEAGE (DAL 1626)
+               ---------------------------------------- -->
+          <section class="about-editorial__section" aria-labelledby="sec1-title">
+            <h2 id="sec1-title" class="about-editorial__subtitle">
+              A STORY SPANNING GENERATIONS, CONTINENTS AND FLAVOURS
             </h2>
 
-            <div class="ornament-divider ornament-divider--left" aria-hidden="true">
-              <span class="ornament-divider__symbol">❖</span>
+            <div class="about-editorial__body">
+              <p class="about-lead-paragraph">
+                The Frignani name carries a history spanning centuries. On August 30, 1626, in Valencia, King Philip IV created the Barony of Frignani and Frignestani, granted to Gaspar Palavicino y Centurión, leaving a historical record that forms part of the name’s journey and tradition.
+              </p>
+
+              <p>
+                Generations later, beside one of Brazil’s great ports in Vitória, Espírito Santo, Sabrina Frignani grew up between the family dining table and the rhythm of ships connecting continents. It was in this environment, suspended between Italian roots and an international vocation, that a worldview grounded in connection, trade, and excellence was born.
+              </p>
+
+              <p>
+                Following a distinguished international career in Spain, Sabrina united her heritage with extensive experience in management and international trade, inaugurating a new chapter in the family history.
+              </p>
             </div>
+          </section>
 
-            <p class="about-pillars__text">
-              We operate across three core pillars: <strong>Wines & Beverages</strong>, <strong>Italian Gastronomy (Food Italy)</strong>, and <strong>Tableware & Lifestyle (Kitchen & Art de Vivre)</strong>, serving restaurants, luxury hotels, premium supermarkets, and casinos in Europe and the Americas.
-            </p>
-            <p class="about-pillars__text">
-              Headquartered in the Grand Duchy of Luxembourg, we connect Italian producers and European artisans directly to international professionals, without superfluous intermediaries and with complete operational security.
-            </p>
-
-            <div class="about-pillars__quote-box">
-              <blockquote class="about-pillars__quote-text">
-                « Our approach: curatorship over volume, relationship over transaction. »
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- KPI Cards Column (Architectural Pedestals) -->
-          <div class="about-pillars__kpis">
-            <div class="about-kpi__list">
-              <div class="about-kpi__card">
-                <span class="about-kpi__num">3</span>
-                <div class="about-kpi__desc">
-                  <strong>Pillars of Activity</strong>
-                  Wines & Beverages, Italian Gastronomy, and Art de Vivre.
-                </div>
-              </div>
-
-              <div class="about-kpi__card">
-                <span class="about-kpi__num">4</span>
-                <div class="about-kpi__desc">
-                  <strong>Strategic Markets</strong>
-                  Fine Restaurants, Luxury Hotels, Premium Retail, and Casinos.
-                </div>
-              </div>
-
-              <div class="about-kpi__card">
-                <span class="about-kpi__num">100%</span>
-                <div class="about-kpi__desc">
-                  <strong>Authentic Origin</strong>
-                  Direct curation from Italy and Europe, without intermediaries.
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 2: OUR STORY & GRANDMOTHER TRIBUTE (CENTERPIECE)
-         ========================================== -->
-    <section class="about-history" id="history" aria-labelledby="history-heading">
-      <div class="site-container">
-        <div class="about-history__layout">
-
-          <!-- Left Column: Archival Museum Frame (Camila's Grandmother Tribute Artwork) -->
-          <div class="about-history__visual">
-            <div class="about-tribute__frame-wrapper">
-              <div class="about-tribute__frame">
-                <!-- Florentine Gold Corner Accents -->
-                <div class="about-tribute__corner about-tribute__corner--tl" aria-hidden="true"></div>
-                <div class="about-tribute__corner about-tribute__corner--tr" aria-hidden="true"></div>
-                <div class="about-tribute__corner about-tribute__corner--bl" aria-hidden="true"></div>
-                <div class="about-tribute__corner about-tribute__corner--br" aria-hidden="true"></div>
-
-                <img src="assets/images/about-grandmother-tribute.png" 
-                     alt="In loving memory of Gentila Frignani - Frignani's Tribute" 
-                     class="about-tribute__img" 
-                     width="1087" 
-                     height="1447" 
-                     loading="lazy">
-
-                <div class="about-tribute__plaque">
-                  <p class="about-tribute__caption">
-                    « Your love, your strength, and your kindness will live forever in our hearts. »
-                  </p>
-                  <span class="about-tribute__seal">
-                    ✦ FRIGNANI'S · EST. TRENTO · ITALIA ✦
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Family Timeline & Narrative -->
-          <div class="about-history__text">
-            <div class="eyebrow">OUR STORY · AN ITALIAN FAMILY HERITAGE</div>
-            <h2 id="history-heading" class="section-title">
-              Century-Old Roots, Tradition and Family Passion
+          <!-- ----------------------------------------
+               SECTION 2: A JOURNEY BACK TO OUR ROOTS
+               ---------------------------------------- -->
+          <section class="about-editorial__section" aria-labelledby="sec2-title">
+            <h2 id="sec2-title" class="about-editorial__subtitle">
+              A JOURNEY BACK TO OUR ROOTS
             </h2>
 
-            <div class="ornament-divider ornament-divider--left" aria-hidden="true">
-              <span class="ornament-divider__symbol">❖</span>
+            <div class="about-editorial__body">
+              <p class="about-lead-paragraph">
+                Today, the new Frignani generation makes the journey back.
+              </p>
+
+              <p>
+                From Luxembourg, the heart of Europe, Frignani’s was created with the purpose of connecting producers, brands, restaurants, and markets through an international import and export service crafted with proximity, deep knowledge, and meticulous attention to detail.
+              </p>
+
+              <p>
+                With the support of the Federazione Italiana Cuochi – Delegazione Lussemburgo, Frignani’s establishes a bridge between Italian tradition and the contemporary world, curating producers and partners that embody quality, authenticity, and excellence.
+              </p>
+
+              <p>
+                More than simply transporting products across borders, we believe in building lasting connections between people, cultures, and businesses.
+              </p>
             </div>
 
-            <p class="section-lead">
-              Sabrina Frignani, founder of FRIGNANI'S, is of Italian descent, with deep family roots in Trento — a historical territory that was once part of the Austro-Hungarian Empire before becoming Italian. This rich cultural heritage transmitted to the Frignani family the secrets and sacred rituals of authentic gastronomy.
-            </p>
-
-            <!-- Interactive Golden Thread Timeline -->
-            <div class="about-timeline">
-              <div class="about-timeline__item">
-                <span class="about-timeline__badge">1</span>
-                <div class="about-timeline__content">
-                  <span class="about-timeline__tag">TRENTO · ANCESTRALITY</span>
-                  <h3 class="about-timeline__heading">Trento, Italy</h3>
-                  <p class="about-timeline__desc">
-                    Land of origin of the Frignani family — at the time, part of the Austro-Hungarian Empire. The cradle of a lineage marked by deep respect for the land, harvest traditions, and authentic flavours.
-                  </p>
-                </div>
-              </div>
-
-              <div class="about-timeline__item">
-                <span class="about-timeline__badge">2</span>
-                <div class="about-timeline__content">
-                  <span class="about-timeline__tag">THE TRANSATLANTIC VOYAGE</span>
-                  <h3 class="about-timeline__heading">A Century-Old Promise</h3>
-                  <p class="about-timeline__desc">
-                    Over a century ago, a ship crossed the Atlantic. Aboard: an Italian family, its sacred traditions, and the promise to bring the authentic flavours of Italy across borders.
-                  </p>
-                </div>
-              </div>
-
-              <div class="about-timeline__item">
-                <span class="about-timeline__badge">3</span>
-                <div class="about-timeline__content">
-                  <span class="about-timeline__tag">LUXEMBOURG · TODAY & THE WORLD</span>
-                  <h3 class="about-timeline__heading">European Hub & Global Vision</h3>
-                  <p class="about-timeline__desc">
-                    Today established in the Grand Duchy of Luxembourg, Sabrina perpetuates this family heritage. In honour of her roots and her grandmother, she connects Italian excellence with discerning professionals worldwide.
-                  </p>
-                </div>
+            <!-- Institutional Partnership Duo -->
+            <div class="about-heritage-duo">
+              <div class="about-heritage-duo__quote" style="grid-column: 1 / -1; text-align: center; border-left: none; border-top: 2px solid var(--color-gold); border-bottom: 2px solid var(--color-gold); padding: 2rem 1.5rem; background-color: rgba(168, 132, 58, 0.05); border-radius: 4px;">
+                <p class="about-heritage-duo__quote-text" style="font-size: 1.25rem; max-width: 680px; margin: 0 auto 0.75rem auto;">
+                  « With the support of Federazione Italiana Cuochi – Delegazione Lussemburgo, we build the bridge between authentic Italian heritage and the contemporary world. »
+                </p>
+                <span class="about-heritage-duo__quote-author">
+                  ✦ Frignani’s · Luxembourg
+                </span>
               </div>
             </div>
+          </section>
 
-            <div class="about-history__motto-box">
-              <p class="about-history__motto">
-                « Frignani's : Una passione, mille sapori. »
-              </p>
+          <!-- ----------------------------------------
+               GRAND CLOSING: CENTERED IN GOLD
+               ---------------------------------------- -->
+          <section class="about-fechamento" aria-label="Frignani’s Institutional Manifesto and Signature">
+            
+            <!-- 3-Line Cadence -->
+            <div class="about-fechamento__cadence">
+              From Italy to the world.<br>
+              From the world to Luxembourg.<br>
+              And from Luxembourg back to the world.
             </div>
-          </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 3: MISSION, VISION & VALUES (TRIPTYCH)
-         ========================================== -->
-    <section class="about-mvv" id="values" aria-labelledby="mvv-heading">
-      <div class="site-container">
-        <div class="about-mvv__header">
-          <div class="eyebrow">OUR FOUNDING PRINCIPLES</div>
-          <h2 id="mvv-heading" class="section-title">Mission, Vision & Values</h2>
-          <div class="ornament-divider" aria-hidden="true">
-            <span class="ornament-divider__symbol">❖</span>
-          </div>
-          <p class="section-lead">
-            The core principles guiding FRIGNANI'S in building enduring trade bridges between Italy, Europe, and the world.
-          </p>
-        </div>
-
-        <div class="about-mvv__grid">
-          <!-- Mission -->
-          <div class="about-mvv__card">
-            <div class="about-mvv__num">I</div>
-            <h3 class="about-mvv__title">Mission</h3>
-            <p class="about-mvv__body">
-              Deliver authentic, high-prestige Italian products and wines from historical terroirs directly to the world's finest dining and hospitality establishments.
-            </p>
-          </div>
-
-          <!-- Vision -->
-          <div class="about-mvv__card">
-            <div class="about-mvv__num">II</div>
-            <h3 class="about-mvv__title">Vision</h3>
-            <p class="about-mvv__body">
-              Become the benchmark boutique maison for Italian culinary curatorship and fine wine trade across Luxembourg, Europe, and international markets.
-            </p>
-          </div>
-
-          <!-- Values -->
-          <div class="about-mvv__card">
-            <div class="about-mvv__num">III</div>
-            <h3 class="about-mvv__title">Values</h3>
-            <p class="about-mvv__body">
-              Excellence, uncompromising authenticity, mutual trust, and enduring direct partnerships with each producer and client.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 4: OUR DIFFERENTIALS
-         ========================================== -->
-    <section class="about-diffs" id="differentials" aria-labelledby="diffs-heading">
-      <div class="site-container">
-        <div class="about-diffs__header">
-          <div class="eyebrow">WHY CHOOSE FRIGNANI'S</div>
-          <h2 id="diffs-heading" class="section-title">Our Differentials</h2>
-          <div class="ornament-divider" aria-hidden="true">
-            <span class="ornament-divider__symbol">❖</span>
-          </div>
-          <p class="section-lead">
-            Why discerning hospitality groups and fine food retailers choose FRIGNANI'S over commodity distributors.
-          </p>
-        </div>
-
-        <div class="about-diffs__grid">
-          <!-- Diff 1 -->
-          <div class="about-diffs__card">
-            <span class="about-diffs__badge">1</span>
-            <div>
-              <h3 class="about-diffs__card-title">Exclusive Curatorship</h3>
-              <p class="about-diffs__card-text">
-                Meticulous selection of prestigious family estates — never anonymous mass catalogs. Every reference carries authentic pedigree and uncompromising quality.
-              </p>
+            <div class="about-fechamento__divider" aria-hidden="true">
+              <span>❖</span>
             </div>
-          </div>
 
-          <!-- Diff 2 -->
-          <div class="about-diffs__card">
-            <span class="about-diffs__badge">2</span>
-            <div>
-              <h3 class="about-diffs__card-title">Direct Relationship</h3>
-              <p class="about-diffs__card-text">
-                A single, dedicated, and accessible point of contact — from initial tasting and custom selection to seamless ongoing fulfillment.
-              </p>
-            </div>
-          </div>
-
-          <!-- Diff 3 -->
-          <div class="about-diffs__card">
-            <span class="about-diffs__badge">3</span>
-            <div>
-              <h3 class="about-diffs__card-title">Agility & Bespoke Solutions</h3>
-              <p class="about-diffs__card-text">
-                Lean and responsive structure: swift decisions, immediate communication, and tailor-made logistics suited to your enterprise.
-              </p>
-            </div>
-          </div>
-
-          <!-- Diff 4 -->
-          <div class="about-diffs__card">
-            <span class="about-diffs__badge">4</span>
-            <div>
-              <h3 class="about-diffs__card-title">Family Storytelling</h3>
-              <p class="about-diffs__card-text">
-                The authentic narrative of an Italian family heritage, bringing emotional depth and tangible prestige to your wine list and discerning patrons.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 5: SELECTION TIERS & TERROIRS (DARK LUXURY)
-         ========================================== -->
-    <section class="about-selection" id="selection" aria-labelledby="selection-heading">
-      <div class="site-container">
-        <div class="text-center" style="max-width: 720px; margin: 0 auto;">
-          <div class="eyebrow">FAMILY ESTATES & TERROIR CURATORSHIP</div>
-          <h2 id="selection-heading" class="section-title">Selection Tiers & Terroirs</h2>
-          <div class="ornament-divider" aria-hidden="true">
-            <span class="ornament-divider__symbol">❖</span>
-          </div>
-          <p class="section-lead">
-            A structured curation categorized by gastronomic profile and quality standards, crafted for sommeliers, chefs, and luxury hospitality managers.
-          </p>
-        </div>
-
-        <div class="about-selection__grid">
-          <!-- Tier 1 -->
-          <div class="about-selection__card">
-            <div class="about-selection__letter">P</div>
-            <h3 class="about-selection__tier">Sparkling & Premium Prosecco</h3>
-            <span class="about-selection__subtier">Valdobbiadene & Franciacorta</span>
-            <p class="about-selection__desc">
-              Ideal for by-the-glass service and refined lists. Vibrant freshness, fine perlage, and accessible luxury for aperitifs and high-profile receptions.
+            <!-- Synthesis Narrative -->
+            <p class="about-fechamento__synthesis">
+              Expertise in international management. Elegance in curation. Forward-thinking vision. Excellence at every stage — through to final delivery.
             </p>
-          </div>
 
-          <!-- Tier 2 -->
-          <div class="about-selection__card">
-            <div class="about-selection__letter">V</div>
-            <h3 class="about-selection__tier">Classic Selection Wines</h3>
-            <span class="about-selection__subtier">Mid-High Gastronomic Range</span>
-            <p class="about-selection__desc">
-              Superb quality-to-value ratio, crafted to compose a balanced and harmonious list (white, red, and rosé) for distinguished culinary tables.
+            <!-- Brand Title & Subtitle -->
+            <h3 class="about-fechamento__brand-title">
+              FRIGNANI’S
+            </h3>
+
+            <p class="about-fechamento__brand-subtitle">
+              A family history. An international vision. A passion that transcends borders.
             </p>
-          </div>
 
-          <!-- Tier 3 -->
-          <div class="about-selection__card">
-            <div class="about-selection__letter">T</div>
-            <h3 class="about-selection__tier">High Range & Exceptional Terroirs</h3>
-            <span class="about-selection__subtier">Toscana, Piemonte & Noble Crus</span>
-            <p class="about-selection__desc">
-              Historic and family prestige. Exceptional crus designed for fine dining establishments, exclusive private cellars, and discerning collectors.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+            <!-- Presentation Request CTA -->
+            <div class="about-fechamento__cta">
+              <a href="#footer" class="btn btn-primary">
+                REQUEST A PRESENTATION
+              </a>
+              <a href="preview-mission-services.html" class="btn btn-secondary">
+                OUR SERVICES
+              </a>
+            </div>
 
-    <!-- ==========================================
-         SECTION 6: B2B PARTNERSHIP CTA
-         ========================================== -->
-    <section class="about-cta" aria-labelledby="cta-heading">
-      <div class="site-container">
-        <div class="about-cta__inner">
-          <div class="eyebrow">RESTAURANTS · HOTELS · CASINOS · PREMIUM RETAIL</div>
-          <h2 id="cta-heading" class="about-cta__title">
-            Let's Build a Direct and Lasting Partnership
-          </h2>
-          <div class="ornament-divider" aria-hidden="true">
-            <span class="ornament-divider__symbol">❖</span>
-          </div>
-          <p class="about-cta__desc">
-            Sabrina Frignani is at your disposal to present our curated portfolio of wines, olive oils, and luxury articles for your business.
-          </p>
-          <div class="hero__cta-row" style="justify-content: center; margin-bottom: 0;">
-            <a href="mailto:info@frignanis.com" class="btn btn-primary">
-              CONTACT BY EMAIL
-            </a>
-            <a href="#footer" class="btn btn-secondary">
-              VIEW CONTACT DETAILS
-            </a>
-          </div>
+          </section>
+
         </div>
-      </div>
-    </section>
+      </article>
+
+    </div>
 
   </main>
 
-  <!-- ==========================================
-       SITE FOOTER
-       ========================================== -->
+  <!-- Footer -->
   <footer id="footer" class="site-footer" role="contentinfo">
     <div class="site-container">
       <div class="site-footer__grid">
 
-        <!-- Column 1: Brand & Tagline -->
         <div class="site-footer__brand">
-          <img src="assets/logo/logo-fundo-escuro-web.png" alt="Frignani's" class="site-footer__logo" width="72" height="91" loading="lazy">
+          <img src="assets/logo/logo-fundo-escuro-web.png" alt="Frignani's" class="site-footer__logo" width="48" height="61">
           <p class="site-footer__tagline">
-            Connecting Italian producers directly to international professionals — promoting Italian culinary culture and heritage around the world through direct import & export transactions.
+            We do not sell products. We connect excellences. Business management and commercial intermediation of Italian excellence — from Luxembourg to the world.
           </p>
-          <a href="mailto:info@frignanis.com" class="btn btn-secondary">GET IN TOUCH</a>
+          <a href="#footer" class="btn btn-secondary">REQUEST A PRESENTATION</a>
         </div>
 
-        <!-- Column 2: Navigate -->
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">NAVIGATE</h3>
+          <h3 class="site-footer__heading">NAVIGATION</h3>
           <ul class="site-footer__menu-list">
             <li><a href="preview.html" class="site-footer__link">Home</a></li>
-            <li><a href="preview.html#categories" class="site-footer__link">Categories</a></li>
+            <li><a href="preview-mission-services.html" class="site-footer__link">Mission &amp; Services</a></li>
             <li><a href="preview-about.html" class="site-footer__link">About Us</a></li>
             <li><a href="#footer" class="site-footer__link">Contact</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Categories -->
         <div class="site-footer__col">
           <h3 class="site-footer__heading">CATEGORIES</h3>
           <ul class="site-footer__menu-list">
-            <li><a href="preview.html#categories" class="site-footer__link">Wines & Prosecco</a></li>
-            <li><a href="preview.html#categories" class="site-footer__link">Olive Oil</a></li>
-            <li><a href="preview.html#categories" class="site-footer__link">Truffle</a></li>
-            <li><a href="preview.html#categories" class="site-footer__link">Biological</a></li>
-            <li><a href="preview.html#categories" class="site-footer__link">Kitchen & Lifestyle</a></li>
+            <li><a href="preview.html#categories" class="site-footer__link">Terroir Wines &amp; Prosecco</a></li>
+            <li><a href="preview.html#categories" class="site-footer__link">Gourmet &amp; Biological Delicacies</a></li>
+            <li><a href="preview.html#categories" class="site-footer__link">Art Décor · Cooking Supreme</a></li>
+            <li><a href="#footer" class="site-footer__link text-gold">✦ Download Institutional Folder</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Contact -->
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">CONTACT</h3>
+          <h3 class="site-footer__heading">CONTACT &amp; HEADQUARTERS</h3>
           <div class="site-footer__contact-item">
-            <a href="mailto:info@frignanis.com">info@frignanis.com</a>
+            <a href="mailto:info@frignanis.com">✉ info@frignanis.com</a>
           </div>
           <div class="site-footer__contact-item">
-            <span class="site-footer__contact-icon">
-              <img src="assets/icons/instagram.svg" alt="" width="18" height="18" loading="lazy">
-            </span>
-            <a href="https://instagram.com/frignanisgourmet" target="_blank" rel="noopener noreferrer">@frignanisgourmet</a>
+            <a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer">☎ +352 621 766 684 (WhatsApp)</a>
+          </div>
+          <div class="site-footer__contact-item">
+            <span style="color: var(--color-text-muted-light); font-size: 0.85rem;">📍 Luxembourg · Europe</span>
+          </div>
+          <div class="site-footer__contact-item">
+            <a href="https://instagram.com/frignanisgourmet" target="_blank" rel="noopener noreferrer">📸 @frignanisgourmet</a>
           </div>
         </div>
 
       </div>
 
-      <!-- Bottom Copyright & Legal Links -->
       <div class="site-footer__bottom">
-        <div class="site-footer__bottom-inner">
-          <p class="site-footer__copyright">
-            © 2026 Frignani's · Italian Excellence, International Trade
-          </p>
-          <div class="site-footer__legal-links">
-            <a href="#" class="site-footer__legal-link">Privacy</a>
-            <a href="#" class="site-footer__legal-link">Terms</a>
-          </div>
-        </div>
+        <p class="site-footer__copyright">
+          © 2026 Frignani's Import &amp; Export · The bridge between Italy and the world. All rights reserved.
+        </p>
       </div>
-
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
 </html>

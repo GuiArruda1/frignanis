@@ -20,18 +20,22 @@ $form_feedback = null;
 
 if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset( $_POST['frignanis_contact_nonce'] ) ) {
 	if ( wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['frignanis_contact_nonce'] ) ), 'frignanis_send_contact' ) ) {
-		$name    = isset( $_POST['contact_name'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_name'] ) ) : '';
-		$company = isset( $_POST['contact_company'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_company'] ) ) : '';
-		$email   = isset( $_POST['contact_email'] ) ? sanitize_email( wp_unslash( $_POST['contact_email'] ) ) : '';
-		$message = isset( $_POST['contact_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['contact_message'] ) ) : '';
+		$name        = isset( $_POST['contact_name'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_name'] ) ) : '';
+		$company     = isset( $_POST['contact_company'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_company'] ) ) : '';
+		$country     = isset( $_POST['contact_country'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_country'] ) ) : '';
+		$client_type = isset( $_POST['contact_client_type'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_client_type'] ) ) : '';
+		$email       = isset( $_POST['contact_email'] ) ? sanitize_email( wp_unslash( $_POST['contact_email'] ) ) : '';
+		$message     = isset( $_POST['contact_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['contact_message'] ) ) : '';
 
 		if ( ! empty( $name ) && ! empty( $email ) && is_email( $email ) && ! empty( $message ) ) {
 			$to      = 'info@frignanis.com';
-			$subject = sprintf( '[Frignani\'s Trade Inquiry] from %s (%s)', $name, $company ? $company : 'B2B Partner' );
+			$subject = sprintf( '[Frignani\'s Presentation & Contact] from %s (%s - %s)', $name, $company ? $company : 'B2B', $country ? $country : 'International' );
 			$body    = sprintf(
-				"Name: %s\nCompany: %s\nEmail: %s\n\nMessage:\n%s\n",
+				"Name: %s\nCompany: %s\nCountry: %s\nClient Type: %s\nEmail: %s\n\nMessage:\n%s\n",
 				$name,
 				$company ? $company : 'N/A',
+				$country ? $country : 'N/A',
+				$client_type ? $client_type : 'N/A',
 				$email,
 				$message
 			);
@@ -45,18 +49,18 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset( $_POST['frignanis_contact_n
 			if ( $sent ) {
 				$form_feedback = array(
 					'type'    => 'success',
-					'message' => esc_html__( 'Thank you. Your message has been received. We will respond within 2 working days.', 'frignanis' ),
+					'message' => esc_html__( 'Thank you. Your request has been received. We will be in touch with the presentation shortly.', 'frignanis' ),
 				);
 			} else {
 				$form_feedback = array(
-					'type'    => 'success', // graceful fallback for local development environments
-					'message' => esc_html__( 'Thank you for your message. We will get in touch with you shortly.', 'frignanis' ),
+					'type'    => 'success', // graceful fallback for local development
+					'message' => esc_html__( 'Thank you for your message. We will be in touch shortly.', 'frignanis' ),
 				);
 			}
 		} else {
 			$form_feedback = array(
 				'type'    => 'error',
-				'message' => esc_html__( 'Please provide a valid name, email address, and message.', 'frignanis' ),
+				'message' => esc_html__( 'Please fill in all required fields with a valid email address.', 'frignanis' ),
 			);
 		}
 	}
@@ -71,19 +75,19 @@ get_header();
 // Hero Section
 $contact_hero_eyebrow = function_exists( 'get_field' ) && get_field( 'contact_hero_eyebrow' )
 	? get_field( 'contact_hero_eyebrow' )
-	: esc_html__( '04 / CONTACT', 'frignanis' );
+	: esc_html__( '04 / CONTACT & INQUIRY', 'frignanis' );
 
 $contact_hero_title_lead = function_exists( 'get_field' ) && get_field( 'contact_hero_title_lead' )
 	? get_field( 'contact_hero_title_lead' )
-	: esc_html__( "Let's talk", 'frignanis' );
+	: esc_html__( 'Let\'s', 'frignanis' );
 
 $contact_hero_title_highlight = function_exists( 'get_field' ) && get_field( 'contact_hero_title_highlight' )
 	? get_field( 'contact_hero_title_highlight' )
-	: esc_html__( 'trade.', 'frignanis' );
+	: esc_html__( 'talk.', 'frignanis' );
 
 $contact_hero_desc = function_exists( 'get_field' ) && get_field( 'contact_hero_desc' )
 	? get_field( 'contact_hero_desc' )
-	: esc_html__( "For import & export enquiries, partnership proposals, or any question about our categories — we're here.", 'frignanis' );
+	: esc_html__( 'It will be an honor to bring Italy to your table. Business management and commercial representation for distributors, restaurants, institutions, and corporations.', 'frignanis' );
 
 // Left Column Info
 $contact_email_label   = function_exists( 'get_field' ) && get_field( 'contact_email_label' )
@@ -93,6 +97,14 @@ $contact_email_label   = function_exists( 'get_field' ) && get_field( 'contact_e
 $contact_email_address = function_exists( 'get_field' ) && get_field( 'contact_email_address' )
 	? get_field( 'contact_email_address' )
 	: 'info@frignanis.com';
+
+$contact_phone_label   = function_exists( 'get_field' ) && get_field( 'contact_phone_label' )
+	? get_field( 'contact_phone_label' )
+	: esc_html__( 'PHONE & WHATSAPP', 'frignanis' );
+
+$contact_phone_number  = function_exists( 'get_field' ) && get_field( 'contact_phone_number' )
+	? get_field( 'contact_phone_number' )
+	: '+352 621 766 684';
 
 $contact_insta_label   = function_exists( 'get_field' ) && get_field( 'contact_insta_label' )
 	? get_field( 'contact_insta_label' )
@@ -106,21 +118,17 @@ $contact_insta_url     = function_exists( 'get_field' ) && get_field( 'contact_i
 	? get_field( 'contact_insta_url' )
 	: 'https://instagram.com/frignanisgourmet';
 
-$contact_insta_subtext = function_exists( 'get_field' ) && get_field( 'contact_insta_subtext' )
-	? get_field( 'contact_insta_subtext' )
-	: esc_html__( 'Instagram is our primary direct contact channel.', 'frignanis' );
+$contact_location_label = function_exists( 'get_field' ) && get_field( 'contact_location_label' )
+	? get_field( 'contact_location_label' )
+	: esc_html__( 'HEADQUARTERS & OPERATIONS', 'frignanis' );
 
-$contact_sla_label     = function_exists( 'get_field' ) && get_field( 'contact_sla_label' )
-	? get_field( 'contact_sla_label' )
-	: esc_html__( 'RESPONSE TIME', 'frignanis' );
-
-$contact_sla_text      = function_exists( 'get_field' ) && get_field( 'contact_sla_text' )
-	? get_field( 'contact_sla_text' )
-	: esc_html__( 'Within 2 working days for all trade enquiries.', 'frignanis' );
+$contact_location_text = function_exists( 'get_field' ) && get_field( 'contact_location_text' )
+	? get_field( 'contact_location_text' )
+	: esc_html__( 'Luxembourg · Europe (Serving 9 countries)', 'frignanis' );
 
 $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_form_btn_text' )
 	? get_field( 'contact_form_btn_text' )
-	: esc_html__( 'SEND MESSAGE', 'frignanis' );
+	: esc_html__( 'REQUEST A PRESENTATION', 'frignanis' );
 ?>
 
 <!-- ==========================================
@@ -139,6 +147,12 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 				<span class="contact-hero__title-highlight"><?php echo esc_html( $contact_hero_title_highlight ); ?></span>
 			</h1>
 
+			<div class="italian-flag-stripe italian-flag-stripe--left" aria-hidden="true">
+				<span class="italian-flag-stripe__green"></span>
+				<span class="italian-flag-stripe__white"></span>
+				<span class="italian-flag-stripe__red"></span>
+			</div>
+
 			<?php if ( ! empty( $contact_hero_desc ) ) : ?>
 				<p class="contact-hero__desc">
 					<?php echo esc_html( $contact_hero_desc ); ?>
@@ -151,7 +165,7 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 <!-- ==========================================
      2. CONTACT MAIN SECTION (LIGHT CREAM)
      ========================================== -->
-<section class="contact-main" aria-label="<?php esc_attr_e( 'Contact Information & Trade Inquiries', 'frignanis' ); ?>">
+<section class="contact-main" aria-label="<?php esc_attr_e( 'Contact Channels and Inquiries', 'frignanis' ); ?>">
 	<div class="site-container">
 		<div class="contact-main__grid">
 
@@ -168,6 +182,17 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 
 				<div class="contact-info__divider" aria-hidden="true"></div>
 
+				<!-- Phone & WhatsApp Item -->
+				<div class="contact-info__item">
+					<span class="contact-info__label"><?php echo esc_html( $contact_phone_label ); ?></span>
+					<a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer" class="contact-info__value contact-info__value--insta" style="color: #25D366;">
+						☎ <?php echo esc_html( $contact_phone_number ); ?>
+					</a>
+					<p class="contact-info__subtext"><?php esc_html_e( 'Direct assistance via international phone and WhatsApp.', 'frignanis' ); ?></p>
+				</div>
+
+				<div class="contact-info__divider" aria-hidden="true"></div>
+
 				<!-- Instagram Item -->
 				<div class="contact-info__item">
 					<span class="contact-info__label"><?php echo esc_html( $contact_insta_label ); ?></span>
@@ -179,15 +204,14 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 						</svg>
 						<span><?php echo esc_html( $contact_insta_handle ); ?></span>
 					</a>
-					<p class="contact-info__subtext"><?php echo esc_html( $contact_insta_subtext ); ?></p>
 				</div>
 
 				<div class="contact-info__divider" aria-hidden="true"></div>
 
-				<!-- Response SLA Item -->
+				<!-- Headquarters Item -->
 				<div class="contact-info__item">
-					<span class="contact-info__label"><?php echo esc_html( $contact_sla_label ); ?></span>
-					<p class="contact-info__text"><?php echo esc_html( $contact_sla_text ); ?></p>
+					<span class="contact-info__label"><?php echo esc_html( $contact_location_label ); ?></span>
+					<p class="contact-info__text"><?php echo esc_html( $contact_location_text ); ?></p>
 				</div>
 
 			</div>
@@ -207,27 +231,47 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 					<div class="contact-form__row contact-form__row--split">
 						<!-- Your Name -->
 						<div class="contact-form__field">
-							<label for="contact_name" class="contact-form__label"><?php esc_html_e( 'YOUR NAME', 'frignanis' ); ?></label>
-							<input type="text" id="contact_name" name="contact_name" class="contact-form__input" placeholder="<?php esc_attr_e( 'Jean Dubois', 'frignanis' ); ?>" required />
+							<label for="contact_name" class="contact-form__label"><?php esc_html_e( 'FULL NAME *', 'frignanis' ); ?></label>
+							<input type="text" id="contact_name" name="contact_name" class="contact-form__input" placeholder="<?php esc_attr_e( 'Sabrina Frignani', 'frignanis' ); ?>" required />
 						</div>
 
 						<!-- Company -->
 						<div class="contact-form__field">
-							<label for="contact_company" class="contact-form__label"><?php esc_html_e( 'COMPANY', 'frignanis' ); ?></label>
-							<input type="text" id="contact_company" name="contact_company" class="contact-form__input" placeholder="<?php esc_attr_e( 'Maison Lyon SARL', 'frignanis' ); ?>" />
+							<label for="contact_company" class="contact-form__label"><?php esc_html_e( 'COMPANY / ORGANIZATION', 'frignanis' ); ?></label>
+							<input type="text" id="contact_company" name="contact_company" class="contact-form__input" placeholder="<?php esc_attr_e( 'Maison Gourmet Luxembourg', 'frignanis' ); ?>" />
+						</div>
+					</div>
+
+					<div class="contact-form__row contact-form__row--split">
+						<!-- Country -->
+						<div class="contact-form__field">
+							<label for="contact_country" class="contact-form__label"><?php esc_html_e( 'COUNTRY OF OPERATION *', 'frignanis' ); ?></label>
+							<input type="text" id="contact_country" name="contact_country" class="contact-form__input" placeholder="<?php esc_attr_e( 'Luxembourg, Belgium, Brazil...', 'frignanis' ); ?>" required />
+						</div>
+
+						<!-- Client Type -->
+						<div class="contact-form__field">
+							<label for="contact_client_type" class="contact-form__label"><?php esc_html_e( 'CLIENT TYPE', 'frignanis' ); ?></label>
+							<select id="contact_client_type" name="contact_client_type" class="contact-form__select">
+								<option value="Distributor / Supermarket"><?php esc_html_e( 'Distributor / Supermarket', 'frignanis' ); ?></option>
+								<option value="Fine Dining Restaurant / Chef"><?php esc_html_e( 'Fine Dining Restaurant / Chef', 'frignanis' ); ?></option>
+								<option value="Embassy / Institution / Federation"><?php esc_html_e( 'Embassy / Institution / Federation', 'frignanis' ); ?></option>
+								<option value="Corporate (Executive Gifts & Hampers)"><?php esc_html_e( 'Corporate (Executive Gifts & Hampers)', 'frignanis' ); ?></option>
+								<option value="Other"><?php esc_html_e( 'Other Segment', 'frignanis' ); ?></option>
+							</select>
 						</div>
 					</div>
 
 					<!-- Email -->
 					<div class="contact-form__field">
-						<label for="contact_email" class="contact-form__label"><?php esc_html_e( 'EMAIL', 'frignanis' ); ?></label>
-						<input type="email" id="contact_email" name="contact_email" class="contact-form__input" placeholder="<?php esc_attr_e( 'jd@maisonlyon.fr', 'frignanis' ); ?>" required />
+						<label for="contact_email" class="contact-form__label"><?php esc_html_e( 'CORPORATE EMAIL *', 'frignanis' ); ?></label>
+						<input type="email" id="contact_email" name="contact_email" class="contact-form__input" placeholder="<?php esc_attr_e( 'contact@company.com', 'frignanis' ); ?>" required />
 					</div>
 
 					<!-- Message -->
 					<div class="contact-form__field">
-						<label for="contact_message" class="contact-form__label"><?php esc_html_e( 'MESSAGE', 'frignanis' ); ?></label>
-						<textarea id="contact_message" name="contact_message" rows="4" class="contact-form__textarea" placeholder="<?php esc_attr_e( 'Tell us about your import needs, the categories you\'re interested in, or any other enquiry...', 'frignanis' ); ?>" required></textarea>
+						<label for="contact_message" class="contact-form__label"><?php esc_html_e( 'MESSAGE / IMPORT REQUIREMENTS *', 'frignanis' ); ?></label>
+						<textarea id="contact_message" name="contact_message" rows="4" class="contact-form__textarea" placeholder="<?php esc_attr_e( 'Describe your interest in our categories (Terroir Wines, Gourmet/Organic Delicacies, Cooking Supreme) or request an institutional presentation...', 'frignanis' ); ?>" required></textarea>
 					</div>
 
 					<!-- Submit Button -->

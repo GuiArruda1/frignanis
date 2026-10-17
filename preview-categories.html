@@ -3,35 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Categories — Frignani's Italian Excellence &amp; International Trade</title>
+  <title>Categories & Curation — FRIGNANI'S | Italian Excellence</title>
+  
+  <!-- Preconnect & Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Theme Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-template-page-categories">
+<body>
+
+  <a class="screen-reader-text" href="#primary-content">Skip to content</a>
 
   <!-- Header -->
-  <header id="masthead" class="site-header site-header--transparent" role="banner">
+  <header id="masthead" class="site-header" role="banner">
     <div class="site-container">
       <div class="site-header__inner">
         
         <div class="site-header__branding">
-          <a href="preview.html" class="site-header__logo-link">
+          <a href="preview.html" class="site-header__logo-link" aria-label="Frignani's Home">
             <img src="assets/logo/logo-fundo-escuro-web.png" alt="Frignani's" class="site-header__logo-img" width="58" height="74">
           </a>
         </div>
 
-        <nav id="primary-navigation" class="site-header__nav" role="navigation">
+        <button class="site-header__nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav id="primary-navigation" class="site-header__nav" role="navigation" aria-label="Main Menu">
           <ul class="site-header__nav-list">
             <li class="site-header__nav-item">
               <a href="preview.html" class="site-header__nav-link">Home</a>
             </li>
             <li class="site-header__nav-item">
-              <a href="preview-categories.html" class="site-header__nav-link is-active">Categories</a>
+              <a href="preview-mission-services.html" class="site-header__nav-link">Mission & Services</a>
             </li>
             <li class="site-header__nav-item">
-              <a href="preview-sobre-nos.html" class="site-header__nav-link">About Us</a>
+              <a href="preview-about.html" class="site-header__nav-link">About Us</a>
             </li>
             <li class="site-header__nav-item">
               <a href="#footer" class="site-header__nav-link">Contact</a>
@@ -39,8 +53,19 @@
           </ul>
         </nav>
 
+        <div class="site-header__lang">
+          <select class="lang-select" aria-label="Select language">
+            <option value="en" selected>EN</option>
+            <option value="pt">PT</option>
+            <option value="fr">FR</option>
+            <option value="it">IT</option>
+            <option value="es">ES</option>
+            <option value="de">DE</option>
+          </select>
+        </div>
+
         <div class="site-header__action">
-          <a href="#footer" class="btn btn-header-contact">CONTACT US</a>
+          <a href="#footer" class="btn btn-header-contact">REQUEST A PRESENTATION</a>
         </div>
 
       </div>
@@ -49,141 +74,189 @@
 
   <main id="primary-content" class="site-main" role="main">
 
-    <!-- Hero Section -->
+    <!-- Categories Hero Section -->
     <section class="cat-page-hero" aria-labelledby="cat-page-title">
       <div class="site-container">
         <div class="cat-page-hero__content">
           <div class="cat-page-hero__eyebrow">
-            — 02 · CATEGORIES
+            — 02 · CATEGORIES & CURATION
           </div>
 
           <h1 id="cat-page-title" class="cat-page-hero__title">
-            What we<br>
-            <span class="cat-page-hero__highlight">export</span>
+            Italian Excellence Across<br>
+            <span class="cat-page-hero__highlight">Three Management Pillars</span>
           </h1>
 
+          <div class="italian-flag-stripe" aria-hidden="true">
+            <span class="italian-flag-stripe__green"></span>
+            <span class="italian-flag-stripe__white"></span>
+            <span class="italian-flag-stripe__red"></span>
+          </div>
+
           <p class="cat-page-hero__desc">
-            Five categories of Italian excellence — selected, documented, and delivered to the world's most discerning buyers. We communicate by category, never by individual supplier or producer name.
+            Terroir wines and prosecco, gourmet and organic delicacies from traditional producers, and art décor pieces for high-end kitchens and dining (Cooking Supreme). We communicate exclusively by categories of excellence and guaranteed provenance.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Editorial 50/50 Rows -->
+    <!-- Categories Editorial Rows -->
     <section class="cat-page-list" aria-label="Categories List">
       
-      <!-- Category I: Wines & Prosecco -->
-      <article id="wines-prosecco" class="cat-row cat-row--image-left">
+      <!-- Row 1: Wines & Prosecco -->
+      <article id="vinhos" class="cat-row cat-row--image-left">
         <div class="cat-row__col cat-row__col--media">
           <div class="cat-row__img-wrap">
-            <img src="assets/images/category-wine.jpg" alt="Italian Vineyards and Rolling Hills in Veneto and Tuscany" class="cat-row__img" loading="lazy">
+            <img src="assets/images/category-wine.jpg" alt="Italian Vineyards and Noble Terroir" class="cat-row__img" loading="lazy">
           </div>
         </div>
         <div class="cat-row__col cat-row__col--content">
           <div class="cat-row__text-wrap">
             <div class="cat-row__meta">
               <span class="cat-row__num">I</span>
-              <span class="cat-row__tags">DOC · DOCG · SPUMANTE</span>
+              <span class="cat-row__tags">DOC · DOCG · VALDOBBIADENE · FRANCIACORTA</span>
             </div>
-            <h2 class="cat-row__title">Wines &amp; Prosecco</h2>
+            <h2 class="cat-row__title">Terroir Wines & Prosecco</h2>
             <p class="cat-row__desc">
-              From the rolling hills of Veneto to the volcanic soils of Sicily, our wine selection spans the full breadth of Italian viticulture. We specialise in Prosecco DOC and DOCG, alongside still and sparkling wines curated for the international professional buyer.
+              Terroir wines and prosecco from selected Italian wineries. From the mineral elegance of the north to the noble reds of the center and south, we connect exclusive vintages and traditional method sparkling wines directly to gastronomic wine lists, importers, and distributors.
             </p>
+            <div style="margin-top: 1.5rem;">
+              <a href="#footer" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+                REQUEST PRESENTATION FOR THIS CATEGORY
+              </a>
+            </div>
           </div>
         </div>
       </article>
 
-      <!-- Category II: Olive Oil -->
-      <article id="olive-oil" class="cat-row cat-row--image-right">
+      <!-- Row 2: Azeite de Oliva -->
+      <article id="gourmet" class="cat-row cat-row--image-right">
         <div class="cat-row__col cat-row__col--content">
           <div class="cat-row__text-wrap">
             <div class="cat-row__meta">
               <span class="cat-row__num">II</span>
-              <span class="cat-row__tags">ITALIAN &amp; BIOLOGICAL</span>
+              <span class="cat-row__tags">OLIVE OIL · ORGANIC & EXTRA VIRGIN</span>
             </div>
-            <h2 class="cat-row__title">Olive Oil</h2>
+            <h2 class="cat-row__title">Italian & Organic Olive Oil</h2>
             <p class="cat-row__desc">
-              Extra virgin olive oil of Italian origin, available in both conventional and certified biological varieties. Biological products are identified by our green designation — a commitment to traceability and organic farming practices.
+              Extra virgin olive oil of verified Italian origin, available in conventional and certified organic lines. The organic line is identified by the green seal of traceability and sustainable agriculture.
             </p>
+            <div style="margin-top: 1.5rem;">
+              <a href="#footer" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+                REQUEST PRESENTATION FOR THIS CATEGORY
+              </a>
+            </div>
           </div>
         </div>
         <div class="cat-row__col cat-row__col--media">
           <div class="cat-row__img-wrap">
-            <img src="assets/images/mission-olive-oil.jpg" alt="Extra Virgin Olive Oil of Italian Origin" class="cat-row__img" loading="lazy">
-            <div class="cat-row__badge" aria-label="Biological certified">
+            <img src="assets/images/mission-olive-oil.jpg" alt="Certified Organic Extra Virgin Italian Olive Oil" class="cat-row__img" loading="lazy">
+            <div class="cat-row__badge" aria-label="Certified Organic">
               <span class="cat-row__badge-dot" aria-hidden="true"></span>
-              <span>BIOLOGICAL</span>
+              <span>CERTIFIED ORGANIC</span>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- Category III: Truffle -->
-      <article id="truffle" class="cat-row cat-row--image-left">
+      <!-- Row 3: Trufas -->
+      <article id="trufas" class="cat-row cat-row--image-left">
         <div class="cat-row__col cat-row__col--media">
           <div class="cat-row__img-wrap">
-            <img src="assets/images/category-truffle.jpg" alt="Italian Truffle Tartufo Harvest" class="cat-row__img" loading="lazy">
+            <img src="assets/images/category-truffle.jpg" alt="Fresh and Preserved Italian Truffles" class="cat-row__img" loading="lazy">
           </div>
         </div>
         <div class="cat-row__col cat-row__col--content">
           <div class="cat-row__text-wrap">
             <div class="cat-row__meta">
               <span class="cat-row__num">III</span>
-              <span class="cat-row__tags">TARTUFO · SEASONAL HARVEST</span>
+              <span class="cat-row__tags">TARTUFO · SEASONAL ITALIAN HARVESTS</span>
             </div>
-            <h2 class="cat-row__title">Truffle</h2>
+            <h2 class="cat-row__title">Truffles & Truffle Condiments</h2>
             <p class="cat-row__desc">
-              The truffle — Tartufo — is among Italy's most prized culinary treasures. We source seasonal harvests from certified Italian regions, offering both fresh and preserved formats for restaurants, delicatessens, and luxury food distributors worldwide.
+              The tartufo is one of Italy's greatest gastronomic treasures. We represent fresh seasonal harvests and preserved products of high aromatic density for fine dining restaurants, gourmet emporiums, and diplomatic events.
             </p>
+            <div style="margin-top: 1.5rem;">
+              <a href="#footer" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+                REQUEST PRESENTATION FOR THIS CATEGORY
+              </a>
+            </div>
           </div>
         </div>
       </article>
 
-      <!-- Category IV: Organic / Biological -->
-      <article id="organic-biological" class="cat-row cat-row--image-right">
+      <!-- Row 4: Biological & Organic Products -->
+      <article id="organicos" class="cat-row cat-row--image-right">
         <div class="cat-row__col cat-row__col--content">
           <div class="cat-row__text-wrap">
             <div class="cat-row__meta">
               <span class="cat-row__num">IV</span>
-              <span class="cat-row__tags">CERTIFIED ORGANIC PRODUCTS</span>
+              <span class="cat-row__tags">EU CERTIFIED ORGANIC PRODUCTS</span>
             </div>
-            <h2 class="cat-row__title">Organic / Biological</h2>
+            <h2 class="cat-row__title">Gourmet Delicacies & Organic Products</h2>
             <p class="cat-row__desc">
-              A growing selection of certified organic Italian products — from grains and legumes to condiments and preserves. All biological products carry the official EU organic certification and are identified by our green designation across the catalog.
+              Special selection of organic and biological products from traditional producers — grains, pulses, artisanal sauces, and preserves that honor health, biodiversity, and European standard certification procedures.
             </p>
+            <div style="margin-top: 1.5rem;">
+              <a href="#footer" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+                REQUEST PRESENTATION FOR THIS CATEGORY
+              </a>
+            </div>
           </div>
         </div>
         <div class="cat-row__col cat-row__col--media">
           <div class="cat-row__img-wrap">
-            <img src="assets/images/category-organic-bio.jpg" alt="Certified Organic Italian Biological Products and Pantry Provisions" class="cat-row__img" loading="lazy">
-            <div class="cat-row__badge" aria-label="Biological certified">
+            <img src="assets/images/category-organic-bio.jpg" alt="Certified Italian Organic and Biological Delicacies" class="cat-row__img" loading="lazy">
+            <div class="cat-row__badge" aria-label="Certified Organic">
               <span class="cat-row__badge-dot" aria-hidden="true"></span>
-              <span>BIOLOGICAL</span>
+              <span>CERTIFIED ORGANIC</span>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- Category V: Luxury European Kitchen & Lifestyle -->
-      <article id="luxury-kitchen-lifestyle" class="cat-row cat-row--image-left">
+      <!-- Row 5: Cooking Supreme & Art Decor -->
+      <article id="cooking-supreme" class="cat-row cat-row--image-left">
         <div class="cat-row__col cat-row__col--media">
           <div class="cat-row__img-wrap">
-            <img src="assets/images/mission-craftsman.jpg" alt="Handcrafted European Ceramics and Artisan Craftsmanship" class="cat-row__img" loading="lazy">
+            <img src="assets/images/mission-craftsman.jpg" alt="Handcrafted European Ceramics and Tableware" class="cat-row__img" loading="lazy">
           </div>
         </div>
         <div class="cat-row__col cat-row__col--content">
           <div class="cat-row__text-wrap">
             <div class="cat-row__meta">
               <span class="cat-row__num">V</span>
-              <span class="cat-row__tags">LAMPS · CERAMICS · LIFESTYLE ARTICLES</span>
+              <span class="cat-row__tags">COOKING SUPREME · LIFESTYLE & ART DE LA TABLE</span>
             </div>
-            <h2 class="cat-row__title">Luxury European Kitchen &amp; Lifestyle</h2>
+            <h2 class="cat-row__title">Art Décor · Cooking Supreme Line</h2>
             <p class="cat-row__desc">
-              Beyond food and wine, Frignani's curates a selection of luxury European articles for the kitchen and restaurant environment — handcrafted ceramics, artisan lighting, and bespoke lifestyle accessories that bring Italian and European craftsmanship to the table.
+              Art décor for high-end kitchens and dining. High-level artisanal European ceramics, ambient lighting, and exclusive pieces that transform dining into a memorable experience of hospitality and style.
             </p>
+            <div style="margin-top: 1.5rem;">
+              <a href="#footer" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+                REQUEST PRESENTATION FOR THIS CATEGORY
+              </a>
+            </div>
           </div>
         </div>
       </article>
+
+      <!-- Folder Download Banner -->
+      <div class="site-container" style="margin-top: 3rem;">
+        <div class="folder-download-banner">
+          <div class="folder-download-banner__content">
+            <span class="folder-download-banner__eyebrow">OFFICIAL CATALOGUE & FOLDER</span>
+            <h3 class="folder-download-banner__title">Frignani’s Institutional PDF Folder</h3>
+            <p class="folder-download-banner__desc">
+              Request our complete executive presentation with operational guidelines, packaging specifications, and standard import procedures.
+            </p>
+          </div>
+          <a href="#footer" class="btn-folder-download">
+            <span>📥</span>
+            <span>REQUEST PDF FOLDER</span>
+          </a>
+        </div>
+      </div>
 
     </section>
 
@@ -193,60 +266,101 @@
   <footer id="footer" class="site-footer" role="contentinfo">
     <div class="site-container">
       <div class="site-footer__grid">
-        
+
+        <!-- Column 1: Brand & Tagline -->
         <div class="site-footer__brand">
-          <img src="assets/logo/logo-fundo-escuro-web.png" alt="Frignani's" class="site-footer__logo" width="48" height="61">
+          <img src="assets/logo/logo-fundo-escuro-web.png" alt="Frignani's" class="site-footer__logo" width="72" height="91" loading="lazy">
+          
+          <div class="italian-flag-stripe italian-flag-stripe--left" aria-hidden="true">
+            <span class="italian-flag-stripe__green"></span>
+            <span class="italian-flag-stripe__white"></span>
+            <span class="italian-flag-stripe__red"></span>
+          </div>
+
           <p class="site-footer__tagline">
-            Frignani's — Italian Excellence, International Trade.<br>
-            Direct connection between Italian producers and global markets.
+            We do not sell products. We connect excellences. Business management and commercial intermediation of Italian excellence — from Luxembourg to the world.
           </p>
+
+          <a href="#footer" class="btn btn-secondary">REQUEST A PRESENTATION</a>
         </div>
 
+        <!-- Column 2: Navigation -->
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">Navigation</h3>
-          <ul class="site-footer__list">
+          <h3 class="site-footer__heading">NAVIGATION</h3>
+          <ul class="site-footer__menu-list">
             <li><a href="preview.html" class="site-footer__link">Home</a></li>
-            <li><a href="preview-categories.html" class="site-footer__link">Categories</a></li>
-            <li><a href="preview-sobre-nos.html" class="site-footer__link">About Us</a></li>
+            <li><a href="preview-mission-services.html" class="site-footer__link">Mission & Services</a></li>
+            <li><a href="preview-about.html" class="site-footer__link">About Us</a></li>
             <li><a href="#footer" class="site-footer__link">Contact</a></li>
           </ul>
         </div>
 
+        <!-- Column 3: Categories -->
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">Categories</h3>
-          <ul class="site-footer__list">
-            <li><a href="#wines-prosecco" class="site-footer__link">Wines &amp; Prosecco</a></li>
-            <li><a href="#olive-oil" class="site-footer__link">Olive Oil</a></li>
-            <li><a href="#truffle" class="site-footer__link">Truffle</a></li>
-            <li><a href="#organic-biological" class="site-footer__link">Organic / Biological</a></li>
-            <li><a href="#luxury-kitchen-lifestyle" class="site-footer__link">Luxury Kitchen &amp; Lifestyle</a></li>
+          <h3 class="site-footer__heading">CATEGORIES</h3>
+          <ul class="site-footer__menu-list">
+            <li><a href="preview-categories.html#vinhos" class="site-footer__link">Terroir Wines & Prosecco</a></li>
+            <li><a href="preview-categories.html#gourmet" class="site-footer__link">Gourmet & Biological Delicacies</a></li>
+            <li><a href="preview-categories.html#cooking-supreme" class="site-footer__link">Art Décor · Cooking Supreme</a></li>
+            <li><a href="#footer" class="site-footer__link text-gold">✦ Download PDF Folder</a></li>
           </ul>
         </div>
 
+        <!-- Column 4: Contact & Headquarters -->
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">Contact</h3>
-          <p class="site-footer__text">
-            For international trade enquiries and commercial partnerships:
-          </p>
-          <a href="mailto:info@frignanis.com" class="site-footer__contact-item">
-            <span class="site-footer__contact-icon">✉</span>
-            <span>info@frignanis.com</span>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="site-footer__contact-item">
-            <span class="site-footer__contact-icon">◈</span>
-            <span>Instagram</span>
-          </a>
+          <h3 class="site-footer__heading">CONTACT & HEADQUARTERS</h3>
+          
+          <div class="site-footer__contact-item">
+            <a href="mailto:info@frignanis.com">✉ info@frignanis.com</a>
+          </div>
+
+          <div class="site-footer__contact-item">
+            <a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer">
+              ☎ +352 621 766 684 (WhatsApp)
+            </a>
+          </div>
+
+          <div class="site-footer__contact-item">
+            <span style="color: var(--color-text-muted-light); font-size: 0.85rem;">
+              📍 Luxembourg · Europe
+            </span>
+          </div>
+
+          <div class="site-footer__contact-item" style="margin-top: 0.5rem;">
+            <span class="site-footer__contact-icon">
+              <img src="assets/icons/instagram.svg" alt="" width="18" height="18" loading="lazy">
+            </span>
+            <a href="https://instagram.com/frignanisgourmet" target="_blank" rel="noopener noreferrer">
+              @frignanisgourmet
+            </a>
+          </div>
         </div>
 
       </div>
 
       <div class="site-footer__bottom">
         <div class="site-footer__bottom-inner">
-          <p class="site-footer__copyright">&copy; 2026 Frignani's. All rights reserved. Italian Excellence &amp; International Trade.</p>
+          <p class="site-footer__copyright">
+            © 2026 Frignani's Import & Export · The bridge between Italy and the world
+          </p>
+          <div class="site-footer__legal-links">
+            <a href="#" class="site-footer__legal-link">Privacy Policy</a>
+            <a href="#" class="site-footer__legal-link">Terms & Conditions</a>
+          </div>
         </div>
       </div>
+
     </div>
   </footer>
 
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.075-2.221-.555-1.831-.755-3.008-2.612-3.099-2.733-.09-.12-0.733-.976-.733-1.86 0-.884.464-1.319.629-1.498.165-.18.36-.225.48-.225.12 0 .24.002.345.006.11.004.255-.042.398.303.148.358.508 1.238.553 1.328.045.09.075.195.015.315-.06.12-.09.195-.18.3-.09.105-.188.235-.269.315-.09.09-.184.187-.079.367.105.18.468.772 1.004 1.249.69.614 1.272.805 1.452.895.18.09.285.075.39-.045.105-.12.45-.525.57-.705.12-.18.24-.15.405-.09.165.06 1.05.495 1.23.585.18.09.3.135.345.21.045.075.045.435-.099.84z"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

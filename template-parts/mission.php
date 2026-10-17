@@ -1,6 +1,11 @@
 <?php
 /**
- * Template Part: Mission Section
+ * Template Part: Home Presentation & Commercial Intermediation Section
+ *
+ * Official Institutional Presentation of FRIGNANI'S Import & Export.
+ * Explains the Luxembourg headquarters, commercial intermediation of Italian excellences,
+ * the 9 international markets served, and the core brand manifesto:
+ * "We do not sell products. We connect excellences."
  *
  * @package Frignanis
  */
@@ -9,91 +14,168 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
-$mission_eyebrow         = function_exists( 'get_field' ) && get_field( 'mission_eyebrow' ) 
-	? get_field( 'mission_eyebrow' ) 
-	: esc_html__( 'OUR MISSION', 'frignanis' );
+// Dynamic ACF Fields with agency fallbacks
+$pres_eyebrow = function_exists( 'get_field' ) && get_field( 'presentation_eyebrow' ) 
+	? get_field( 'presentation_eyebrow' ) 
+	: esc_html__( 'LUXEMBOURG · THE HEART OF EUROPE · INTERNATIONAL TRADE MAISON', 'frignanis' );
 
-$mission_title_lead      = function_exists( 'get_field' ) && get_field( 'mission_title_lead' ) 
-	? get_field( 'mission_title_lead' ) 
-	: esc_html__( 'A bridge between Italy and the', 'frignanis' );
+$pres_title_lead = function_exists( 'get_field' ) && get_field( 'presentation_title_lead' ) 
+	? get_field( 'presentation_title_lead' ) 
+	: esc_html__( 'Business management and commercial intermediation of', 'frignanis' );
 
-$mission_title_highlight = function_exists( 'get_field' ) && get_field( 'mission_title_highlight' ) 
-	? get_field( 'mission_title_highlight' ) 
-	: esc_html__( 'world', 'frignanis' );
+$pres_title_highlight = function_exists( 'get_field' ) && get_field( 'presentation_title_highlight' ) 
+	? get_field( 'presentation_title_highlight' ) 
+	: esc_html__( 'Italian excellence', 'frignanis' );
 
-$mission_body            = function_exists( 'get_field' ) && get_field( 'mission_body' ) 
-	? get_field( 'mission_body' ) 
-	: esc_html__( "Frignani's was founded on a simple belief: that the finest Italian products deserve a direct path to international markets. We work exclusively with Italian producers, operating through transparent import & export transactions that honour their craft.", 'frignanis' );
+$pres_p1 = function_exists( 'get_field' ) && get_field( 'presentation_p1' ) 
+	? get_field( 'presentation_p1' ) 
+	: esc_html__( 'Headquartered in Luxembourg, in the heart of Europe, Frignani’s Import & Export is dedicated to business management and commercial intermediation of what Italy produces finest: terroir wines and proseccos, gourmet and biological delicacies from selected producers, and art décor pieces that elevate haute cuisine kitchens and high-end tables. Each partnership is conducted according to the standard operating procedure of each producer and client.', 'frignanis' );
 
-$mission_btn_text        = function_exists( 'get_field' ) && get_field( 'mission_btn_text' ) 
-	? get_field( 'mission_btn_text' ) 
-	: esc_html__( 'OUR STORY', 'frignanis' );
+$pres_p2 = function_exists( 'get_field' ) && get_field( 'presentation_p2' ) 
+	? get_field( 'presentation_p2' ) 
+	: esc_html__( 'We represent traditional Italian producers before distributors, fine dining restaurants, institutions, and major corporations in Luxembourg, Belgium, Germany, Spain, Netherlands, United States, Brazil, Chile, and Colombia.', 'frignanis' );
 
-$mission_btn_url         = function_exists( 'get_field' ) && get_field( 'mission_btn_url' ) 
-	? get_field( 'mission_btn_url' ) 
-	: '#story';
+$pres_tagline = function_exists( 'get_field' ) && get_field( 'presentation_tagline' ) 
+	? get_field( 'presentation_tagline' ) 
+	: esc_html__( 'We do not sell products. We connect excellences.', 'frignanis' );
 
-$mission_img_primary     = function_exists( 'get_field' ) ? get_field( 'mission_image_primary' ) : null;
-$mission_img_secondary   = function_exists( 'get_field' ) ? get_field( 'mission_image_secondary' ) : null;
+$pres_cta_primary_text = function_exists( 'get_field' ) && get_field( 'presentation_cta_primary_text' ) 
+	? get_field( 'presentation_cta_primary_text' ) 
+	: esc_html__( 'REQUEST A PRESENTATION', 'frignanis' );
 
-$primary_img_src = ! empty( $mission_img_primary['url'] ) 
-	? $mission_img_primary['url'] 
-	: get_template_directory_uri() . '/assets/images/mission-olive-oil.jpg';
+$pres_cta_primary_url = function_exists( 'get_field' ) && get_field( 'presentation_cta_primary_url' ) 
+	? get_field( 'presentation_cta_primary_url' ) 
+	: home_url( '/contact/' );
 
-$secondary_img_src = ! empty( $mission_img_secondary['url'] ) 
-	? $mission_img_secondary['url'] 
-	: get_template_directory_uri() . '/assets/images/mission-craftsman.jpg';
+$pres_cta_secondary_text = function_exists( 'get_field' ) && get_field( 'presentation_cta_secondary_text' ) 
+	? get_field( 'presentation_cta_secondary_text' ) 
+	: esc_html__( 'EXPLORE OUR SERVICES', 'frignanis' );
+
+$pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presentation_cta_secondary_url' ) 
+	? get_field( 'presentation_cta_secondary_url' ) 
+	: home_url( '/mission-and-services/' );
 ?>
 
-<section class="mission" id="mission" aria-labelledby="mission-title">
-	<div class="site-container">
+<!-- ==========================================
+     HOME: INSTITUTIONAL PRESENTATION SECTION
+     ========================================== -->
+<section class="mission home-presentation" id="presentation" aria-labelledby="presentation-title">
+	<div class="site-container site-container--wide">
 		<div class="mission__grid">
 
-			<!-- Left Column: Story & Narrative -->
+			<!-- Left Column: Story, Intermediation & Markets -->
 			<div class="mission__content">
-				<?php if ( ! empty( $mission_eyebrow ) ) : ?>
-					<div class="eyebrow"><?php echo esc_html( $mission_eyebrow ); ?></div>
-				<?php endif; ?>
-
-				<h2 id="mission-title" class="mission__title">
-					<?php echo esc_html( $mission_title_lead ); ?>
-					<?php if ( ! empty( $mission_title_highlight ) ) : ?>
-						<span class="text-gold italic-serif"><?php echo esc_html( $mission_title_highlight ); ?></span>.
-					<?php endif; ?>
-				</h2>
-
-				<?php if ( ! empty( $mission_body ) ) : ?>
-					<div class="mission__body">
-						<p><?php echo wp_kses_post( nl2br( $mission_body ) ); ?></p>
+				
+				<?php if ( ! empty( $pres_eyebrow ) ) : ?>
+					<div class="eyebrow">
+						<span class="eyebrow-dot" aria-hidden="true"></span>
+						<?php echo esc_html( $pres_eyebrow ); ?>
 					</div>
 				<?php endif; ?>
 
-				<?php if ( ! empty( $mission_btn_text ) ) : ?>
-					<a href="<?php echo esc_url( $mission_btn_url ); ?>" class="btn btn-outline-dark">
-						<?php echo esc_html( $mission_btn_text ); ?>
+				<h2 id="presentation-title" class="mission__title">
+					<?php echo esc_html( $pres_title_lead ); ?>
+					<?php if ( ! empty( $pres_title_highlight ) ) : ?>
+						<span class="text-gold italic-serif"><?php echo esc_html( $pres_title_highlight ); ?></span>.
+					<?php endif; ?>
+				</h2>
+
+				<!-- Italian Flag Ribbon Accent -->
+				<div class="italian-flag-stripe italian-flag-stripe--left" aria-hidden="true" style="margin-bottom: 1.75rem;">
+					<span class="italian-flag-stripe__green"></span>
+					<span class="italian-flag-stripe__white"></span>
+					<span class="italian-flag-stripe__red"></span>
+				</div>
+
+				<div class="mission__body">
+					<?php if ( ! empty( $pres_p1 ) ) : ?>
+						<p class="mission__lead-p">
+							<?php echo esc_html( $pres_p1 ); ?>
+						</p>
+					<?php endif; ?>
+
+					<?php if ( ! empty( $pres_p2 ) ) : ?>
+						<p class="mission__markets-p">
+							<?php echo esc_html( $pres_p2 ); ?>
+						</p>
+					<?php endif; ?>
+				</div>
+
+				<!-- International Market Chips (9 Countries Served) -->
+				<div class="presentation-countries" aria-label="<?php esc_attr_e( 'International Markets Served', 'frignanis' ); ?>">
+					<span class="country-chip">🇱🇺 Luxembourg</span>
+					<span class="country-chip">🇧🇪 Belgium</span>
+					<span class="country-chip">🇩🇪 Germany</span>
+					<span class="country-chip">🇪🇸 Spain</span>
+					<span class="country-chip">🇳🇱 Netherlands</span>
+					<span class="country-chip">🇺🇸 United States</span>
+					<span class="country-chip">🇧🇷 Brazil</span>
+					<span class="country-chip">🇨🇱 Chile</span>
+					<span class="country-chip">🇨🇴 Colombia</span>
+				</div>
+
+				<!-- Action Buttons -->
+				<div class="mission__cta-row">
+					<a href="<?php echo esc_url( $pres_cta_primary_url ); ?>" class="btn btn-primary">
+						<?php echo esc_html( $pres_cta_primary_text ); ?>
 					</a>
-				<?php endif; ?>
+					<a href="<?php echo esc_url( $pres_cta_secondary_url ); ?>" class="btn btn-outline-dark">
+						<?php echo esc_html( $pres_cta_secondary_text ); ?>
+					</a>
+				</div>
+
 			</div>
 
-			<!-- Right Column: Staggered Dual Photography -->
+			<!-- Right Column: Climax Manifesto Card & Dual Heritage Photography -->
 			<div class="mission__visuals">
-				<div class="mission__image-wrapper mission__image-wrapper--primary">
-					<img src="<?php echo esc_url( $primary_img_src ); ?>" 
-						 alt="<?php esc_attr_e( 'Artisanal Italian Extra Virgin Olive Oil', 'frignanis' ); ?>" 
-						 class="mission__image" 
-						 width="600" 
-						 height="600" 
-						 loading="lazy" />
+
+				<!-- Manifesto Climax Card ("We do not sell products. We connect excellences.") -->
+				<div class="presentation-manifesto-card" aria-label="<?php esc_attr_e( 'Brand Manifesto', 'frignanis' ); ?>">
+					<div class="presentation-manifesto-card__inner">
+						<span class="presentation-manifesto-card__quote-mark" aria-hidden="true">«</span>
+						<blockquote class="presentation-manifesto-card__quote">
+							<?php echo esc_html( $pres_tagline ); ?>
+						</blockquote>
+						<div class="presentation-manifesto-card__seal">
+							<span>✦</span> <?php esc_html_e( "FRIGNANI'S IMPORT & EXPORT · LUXEMBOURG", 'frignanis' ); ?> <span>✦</span>
+						</div>
+					</div>
 				</div>
-				<div class="mission__image-wrapper mission__image-wrapper--secondary">
-					<img src="<?php echo esc_url( $secondary_img_src ); ?>" 
-						 alt="<?php esc_attr_e( 'Master Italian Craftsman in Traditional Bottega Workshop', 'frignanis' ); ?>" 
-						 class="mission__image" 
-						 width="600" 
-						 height="800" 
-						 loading="lazy" />
+
+				<!-- Visual Composition: Estate Terroir & Archival Heritage -->
+				<div class="mission__frame-main">
+					<div class="mission__image-wrapper mission__image-wrapper--primary">
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9880.JPG' ); ?>" 
+							 alt="<?php esc_attr_e( 'Italian Vineyard Terroir and Wine Barrels', 'frignanis' ); ?>" 
+							 class="mission__image" 
+							 width="1179" 
+							 height="632" 
+							 loading="lazy" />
+						<div class="mission__image-badge">
+							<span class="mission__badge-origin"><?php esc_html_e( "TERROIR D'ITALIA", 'frignanis' ); ?></span>
+							<span class="mission__badge-title"><?php esc_html_e( 'B2B Intermediation', 'frignanis' ); ?></span>
+						</div>
+					</div>
 				</div>
+
+				<div class="mission__frame-overlap">
+					<div class="mission__image-wrapper mission__image-wrapper--secondary">
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9868.PNG' ); ?>" 
+							 alt="<?php esc_attr_e( 'Historic Italian Grape Harvest and Tradition', 'frignanis' ); ?>" 
+							 class="mission__image" 
+							 width="1179" 
+							 height="1599" 
+							 loading="lazy" />
+						<div class="mission__archival-tag">
+							<span class="mission__tag-icon">🏛️</span>
+							<div class="mission__tag-text">
+								<strong><?php esc_html_e( 'Archivio Storico', 'frignanis' ); ?></strong>
+								<span><?php esc_html_e( 'Ferrara · Dal 1626', 'frignanis' ); ?></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 
 		</div>

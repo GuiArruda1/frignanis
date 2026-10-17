@@ -12,51 +12,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 // ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
 $categories_eyebrow = function_exists( 'get_field' ) && get_field( 'categories_eyebrow' ) 
 	? get_field( 'categories_eyebrow' ) 
-	: esc_html__( 'CATEGORIES', 'frignanis' );
+	: esc_html__( 'ITALIAN EXCELLENCE', 'frignanis' );
 
 $categories_heading = function_exists( 'get_field' ) && get_field( 'categories_heading' ) 
 	? get_field( 'categories_heading' ) 
-	: esc_html__( 'What we export', 'frignanis' );
+	: esc_html__( 'Our Representation Categories', 'frignanis' );
 
 $categories_link_text = function_exists( 'get_field' ) && get_field( 'categories_link_text' ) 
 	? get_field( 'categories_link_text' ) 
-	: esc_html__( 'VIEW ALL CATEGORIES', 'frignanis' );
+	: esc_html__( 'EXPLORE ALL CATEGORIES', 'frignanis' );
 
 $categories_link_url = function_exists( 'get_field' ) && get_field( 'categories_link_url' ) 
 	? get_field( 'categories_link_url' ) 
-	: '#categories';
+	: home_url( '/categories/' );
 
-// Category cards data
+// Category cards data (Official Briefing - Sept 2026)
 $default_categories = array(
 	array(
 		'num'   => 'I',
-		'title' => esc_html__( 'Wines & Prosecco', 'frignanis' ),
-		'tags'  => esc_html__( 'DOC · DOCG · SPUMANTE', 'frignanis' ),
-		'url'   => '#',
+		'title' => esc_html__( 'Terroir Wines & Prosecco', 'frignanis' ),
+		'tags'  => esc_html__( 'DOC · DOCG · VALDOBBIADENE · FRANCIACORTA', 'frignanis' ),
+		'desc'  => esc_html__( 'Selected Italian wineries, noble sparkling wines, and appellation wines for prestigious lists.', 'frignanis' ),
+		'url'   => home_url( '/categories/#vinhos' ),
 	),
 	array(
 		'num'   => 'II',
-		'title' => esc_html__( 'Olive Oil', 'frignanis' ),
-		'tags'  => esc_html__( 'ITALIAN & BIOLOGICAL', 'frignanis' ),
-		'url'   => '#',
+		'title' => esc_html__( 'Gourmet & Biological Delicacies', 'frignanis' ),
+		'tags'  => esc_html__( 'EXTRA VIRGIN OLIVE OIL · TRUFFLES · ORGANIC', 'frignanis' ),
+		'desc'  => esc_html__( 'Certified organic Italian olive oils, seasonal truffles, and products from traditional producers.', 'frignanis' ),
+		'url'   => home_url( '/categories/#gourmet' ),
 	),
 	array(
 		'num'   => 'III',
-		'title' => esc_html__( 'Truffle', 'frignanis' ),
-		'tags'  => esc_html__( 'TARTUFO · SEASONAL', 'frignanis' ),
-		'url'   => '#',
-	),
-	array(
-		'num'   => 'IV',
-		'title' => esc_html__( 'Biological', 'frignanis' ),
-		'tags'  => esc_html__( 'ORGANIC · CERTIFIED', 'frignanis' ),
-		'url'   => '#',
-	),
-	array(
-		'num'   => 'V',
-		'title' => esc_html__( 'Kitchen & Lifestyle', 'frignanis' ),
-		'tags'  => esc_html__( 'LUXURY EUROPEAN', 'frignanis' ),
-		'url'   => '#',
+		'title' => esc_html__( 'Art Décor · Cooking Supreme', 'frignanis' ),
+		'tags'  => esc_html__( 'CERAMICS · LIGHTING · TABLEWARE', 'frignanis' ),
+		'desc'  => esc_html__( 'Exclusive pieces and European ceramics that elevate fine dining kitchens and prestigious tables.', 'frignanis' ),
+		'url'   => home_url( '/categories/#cooking-supreme' ),
 	),
 );
 ?>
@@ -87,16 +78,19 @@ $default_categories = array(
 			<?php endif; ?>
 		</div>
 
-		<!-- 5-Column Luxury Cards Grid -->
-		<div class="categories__grid">
+		<!-- 3-Column Luxury Cards Grid -->
+		<div class="categories__grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
 			<?php foreach ( $default_categories as $item ) : ?>
-				<article class="category-card">
+				<a href="<?php echo esc_url( $item['url'] ); ?>" class="category-card" style="display: block; text-decoration: none;">
 					<span class="category-card__num"><?php echo esc_html( $item['num'] ); ?></span>
 					<div class="category-card__body">
 						<h3 class="category-card__title"><?php echo esc_html( $item['title'] ); ?></h3>
 						<p class="category-card__tags"><?php echo esc_html( $item['tags'] ); ?></p>
+						<p style="font-size: 0.9rem; color: var(--color-text-muted-dark); margin-top: 0.5rem; line-height: 1.5;">
+							<?php echo esc_html( $item['desc'] ); ?>
+						</p>
 					</div>
-				</article>
+				</a>
 			<?php endforeach; ?>
 		</div>
 

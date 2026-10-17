@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initMobileNav();
   initSmoothScroll();
+  initLanguageSwitcher();
 });
 
 /**
@@ -62,10 +63,10 @@ function initSplashScreen() {
     }
   });
 
-  // 4. Auto dismiss after 3.2 seconds
+  // 4. Auto dismiss after 4.2 seconds (allowing the luxury Italy-Luxembourg bridge animation to complete)
   setTimeout(() => {
     dismissSplash();
-  }, 3200);
+  }, 4200);
 }
 
 /**
@@ -151,4 +152,94 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/**
+ * Custom Language Switcher integration with GTranslate
+ * Automatically translates the entire site via GTranslate lib without manual translation effort.
+ */
+function initLanguageSwitcher() {
+  const langSelects = document.querySelectorAll('.lang-select');
+  if (!langSelects.length) return;
+
+  const defaultLang = 'en';
+
+  // Load GTranslate Translation Engine Lib dynamically if not already loaded
+  function loadGTLib(callback) {
+    if (window.__GT && window.__GT.translator) {
+      callback && callback();
+      return;
+    }
+
+    if (!window.gt_translate_script) {
+      window.gt_translate_script = document.createElement('script');
+      window.gt_translate_script.src = 'https://cdn.gtranslate.net/widgets/latest/lib.min.js';
+      window.gt_translate_script.async = true;
+      document.body.appendChild(window.gt_translate_script);
+      window.gt_translate_script.addEventListener('load', () => {
+        callback && callback();
+      }, { once: true });
+    } else {
+      callback && callback();
+    }
+  }
+
+  // Translate function wrapper
+  function switchLanguage(targetLang) {
+    targetLang = (targetLang || defaultLang).toLowerCase();
+    
+    // Store in localStorage for GTranslate and theme persistence
+    try {
+      localStorage.setItem('__GT_TRANSLATE_LANGS', JSON.stringify({ srcLang: defaultLang, tgtLang: targetLang }));
+      localStorage.setItem('frignanis_lang', targetLang);
+    } catch (e) {}
+
+    // Update all select dropdowns across headers (desktop and mobile)
+    langSelects.forEach((select) => {
+      select.value = targetLang;
+    });
+
+    loadGTLib(() => {
+      if (window.__GT && window.__GT.translator) {
+        window.__GT.translator.translate(defaultLang, targetLang);
+      } else if (typeof window.doGTranslate === 'function') {
+        window.doGTranslate(defaultLang + '|' + targetLang);
+      }
+    });
+  }
+
+  // Pre-fetch on user interaction (hover/focus) for instant translation
+  langSelects.forEach((select) => {
+    select.addEventListener('pointerenter', () => loadGTLib(), { once: true });
+    select.addEventListener('focusin', () => loadGTLib(), { once: true });
+
+    // Handle change event
+    select.addEventListener('change', (e) => {
+      const selected = e.target.value;
+      switchLanguage(selected);
+    });
+  });
+
+  // Restore active language from saved session/localStorage
+  let savedLang = defaultLang;
+  try {
+    const gtSaved = JSON.parse(localStorage.getItem('__GT_TRANSLATE_LANGS'));
+    if (gtSaved && gtSaved.tgtLang) {
+      savedLang = gtSaved.tgtLang.toLowerCase();
+    } else {
+      savedLang = localStorage.getItem('frignanis_lang') || defaultLang;
+    }
+  } catch (e) {
+    savedLang = localStorage.getItem('frignanis_lang') || defaultLang;
+  }
+
+  if (savedLang && savedLang !== defaultLang) {
+    langSelects.forEach((select) => {
+      select.value = savedLang;
+    });
+    // Trigger auto-translate for returning visitors
+    loadGTLib(() => {
+      switchLanguage(savedLang);
+    });
+  }
 }

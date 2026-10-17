@@ -2,6 +2,9 @@
 /**
  * Template Part: Hero Section
  *
+ * Full-width cinematic banner hero featuring authentic Italian vineyard terroir
+ * and wine barrels (IMG_9880.JPG), with noble typography and B2B positioning.
+ *
  * @package Frignanis
  */
 
@@ -10,53 +13,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
-$hero_eyebrow         = function_exists( 'get_field' ) && get_field( 'hero_eyebrow' ) 
+$hero_eyebrow = function_exists( 'get_field' ) && get_field( 'hero_eyebrow' ) 
 	? get_field( 'hero_eyebrow' ) 
-	: esc_html__( 'ITALIAN EXCELLENCE · INTERNATIONAL TRADE', 'frignanis' );
+	: esc_html__( 'LUXEMBOURG · THE BRIDGE BETWEEN ITALY AND THE WORLD', 'frignanis' );
 
-$hero_title_lead      = function_exists( 'get_field' ) && get_field( 'hero_title_lead' ) 
+$hero_title_lead = function_exists( 'get_field' ) && get_field( 'hero_title_lead' ) 
 	? get_field( 'hero_title_lead' ) 
-	: esc_html__( 'Italian', 'frignanis' );
+	: esc_html__( 'Authentic Italy, brought to the', 'frignanis' );
 
 $hero_title_highlight = function_exists( 'get_field' ) && get_field( 'hero_title_highlight' ) 
 	? get_field( 'hero_title_highlight' ) 
-	: esc_html__( 'Excellence', 'frignanis' );
+	: esc_html__( 'most demanding tables', 'frignanis' );
 
-$hero_title_end       = function_exists( 'get_field' ) && get_field( 'hero_title_end' ) 
+$hero_title_end = function_exists( 'get_field' ) && get_field( 'hero_title_end' ) 
 	? get_field( 'hero_title_end' ) 
-	: esc_html__( 'International Trade', 'frignanis' );
+	: esc_html__( 'of the world.', 'frignanis' );
 
-$hero_description     = function_exists( 'get_field' ) && get_field( 'hero_description' ) 
+$hero_description = function_exists( 'get_field' ) && get_field( 'hero_description' ) 
 	? get_field( 'hero_description' ) 
-	: esc_html__( 'We connect Italian producers directly to international professionals — promoting Italian culinary culture and heritage around the world, through direct import & export transactions.', 'frignanis' );
+	: esc_html__( 'Business management and commercial intermediation of Italian excellence, following the standard procedure of each producer and client. From Luxembourg to the world.', 'frignanis' );
 
 $hero_primary_btn_text = function_exists( 'get_field' ) && get_field( 'hero_primary_btn_text' ) 
 	? get_field( 'hero_primary_btn_text' ) 
-	: esc_html__( 'EXPLORE CATEGORIES', 'frignanis' );
+	: esc_html__( 'REQUEST A PRESENTATION', 'frignanis' );
 
-$hero_primary_btn_url  = function_exists( 'get_field' ) && get_field( 'hero_primary_btn_url' ) 
+$hero_primary_btn_url = function_exists( 'get_field' ) && get_field( 'hero_primary_btn_url' ) 
 	? get_field( 'hero_primary_btn_url' ) 
-	: '#categories';
+	: home_url( '/contact/' );
 
 $hero_secondary_btn_text = function_exists( 'get_field' ) && get_field( 'hero_secondary_btn_text' ) 
 	? get_field( 'hero_secondary_btn_text' ) 
-	: esc_html__( 'GET IN TOUCH', 'frignanis' );
+	: esc_html__( 'OUR SERVICES', 'frignanis' );
 
-$hero_secondary_btn_url  = function_exists( 'get_field' ) && get_field( 'hero_secondary_btn_url' ) 
+$hero_secondary_btn_url = function_exists( 'get_field' ) && get_field( 'hero_secondary_btn_url' ) 
 	? get_field( 'hero_secondary_btn_url' ) 
-	: '#footer';
+	: home_url( '/mission-and-services/' );
+
+$hero_bg_image = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9880.JPG';
 ?>
 
-<section class="hero" id="hero" aria-labelledby="hero-title">
-	<!-- Background Media Atmosphere -->
+<section class="hero hero--banner" id="hero" aria-labelledby="hero-title">
+	<!-- Full-Width Cinematic Background Media (IMG_9880.JPG Estate Vineyards & Barrels) -->
 	<div class="hero__bg-media" aria-hidden="true">
-		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-vineyard-backdrop.jpg' ); ?>" 
-			 alt="" 
-			 class="hero__bg-photo" 
+		<img src="<?php echo esc_url( $hero_bg_image ); ?>" 
+			 alt="<?php esc_attr_e( 'Italian Vineyard Terroir Hills, Estate Villa and Wine Barrels', 'frignanis' ); ?>" 
+			 class="hero__bg-photo hero__bg-photo--estate" 
 			 width="1179" 
 			 height="632" 
 			 fetchpriority="high" />
-		<div class="hero__bg-overlay"></div>
+		<div class="hero__bg-overlay hero__bg-overlay--banner"></div>
 		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-ambient.svg' ); ?>" 
 			 alt="" 
 			 class="hero__ambient-bg" 
@@ -65,10 +70,10 @@ $hero_secondary_btn_url  = function_exists( 'get_field' ) && get_field( 'hero_se
 	</div>
 
 	<div class="site-container">
-		<div class="hero__layout">
+		<div class="hero__layout hero__layout--banner">
 
-			<!-- Left Column: Narrative & Positioning -->
-			<div class="hero__content">
+			<!-- Hero Narrative & Positioning (Left Content Section) -->
+			<div class="hero__content hero__content--banner">
 
 				<!-- Eyebrow -->
 				<?php if ( ! empty( $hero_eyebrow ) ) : ?>
@@ -84,12 +89,19 @@ $hero_secondary_btn_url  = function_exists( 'get_field' ) && get_field( 'hero_se
 						<?php echo esc_html( $hero_title_lead ); ?><br />
 					<?php endif; ?>
 					<?php if ( ! empty( $hero_title_highlight ) ) : ?>
-						<span class="text-gold italic-serif"><?php echo esc_html( $hero_title_highlight ); ?></span>,<br />
+						<span class="text-gold italic-serif"><?php echo esc_html( $hero_title_highlight ); ?></span><br />
 					<?php endif; ?>
 					<?php if ( ! empty( $hero_title_end ) ) : ?>
 						<?php echo esc_html( $hero_title_end ); ?>
 					<?php endif; ?>
 				</h1>
+
+				<!-- Italian Flag Ribbon Accent -->
+				<div class="italian-flag-stripe italian-flag-stripe--left" aria-hidden="true" style="margin-bottom: 1.5rem;">
+					<span class="italian-flag-stripe__green"></span>
+					<span class="italian-flag-stripe__white"></span>
+					<span class="italian-flag-stripe__red"></span>
+				</div>
 
 				<!-- Subtitle / Value Proposition -->
 				<?php if ( ! empty( $hero_description ) ) : ?>
@@ -117,71 +129,45 @@ $hero_secondary_btn_url  = function_exists( 'get_field' ) && get_field( 'hero_se
 				<div class="hero__badges">
 					<div class="hero__badge-item">
 						<span class="hero__badge-icon" aria-hidden="true">✦</span>
-						<span class="hero__badge-text"><?php esc_html_e( 'Curadoria Institucional', 'frignanis' ); ?></span>
+						<span class="hero__badge-text"><?php esc_html_e( 'Business Management & Intermediation', 'frignanis' ); ?></span>
 					</div>
 					<div class="hero__badge-item">
 						<span class="hero__badge-icon" aria-hidden="true">✦</span>
-						<span class="hero__badge-text"><?php esc_html_e( 'Operações Diretas B2B', 'frignanis' ); ?></span>
+						<span class="hero__badge-text"><?php esc_html_e( 'B2B Standard Procedure', 'frignanis' ); ?></span>
 					</div>
 					<div class="hero__badge-item">
 						<span class="hero__badge-icon" aria-hidden="true">✦</span>
-						<span class="hero__badge-text"><?php esc_html_e( 'Itália & Europa para o Mundo', 'frignanis' ); ?></span>
+						<span class="hero__badge-text"><?php esc_html_e( '9 International Markets', 'frignanis' ); ?></span>
 					</div>
 				</div>
 
-				<!-- Scroll Indicator -->
-				<a href="#mission" class="hero__scroll-indicator" aria-label="<?php esc_attr_e( 'Scroll to content', 'frignanis' ); ?>">
-					<span><?php esc_html_e( 'SCROLL', 'frignanis' ); ?></span>
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-						<line x1="12" y1="5" x2="12" y2="19"></line>
-						<polyline points="19 12 12 19 5 12"></polyline>
-					</svg>
-				</a>
-
 			</div>
 
-			<!-- Right Column: Creative Banner Visual Showcase (Camila's World Map) -->
-			<div class="hero__visual">
-				<div class="hero__showcase-card">
-					<div class="hero__showcase-header">
-						<div class="hero__showcase-tag">
-							<span class="hero__pulse-dot" aria-hidden="true"></span>
-							<span class="hero__showcase-tag-title"><?php esc_html_e( 'IMPORTAÇÃO & EXPORTAÇÃO', 'frignanis' ); ?></span>
-						</div>
-						<div class="hero__showcase-origin">
-							<span class="hero__flag-emoji" aria-hidden="true">🇮🇹</span>
-							<span><?php esc_html_e( 'Origem: Itália', 'frignanis' ); ?></span>
-						</div>
-					</div>
+		</div>
+	</div>
 
-					<div class="hero__showcase-media">
-						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-world-map.png' ); ?>" 
-							 alt="<?php esc_attr_e( 'FRIGNANI\'S — Rede Internacional de Importação e Exportação', 'frignanis' ); ?>" 
-							 class="hero__showcase-img" 
-							 width="1536" 
-							 height="1024" 
-							 loading="eager" />
-					</div>
-
-					<div class="hero__showcase-footer">
-						<div class="hero__showcase-stat">
-							<span class="hero__stat-num">8+</span>
-							<span class="hero__stat-label"><?php esc_html_e( 'Rotas Globais', 'frignanis' ); ?></span>
-						</div>
-						<div class="hero__showcase-divider" aria-hidden="true"></div>
-						<div class="hero__showcase-stat">
-							<span class="hero__stat-num">100%</span>
-							<span class="hero__stat-label"><?php esc_html_e( 'Parcerias Diretas', 'frignanis' ); ?></span>
-						</div>
-						<div class="hero__showcase-divider" aria-hidden="true"></div>
-						<div class="hero__showcase-stat">
-							<span class="hero__stat-num">B2B</span>
-							<span class="hero__stat-label"><?php esc_html_e( 'Curadoria Exclusiva', 'frignanis' ); ?></span>
-						</div>
-					</div>
+	<!-- Bottom Architectural Key Metrics Banner -->
+	<div class="hero__bottom-stats" aria-label="<?php esc_attr_e( 'Key Performance Indicators', 'frignanis' ); ?>">
+		<div class="site-container">
+			<div class="hero__stats-grid">
+				<div class="hero__stat-block">
+					<span class="hero__stat-number">9</span>
+					<span class="hero__stat-title"><?php esc_html_e( 'Countries Served', 'frignanis' ); ?></span>
+					<span class="hero__stat-sub"><?php esc_html_e( 'Europe, Americas & Global Hubs', 'frignanis' ); ?></span>
+				</div>
+				<div class="hero__stat-divider" aria-hidden="true"></div>
+				<div class="hero__stat-block">
+					<span class="hero__stat-number">100%</span>
+					<span class="hero__stat-title"><?php esc_html_e( 'Excellence & Terroir Origin', 'frignanis' ); ?></span>
+					<span class="hero__stat-sub"><?php esc_html_e( 'Selected Italian Family Estates', 'frignanis' ); ?></span>
+				</div>
+				<div class="hero__stat-divider" aria-hidden="true"></div>
+				<div class="hero__stat-block">
+					<span class="hero__stat-number">B2B</span>
+					<span class="hero__stat-title"><?php esc_html_e( 'Direct Representation', 'frignanis' ); ?></span>
+					<span class="hero__stat-sub"><?php esc_html_e( 'A single interlocutor across Italy', 'frignanis' ); ?></span>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </section>

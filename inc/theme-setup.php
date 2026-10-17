@@ -58,3 +58,26 @@ function frignanis_theme_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'frignanis_theme_setup' );
+
+/**
+ * Filter primary navigation items: replace Categories with Mission & Services
+ */
+function frignanis_filter_primary_nav_menu_items( $items, $args ) {
+	if ( ! empty( $args->theme_location ) && 'primary' === $args->theme_location ) {
+		$has_mission = false;
+		foreach ( $items as $key => $item ) {
+			// If item is Categories / Categorias, transform it to Mission & Services
+			if ( stripos( $item->title, 'Categories' ) !== false || stripos( $item->title, 'Categorias' ) !== false || stripos( $item->url, 'categories' ) !== false || stripos( $item->url, 'categorias' ) !== false ) {
+				$item->title = esc_html__( 'Mission & Services', 'frignanis' );
+				$item->url   = home_url( '/mission-and-services/' );
+				$has_mission = true;
+			}
+			if ( stripos( $item->title, 'Mission' ) !== false || stripos( $item->title, 'Missão' ) !== false || stripos( $item->url, 'mission' ) !== false || stripos( $item->url, 'missao' ) !== false ) {
+				$has_mission = true;
+			}
+		}
+	}
+	return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'frignanis_filter_primary_nav_menu_items', 10, 2 );
+
