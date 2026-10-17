@@ -89,8 +89,8 @@ $ms_why_quote = function_exists( 'get_field' ) && get_field( 'ms_why_quote' )
 	? get_field( 'ms_why_quote' )
 	: esc_html__( 'A single interlocutor. The whole of Italy within your reach.', 'frignanis' );
 
-// Assets URIs (Authentic Drive images only - No AI generated photos)
-$img_vineyard_estate  = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9880.JPG';
+// Assets URIs (Authentic Drive & Folder images)
+$img_vineyard_estate  = get_template_directory_uri() . '/assets/images/wine-bottles-curation.jpg';
 $img_archival_harvest = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9868.PNG';
 $img_world_map        = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/1349EB2A-5455-44E4-837E-4A49ED57E6B3.png';
 
@@ -107,7 +107,7 @@ $pdf_folder_url = get_template_directory_uri() . '/assets/images/drive-download-
      ========================================== -->
 <section class="ms-hero" aria-labelledby="ms-hero-heading">
 	<div class="ms-hero__bg-media" aria-hidden="true">
-		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9876.JPG' ); ?>" 
+		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-vineyard-backdrop.jpg' ); ?>" 
 			 alt="<?php esc_attr_e( 'Italian Terroir Hills and Vineyards', 'frignanis' ); ?>" 
 			 class="ms-hero__bg-photo" 
 			 width="1179" 

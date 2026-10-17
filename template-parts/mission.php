@@ -145,8 +145,8 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 				<!-- Visual Composition: Estate Terroir & Archival Heritage -->
 				<div class="mission__frame-main">
 					<div class="mission__image-wrapper mission__image-wrapper--primary">
-						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9880.JPG' ); ?>" 
-							 alt="<?php esc_attr_e( 'Italian Vineyard Terroir and Wine Barrels', 'frignanis' ); ?>" 
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/wine-bottles-curation.jpg' ); ?>" 
+							 alt="<?php esc_attr_e( 'Italian Vineyard Terroir and Wine Curation', 'frignanis' ); ?>" 
 							 class="mission__image" 
 							 width="1179" 
 							 height="632" 
