@@ -33,6 +33,7 @@ $default_categories = array(
 		'title' => esc_html__( 'Terroir Wines & Prosecco', 'frignanis' ),
 		'tags'  => esc_html__( 'DOC · DOCG · VALDOBBIADENE · FRANCIACORTA', 'frignanis' ),
 		'desc'  => esc_html__( 'Selected Italian wineries, noble sparkling wines, and appellation wines for prestigious lists.', 'frignanis' ),
+		'image' => get_template_directory_uri() . '/assets/images/italian-sommelier-prosecco-pour.jpg',
 		'url'   => home_url( '/categories/#vinhos' ),
 	),
 	array(
@@ -40,6 +41,7 @@ $default_categories = array(
 		'title' => esc_html__( 'Gourmet & Biological Delicacies', 'frignanis' ),
 		'tags'  => esc_html__( 'EXTRA VIRGIN OLIVE OIL · TRUFFLES · ORGANIC', 'frignanis' ),
 		'desc'  => esc_html__( 'Certified organic Italian olive oils, seasonal truffles, and products from traditional producers.', 'frignanis' ),
+		'image' => get_template_directory_uri() . '/assets/images/italian-olive-picking-hand.jpg',
 		'url'   => home_url( '/categories/#gourmet' ),
 	),
 	array(
@@ -47,6 +49,7 @@ $default_categories = array(
 		'title' => esc_html__( 'Art Décor · Cooking Supreme', 'frignanis' ),
 		'tags'  => esc_html__( 'CERAMICS · LIGHTING · TABLEWARE', 'frignanis' ),
 		'desc'  => esc_html__( 'Exclusive pieces and European ceramics that elevate fine dining kitchens and prestigious tables.', 'frignanis' ),
+		'image' => get_template_directory_uri() . '/assets/images/italian-art-decor-emerald-ceramics.jpg',
 		'url'   => home_url( '/categories/#cooking-supreme' ),
 	),
 );
@@ -81,7 +84,15 @@ $default_categories = array(
 		<!-- 3-Column Luxury Cards Grid -->
 		<div class="categories__grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
 			<?php foreach ( $default_categories as $item ) : ?>
-				<a href="<?php echo esc_url( $item['url'] ); ?>" class="category-card" style="display: block; text-decoration: none;">
+				<a href="<?php echo esc_url( $item['url'] ); ?>" class="category-card" style="display: flex; flex-direction: column; text-decoration: none; overflow: hidden;">
+					<?php if ( ! empty( $item['image'] ) ) : ?>
+						<div style="height: 180px; width: 100%; overflow: hidden; border-radius: 4px; margin-bottom: 1.25rem;">
+							<img src="<?php echo esc_url( $item['image'] ); ?>" 
+								 alt="<?php echo esc_attr( $item['title'] ); ?>" 
+								 style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" 
+								 loading="lazy" />
+						</div>
+					<?php endif; ?>
 					<span class="category-card__num"><?php echo esc_html( $item['num'] ); ?></span>
 					<div class="category-card__body">
 						<h3 class="category-card__title"><?php echo esc_html( $item['title'] ); ?></h3>

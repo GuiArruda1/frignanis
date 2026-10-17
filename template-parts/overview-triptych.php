@@ -52,8 +52,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- PANEL 2: OUR MISSION AND SERVICES (NAVY / GOLD / AUTHENTIC HARVEST PHOTOGRAPHY) -->
 			<article class="triptych-panel triptych-panel--mission">
 				<div class="triptych-panel__media-bg" aria-hidden="true">
-					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-grape-harvest-color.jpg' ); ?>" 
-						 alt="<?php esc_attr_e( 'Italian Vineyard Harvest Celebration', 'frignanis' ); ?>" 
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-vineyard-grape-rows.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Italian Vineyard Terroir & Grape Harvest', 'frignanis' ); ?>" 
 						 class="triptych-panel__bg-img" 
 						 width="1600" 
 						 height="1069" 

@@ -89,15 +89,15 @@ $ms_why_quote = function_exists( 'get_field' ) && get_field( 'ms_why_quote' )
 	? get_field( 'ms_why_quote' )
 	: esc_html__( 'A single interlocutor. The whole of Italy within your reach.', 'frignanis' );
 
-// Assets URIs (Authentic Drive & Folder images)
-$img_vineyard_estate  = get_template_directory_uri() . '/assets/images/wine-bottles-curation.jpg';
+// Assets URIs (Authentic Client Photography)
+$img_vineyard_estate  = get_template_directory_uri() . '/assets/images/italian-grapes-sunlit-vine.jpg';
 $img_archival_harvest = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9868.PNG';
 $img_world_map        = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/1349EB2A-5455-44E4-837E-4A49ED57E6B3.png';
 
-$img_audience_retail      = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Instagram/3.jpg';
-$img_audience_restaurants = get_template_directory_uri() . '/assets/images/italian-fine-dining-color.jpg';
-$img_audience_diplomatic  = get_template_directory_uri() . '/assets/images/italian-art-decor-shelving.jpg';
-$img_audience_corporate   = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Instagram/6.jpg';
+$img_audience_retail      = get_template_directory_uri() . '/assets/images/italian-grape-harvest-workers.jpg';
+$img_audience_restaurants = get_template_directory_uri() . '/assets/images/italian-fine-dining-dinner.jpg';
+$img_audience_diplomatic  = get_template_directory_uri() . '/assets/images/italian-art-decor-shelving-display.jpg';
+$img_audience_corporate   = get_template_directory_uri() . '/assets/images/italian-wine-celebration-toast.jpg';
 
 $pdf_folder_url = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Folder%20-%20Site/FOLDER.pdf';
 ?>

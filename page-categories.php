@@ -41,8 +41,8 @@ $categories_data = array(
 		'tags'        => esc_html__( 'DOC · DOCG · VALDOBBIADENE · FRANCIACORTA', 'frignanis' ),
 		'title'       => esc_html__( 'Terroir Wines & Prosecco', 'frignanis' ),
 		'desc'        => esc_html__( 'Terroir wines and prosecco from selected Italian wineries. From the mineral elegance of the north to the noble reds of the center and south, we connect exclusive vintages and traditional method sparkling wines directly to gastronomic wine lists, importers, and distributors.', 'frignanis' ),
-		'image'       => get_template_directory_uri() . '/assets/images/italian-vineyard-sun-color.jpg',
-		'image_alt'   => esc_attr__( 'Italian Vineyards and Noble Terroir Harvest', 'frignanis' ),
+		'image'       => get_template_directory_uri() . '/assets/images/italian-sommelier-prosecco-pour.jpg',
+		'image_alt'   => esc_attr__( 'Italian Sommelier Pouring Traditional Method Prosecco', 'frignanis' ),
 		'layout'      => 'image-left',
 		'badge'       => '',
 	),
@@ -52,7 +52,7 @@ $categories_data = array(
 		'tags'        => esc_html__( 'OLIVE OIL · ORGANIC & EXTRA VIRGIN', 'frignanis' ),
 		'title'       => esc_html__( 'Italian & Organic Olive Oil', 'frignanis' ),
 		'desc'        => esc_html__( 'Extra virgin olive oil of verified Italian origin, available in conventional and certified organic lines. The organic line is identified by the green seal of traceability and sustainable agriculture.', 'frignanis' ),
-		'image'       => get_template_directory_uri() . '/assets/images/italian-olive-harvest-color.jpg',
+		'image'       => get_template_directory_uri() . '/assets/images/italian-olive-harvest-hands.jpg',
 		'image_alt'   => esc_attr__( 'Certified Organic Extra Virgin Italian Olive Harvest', 'frignanis' ),
 		'layout'      => 'image-right',
 		'badge'       => esc_html__( 'CERTIFIED ORGANIC', 'frignanis' ),
@@ -63,8 +63,8 @@ $categories_data = array(
 		'tags'        => esc_html__( 'TARTUFO · SEASONAL ITALIAN HARVESTS', 'frignanis' ),
 		'title'       => esc_html__( 'Truffles & Truffle Condiments', 'frignanis' ),
 		'desc'        => esc_html__( 'The tartufo is one of Italy\'s greatest gastronomic treasures. We represent fresh seasonal harvests and preserved products of high aromatic density for fine dining restaurants, gourmet emporiums, and diplomatic events.', 'frignanis' ),
-		'image'       => get_template_directory_uri() . '/assets/images/category-truffle.jpg',
-		'image_alt'   => esc_attr__( 'Fresh and Preserved Italian Truffles', 'frignanis' ),
+		'image'       => get_template_directory_uri() . '/assets/images/italian-lake-olive-terroir.jpg',
+		'image_alt'   => esc_attr__( 'Italian Terroir Hills and Gastronomic Landscapes', 'frignanis' ),
 		'layout'      => 'image-left',
 		'badge'       => '',
 	),
@@ -74,8 +74,8 @@ $categories_data = array(
 		'tags'        => esc_html__( 'EU CERTIFIED ORGANIC PRODUCTS', 'frignanis' ),
 		'title'       => esc_html__( 'Gourmet Delicacies & Organic Products', 'frignanis' ),
 		'desc'        => esc_html__( 'Special selection of organic and biological products from traditional producers — grains, pulses, artisanal sauces, and preserves that honor health, biodiversity, and European standard certification procedures.', 'frignanis' ),
-		'image'       => get_template_directory_uri() . '/assets/images/category-organic-bio.jpg',
-		'image_alt'   => esc_attr__( 'Certified Italian Organic and Biological Delicacies', 'frignanis' ),
+		'image'       => get_template_directory_uri() . '/assets/images/italian-olive-picking-hand.jpg',
+		'image_alt'   => esc_attr__( 'Hand Harvesting Certified Italian Organic Produce', 'frignanis' ),
 		'layout'      => 'image-right',
 		'badge'       => esc_html__( 'CERTIFIED ORGANIC', 'frignanis' ),
 	),
@@ -85,8 +85,8 @@ $categories_data = array(
 		'tags'        => esc_html__( 'COOKING SUPREME · LIFESTYLE & ART DE LA TABLE', 'frignanis' ),
 		'title'       => esc_html__( 'Art Décor · Cooking Supreme Line', 'frignanis' ),
 		'desc'        => esc_html__( 'Art décor for high-end kitchens and dining. High-level artisanal European ceramics, ambient lighting, and exclusive pieces that transform dining into a memorable experience of hospitality and style.', 'frignanis' ),
-		'image'       => get_template_directory_uri() . '/assets/images/italian-art-decor-ceramics.jpg',
-		'image_alt'   => esc_attr__( 'Handcrafted Italian Ceramics and Cooking Supreme Collection', 'frignanis' ),
+		'image'       => get_template_directory_uri() . '/assets/images/italian-art-decor-emerald-ceramics.jpg',
+		'image_alt'   => esc_attr__( 'Handcrafted Italian Emerald Glazed Ceramics and Cooking Supreme Collection', 'frignanis' ),
 		'layout'      => 'image-left',
 		'badge'       => '',
 	),
@@ -201,6 +201,119 @@ $categories_data = array(
 
 		</article>
 	<?php endforeach; ?>
+
+	<!-- Curated Visual Gallery of Authentic Italian Heritage & Terroir -->
+	<div class="cat-gallery-section">
+		<div class="site-container">
+			<div class="cat-gallery__header">
+				<div class="eyebrow"><?php esc_html_e( 'AUTHENTIC ITALIAN EXCELLENCE', 'frignanis' ); ?></div>
+				<h2 class="cat-gallery__title">
+					<?php esc_html_e( 'Moments of', 'frignanis' ); ?> <span class="cat-gallery__title-highlight"><?php esc_html_e( 'Terroir & Tradition', 'frignanis' ); ?></span>
+				</h2>
+				<p class="cat-gallery__desc">
+					<?php esc_html_e( 'From sunlit hillside vineyards to Michelin-starred tables and handcrafted ceramic workshops — every reference reflects our direct connection to Italy’s finest artisans.', 'frignanis' ); ?>
+				</p>
+			</div>
+
+			<div class="cat-gallery__grid">
+				<!-- 1. Grapes on Vine -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-grapes-sunlit-vine.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Sunlit Italian Vineyard Grapes', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'TERROIR WINES', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Sunlit Estate Grape Clusters', 'frignanis' ); ?></p>
+					</div>
+				</div>
+
+				<!-- 2. Red Wine Pour -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-red-wine-pour.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Fine Italian Red Wine Pour', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'GRAND CRU', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Noble Appellation Vintages', 'frignanis' ); ?></p>
+					</div>
+				</div>
+
+				<!-- 3. Beige Ceramic Tableware -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-art-decor-tableware-beige.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Handcrafted Italian Beige Ceramics', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'COOKING SUPREME', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Handcrafted Artisanal Tableware', 'frignanis' ); ?></p>
+					</div>
+				</div>
+
+				<!-- 4. Illuminated Shelving Display -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-art-decor-shelving-display.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Illuminated Luxury Art Décor Display', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'ART DÉCOR', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Fine Living & Curated Spaces', 'frignanis' ); ?></p>
+					</div>
+				</div>
+
+				<!-- 5. Fine Dining Table Setting -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-fine-dining-dinner.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Haute Gastronomy Dining Table', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'FINE DINING', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Haute Cuisine & Pairing', 'frignanis' ); ?></p>
+					</div>
+				</div>
+
+				<!-- 6. Twilight Terrace Dining -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-terrace-dining-twilight.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Twilight Terrace Hospitality', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'HOSPITALITY', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Seaside Twilight Banqueting', 'frignanis' ); ?></p>
+					</div>
+				</div>
+
+				<!-- 7. Vineyard Celebration Toast -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-wine-celebration-toast.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Italian Vineyard Harvest Celebration', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'CELEBRATION', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Vineyard Toast & Friendship', 'frignanis' ); ?></p>
+					</div>
+				</div>
+
+				<!-- 8. Historic Estate & Church -->
+				<div class="cat-gallery-item">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-estate-church-hills.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Historic Italian Heritage Estate', 'frignanis' ); ?>" 
+						 class="cat-gallery-item__img" 
+						 loading="lazy" />
+					<div class="cat-gallery-item__overlay">
+						<span class="cat-gallery-item__tag"><?php esc_html_e( 'HERITAGE', 'frignanis' ); ?></span>
+						<p class="cat-gallery-item__caption"><?php esc_html_e( 'Historic Ferrara Hillside Estate', 'frignanis' ); ?></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Folder Download Banner inside Categories -->
 	<div class="site-container" style="margin-top: 3rem;">
