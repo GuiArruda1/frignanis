@@ -128,7 +128,7 @@ $contact_location_text = function_exists( 'get_field' ) && get_field( 'contact_l
 
 $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_form_btn_text' )
 	? get_field( 'contact_form_btn_text' )
-	: esc_html__( 'REQUEST A PRESENTATION', 'frignanis' );
+	: esc_html__( 'SEND MESSAGE', 'frignanis' );
 ?>
 
 <!-- ==========================================
