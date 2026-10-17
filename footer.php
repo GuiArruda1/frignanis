@@ -99,7 +99,7 @@ $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_cop
 					<li><a href="<?php echo esc_url( home_url( '/categories/#vinhos' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Terroir Wines & Prosecco', 'frignanis' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/categories/#gourmet' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Gourmet & Biological Delicacies', 'frignanis' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/categories/#cooking-supreme' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Art Décor · Cooking Supreme', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="site-footer__link text-gold">✦ <?php esc_html_e( 'Download PDF Folder', 'frignanis' ); ?></a></li>
+					<li><a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="site-footer__link text-gold" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">✦ <?php esc_html_e( 'Frignani Apresentation (PDF)', 'frignanis' ); ?></a></li>
 				</ul>
 			</div>
 

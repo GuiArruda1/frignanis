@@ -99,7 +99,7 @@ $img_audience_restaurants = get_template_directory_uri() . '/assets/images/itali
 $img_audience_diplomatic  = get_template_directory_uri() . '/assets/images/italian-art-decor-shelving-display.jpg';
 $img_audience_corporate   = get_template_directory_uri() . '/assets/images/italian-wine-celebration-toast.jpg';
 
-$pdf_folder_url = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Folder%20-%20Site/FOLDER.pdf';
+$pdf_folder_url = frignanis_get_presentation_pdf_url();
 ?>
 
 <!-- ==========================================
@@ -566,9 +566,9 @@ $pdf_folder_url = get_template_directory_uri() . '/assets/images/drive-download-
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary ms-cta__btn">
 					<?php esc_html_e( 'REQUEST A PRESENTATION', 'frignanis' ); ?>
 				</a>
-				<a href="<?php echo esc_url( $pdf_folder_url ); ?>" class="btn btn-secondary ms-cta__btn" download target="_blank" rel="noopener noreferrer">
+				<a href="<?php echo esc_url( $pdf_folder_url ); ?>" class="btn btn-secondary ms-cta__btn" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
 					<span>📥</span>
-					<span><?php esc_html_e( 'DOWNLOAD PDF FOLDER', 'frignanis' ); ?></span>
+					<span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 				</a>
 			</div>
 		</div>

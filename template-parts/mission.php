@@ -119,8 +119,8 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 					<a href="<?php echo esc_url( $pres_cta_primary_url ); ?>" class="btn btn-primary">
 						<?php echo esc_html( $pres_cta_primary_text ); ?>
 					</a>
-					<a href="<?php echo esc_url( $pres_cta_secondary_url ); ?>" class="btn btn-outline-dark">
-						<?php echo esc_html( $pres_cta_secondary_text ); ?>
+					<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn btn-outline-dark" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
+						<span>📥</span> <?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?>
 					</a>
 				</div>
 

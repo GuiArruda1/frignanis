@@ -325,9 +325,9 @@ $categories_data = array(
 					<?php esc_html_e( 'Request our complete executive presentation with operational guidelines, packaging specifications, and standard import procedures.', 'frignanis' ); ?>
 				</p>
 			</div>
-			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn-folder-download">
+			<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn-folder-download" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
 				<span>📥</span>
-				<span><?php esc_html_e( 'REQUEST PDF FOLDER', 'frignanis' ); ?></span>
+				<span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 			</a>
 		</div>
 	</div>
