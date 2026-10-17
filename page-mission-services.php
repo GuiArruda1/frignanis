@@ -95,8 +95,8 @@ $img_archival_harvest = get_template_directory_uri() . '/assets/images/drive-dow
 $img_world_map        = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/1349EB2A-5455-44E4-837E-4A49ED57E6B3.png';
 
 $img_audience_retail      = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Instagram/3.jpg';
-$img_audience_restaurants = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Instagram/2.jpg';
-$img_audience_diplomatic  = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Instagram/1.jpg';
+$img_audience_restaurants = get_template_directory_uri() . '/assets/images/italian-fine-dining-color.jpg';
+$img_audience_diplomatic  = get_template_directory_uri() . '/assets/images/italian-art-decor-shelving.jpg';
 $img_audience_corporate   = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Instagram/6.jpg';
 
 $pdf_folder_url = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/Folder%20-%20Site/FOLDER.pdf';
@@ -107,7 +107,7 @@ $pdf_folder_url = get_template_directory_uri() . '/assets/images/drive-download-
      ========================================== -->
 <section class="ms-hero" aria-labelledby="ms-hero-heading">
 	<div class="ms-hero__bg-media" aria-hidden="true">
-		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-vineyard-backdrop.jpg' ); ?>" 
+		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-hero-estate-vineyard-color.jpg' ); ?>" 
 			 alt="<?php esc_attr_e( 'Italian Terroir Hills and Vineyards', 'frignanis' ); ?>" 
 			 class="ms-hero__bg-photo" 
 			 width="1179" 

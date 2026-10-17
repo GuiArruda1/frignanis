@@ -49,7 +49,7 @@ $hero_secondary_btn_url = function_exists( 'get_field' ) && get_field( 'hero_sec
 	? get_field( 'hero_secondary_btn_url' ) 
 	: home_url( '/mission-and-services/' );
 
-$hero_bg_image = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9880.JPG';
+$hero_bg_image = get_template_directory_uri() . '/assets/images/italian-hero-estate-vineyard-color.jpg';
 ?>
 
 <section class="hero hero--banner" id="hero" aria-labelledby="hero-title">
