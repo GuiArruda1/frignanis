@@ -10,9 +10,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
+$footer_lead          = function_exists( 'get_field' ) && get_field( 'footer_lead' )
+	? get_field( 'footer_lead' )
+	: esc_html__( 'Excelência italiana. Conexões globais.', 'frignanis' );
+
 $footer_tagline       = function_exists( 'get_field' ) && get_field( 'footer_tagline' ) 
 	? get_field( 'footer_tagline' ) 
-	: esc_html__( 'We do not sell products. We connect excellences. Business management and commercial intermediation of Italian excellence — from Luxembourg to the world.', 'frignanis' );
+	: esc_html__( 'Gestão estratégica, representação e intermediação comercial de marcas italianas de prestígio, projetando o Made in Italy nos mercados mais exclusivos da Europa e das Américas.', 'frignanis' );
+
+$footer_text_p2       = function_exists( 'get_field' ) && get_field( 'footer_text_p2' )
+	? get_field( 'footer_text_p2' )
+	: esc_html__( 'A partir de Luxemburgo, conectamos marcas que traduzem tradição, autenticidade, inovação e vanguarda a parceiros estratégicos e oportunidades de crescimento no cenário internacional.', 'frignanis' );
+
+$footer_closing       = function_exists( 'get_field' ) && get_field( 'footer_closing' )
+	? get_field( 'footer_closing' )
+	: esc_html__( 'De Luxemburgo para o mundo.', 'frignanis' );
 
 $footer_cta_label     = function_exists( 'get_field' ) && get_field( 'footer_cta_label' ) 
 	? get_field( 'footer_cta_label' ) 
@@ -68,9 +80,27 @@ $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_cop
 					<span class="italian-flag-stripe__red"></span>
 				</div>
 
+				<?php if ( ! empty( $footer_lead ) ) : ?>
+					<h4 class="site-footer__lead-title">
+						<?php echo esc_html( $footer_lead ); ?>
+					</h4>
+				<?php endif; ?>
+
 				<?php if ( ! empty( $footer_tagline ) ) : ?>
 					<p class="site-footer__tagline">
 						<?php echo esc_html( $footer_tagline ); ?>
+					</p>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $footer_text_p2 ) ) : ?>
+					<p class="site-footer__tagline" style="margin-top: -0.5rem;">
+						<?php echo esc_html( $footer_text_p2 ); ?>
+					</p>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $footer_closing ) ) : ?>
+					<p class="site-footer__closing text-gold italic-serif">
+						<?php echo esc_html( $footer_closing ); ?>
 					</p>
 				<?php endif; ?>
 
