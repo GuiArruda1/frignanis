@@ -62,29 +62,33 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 	</section>
 
 	<!-- ==========================================
-	     2. ORIGENS ITALIANAS
-	     2 parágrafos centralizados
+	     2. FEATURED SHOWCASE: AS RAÍZES EM FERRARA
 	     ========================================== -->
-	<section class="about-origins-section" aria-labelledby="origins-heading">
-		<div class="site-container">
-			<div class="about-origins-container">
-				
-				<h2 id="origins-heading" class="about-origins-title">
-					<?php esc_html_e( 'Origens italianas', 'frignanis' ); ?>
+	<section class="about-heritage-showcase" aria-labelledby="heritage-showcase-title">
+		<!-- Gold Leaf Texture Accent Bar -->
+		<div class="about-heritage-showcase__gold-bar" aria-hidden="true"></div>
+
+		<div class="about-heritage-showcase__inner">
+			
+			<!-- Left Narrative Column -->
+			<div class="about-heritage-showcase__content">
+				<div class="about-heritage-showcase__pill-row">
+					<span class="about-heritage-showcase__pill"><?php esc_html_e( 'AS RAÍZES FAMILIARES', 'frignanis' ); ?></span>
+					<span class="about-heritage-showcase__pill-line" aria-hidden="true"></span>
+				</div>
+
+				<h2 id="heritage-showcase-title" class="about-heritage-showcase__title">
+					Ferrara · Emilia-Romagna
 				</h2>
 
-				<!-- Parágrafo 1 Centralizado -->
-				<p class="about-origins-text">
-					<?php esc_html_e( 'Nas terras verdejantes do norte da Itália, na Emilia-Romagna, província de Ferrara, encontram-se as raízes da família Frignani. Uma região onde a tradição, a arte de viver e a excelência gastronômica fazem parte de um patrimônio cultural transmitido ao longo dos séculos.', 'frignanis' ); ?>
-				</p>
+				<div class="about-heritage-showcase__text">
+					<p>
+						<?php esc_html_e( 'Nas terras verdejantes do norte da Itália, na Emilia-Romagna, província de Ferrara, encontram-se as raízes da família Frignani. Uma região onde a tradição, a arte de viver e a excelência gastronômica fazem parte de um patrimônio cultural transmitido ao longo dos séculos.', 'frignanis' ); ?>
+					</p>
+				</div>
 
-				<!-- Parágrafo 2 Centralizado -->
-				<p class="about-origins-text">
-					<?php esc_html_e( 'Uma herança viva onde o respeito pela terra, os sabores autênticos e a dedicação ao ofício familiar moldaram um patrimônio transmitido com afeto e maestria, criando os alicerces de uma vocação que cruzaria oceanos.', 'frignanis' ); ?>
-				</p>
-
-				<!-- Archival Heritage Tribute -->
-				<div class="about-heritage-tribute" style="justify-content: center; margin-top: 2.5rem;" aria-label="<?php esc_attr_e( 'Tributo a Gentila Frignani', 'frignanis' ); ?>">
+				<!-- Tribute to Gentila Frignani -->
+				<div class="about-heritage-tribute" aria-label="<?php esc_attr_e( 'Tributo a Gentila Frignani', 'frignanis' ); ?>">
 					<div class="about-heritage-tribute__arch">
 						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gentila-frignani-portrait.png' ); ?>" 
 							 alt="<?php esc_attr_e( 'Gentila Frignani', 'frignanis' ); ?>" 
@@ -93,14 +97,27 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 							 height="145" 
 							 loading="lazy" />
 					</div>
-					<div class="about-heritage-tribute__info" style="text-align: left;">
+					<div class="about-heritage-tribute__info">
 						<span class="about-heritage-tribute__intro"><?php esc_html_e( 'In amorevole ricordo di', 'frignanis' ); ?></span>
 						<h3 class="about-heritage-tribute__name">Gentila Frignani</h3>
 						<p class="about-heritage-tribute__dedication"><?php esc_html_e( 'Le nostre radici, sempre nel cuore.', 'frignanis' ); ?></p>
 					</div>
 				</div>
-
 			</div>
+
+			<!-- Right Architectural Arch Window & Navy Block -->
+			<div class="about-heritage-showcase__visual" aria-hidden="true">
+				<div class="about-heritage-showcase__navy-block"></div>
+				<div class="about-heritage-showcase__arch-frame">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-ferrara-estate-arch.jpg' ); ?>" 
+						 alt="<?php esc_attr_e( 'Terras verdejantes e patrimônio de Ferrara, Emilia-Romagna', 'frignanis' ); ?>" 
+						 class="about-heritage-showcase__arch-img" 
+						 width="1179" 
+						 height="1105" 
+						 loading="lazy" />
+				</div>
+			</div>
+
 		</div>
 	</section>
 
