@@ -535,14 +535,14 @@ function frignanis_register_acf_field_groups() {
 					'label'         => esc_html__( 'Instagram Handle', 'frignanis' ),
 					'name'          => 'contact_insta_handle',
 					'type'          => 'text',
-					'default_value' => '@frignanisgourmet',
+					'default_value' => '@frignanis_import_export',
 				),
 				array(
 					'key'           => 'field_contact_insta_url',
 					'label'         => esc_html__( 'Instagram URL', 'frignanis' ),
 					'name'          => 'contact_insta_url',
 					'type'          => 'url',
-					'default_value' => 'https://instagram.com/frignanisgourmet',
+					'default_value' => 'https://www.instagram.com/frignanis_import_export',
 				),
 				array(
 					'key'           => 'field_contact_insta_subtext',

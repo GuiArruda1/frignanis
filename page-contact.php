@@ -112,11 +112,11 @@ $contact_insta_label   = function_exists( 'get_field' ) && get_field( 'contact_i
 
 $contact_insta_handle  = function_exists( 'get_field' ) && get_field( 'contact_insta_handle' )
 	? get_field( 'contact_insta_handle' )
-	: '@frignanisgourmet';
+	: '@frignanis_import_export';
 
 $contact_insta_url     = function_exists( 'get_field' ) && get_field( 'contact_insta_url' )
 	? get_field( 'contact_insta_url' )
-	: 'https://instagram.com/frignanisgourmet';
+	: 'https://www.instagram.com/frignanis_import_export';
 
 $contact_location_label = function_exists( 'get_field' ) && get_field( 'contact_location_label' )
 	? get_field( 'contact_location_label' )

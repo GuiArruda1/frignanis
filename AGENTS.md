@@ -12,7 +12,7 @@ Refer to the dedicated skills:
    `Home` · `Categorias` · `Sobre Nós` · `Contato` (with language selector: PT, EN, FR, IT, ES, DE).
 2. **Import & Export Positioning:** The website must strongly highlight "Importação & Exportação / Gestão de Negócios e Intermediação Comercial", with Camila's world map artwork as the centerpiece.
 3. **No Producer/Supplier/Winery Names:** Communicate exclusively by **categories** (Vinhos e proseccos de terroir, Iguarias gourmet e biológicas, Art decor / Cooking Supreme). Never disclose individual suppliers, wineries, or partner names.
-4. **Official Contact Info:** Use `info@frignanis.com`, `+352 621 766 684` (Telefone e WhatsApp), Luxembourg headquarters, and official Instagram handle `@frignanisgourmet`.
+4. **Official Contact Info:** Use `info@frignanis.com`, `+352 621 766 684` (Telefone e WhatsApp), Luxembourg headquarters, and official Instagram handle `@frignanis_import_export` (https://www.instagram.com/frignanis_import_export).
 5. **Sobre Nós:** Central focus is the noble family history from Ferrara (1626 Baronia de Frignani e Frignestani created by King Philip IV), Atlantic crossing to Brazil (Vitória/ES port), international career in Spain, and returning to roots in Luxembourg with support from Federazione Italiana Cuochi – Delegazione Lussemburgo.
 6. **Official Color Palette:** 
    - Azul Marinho Real: `#14294A`
