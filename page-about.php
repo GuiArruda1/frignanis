@@ -41,7 +41,7 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 
 		<div class="about-panoramic-hero__content">
 			<div class="about-panoramic-hero__badge">
-				<span>📁</span> <?php esc_html_e( "História Frignani's", 'frignanis' ); ?>
+				<?php frignanis_icon( 'folder', 16, 'icon-svg--gold' ); ?> <span><?php esc_html_e( "História Frignani's", 'frignanis' ); ?></span>
 			</div>
 
 			<h1 id="about-hero-title" class="about-panoramic-hero__title">
@@ -134,7 +134,7 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 				<!-- Row 1: Valência, 1626 (Card Left) + História europeia (Right) -->
 				<div class="about-wireframe-row">
 					<div class="about-wireframe-card">
-						<div class="about-wireframe-card__icon" aria-hidden="true">🏛️</div>
+						<div class="about-wireframe-card__icon" aria-hidden="true"><?php frignanis_icon( 'landmark', 28 ); ?></div>
 						<h3 class="about-wireframe-card__label"><?php esc_html_e( 'Valência, 1626', 'frignanis' ); ?></h3>
 					</div>
 
@@ -158,7 +158,7 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 					</div>
 
 					<div class="about-wireframe-card">
-						<div class="about-wireframe-card__icon" aria-hidden="true">🚢</div>
+						<div class="about-wireframe-card__icon" aria-hidden="true"><?php frignanis_icon( 'ship', 28 ); ?></div>
 						<h3 class="about-wireframe-card__label"><?php esc_html_e( 'Imigração italiana', 'frignanis' ); ?></h3>
 					</div>
 				</div>
@@ -166,7 +166,7 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 				<!-- Row 3: Vitória, Brasil (Card Left) + Novas gerações (Right) -->
 				<div class="about-wireframe-row">
 					<div class="about-wireframe-card">
-						<div class="about-wireframe-card__icon" aria-hidden="true">🌊</div>
+						<div class="about-wireframe-card__icon" aria-hidden="true"><?php frignanis_icon( 'waves', 28 ); ?></div>
 						<h3 class="about-wireframe-card__label"><?php esc_html_e( 'Vitória, Brasil', 'frignanis' ); ?></h3>
 					</div>
 
@@ -193,7 +193,7 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 				
 				<div class="about-lux-header">
 					<div class="about-lux-badge">
-						<span>🏛️</span> <?php esc_html_e( 'CENTRO DE NEGÓCIOS EUROPEU', 'frignanis' ); ?>
+						<?php frignanis_icon( 'building', 16, 'icon-svg--gold' ); ?> <span><?php esc_html_e( 'CENTRO DE NEGÓCIOS EUROPEU', 'frignanis' ); ?></span>
 					</div>
 					<h2 id="lux-heading" class="about-lux-title">
 						<?php esc_html_e( "Luxemburgo — Frignani's", 'frignanis' ); ?>
@@ -226,7 +226,7 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 
 					<div>
 						<div class="about-alliance-card" style="margin: 0 0 1.5rem 0; padding: 1.5rem;">
-							<div class="about-alliance-card__icon" aria-hidden="true">✦</div>
+							<div class="about-alliance-card__icon" aria-hidden="true"><?php frignanis_icon( 'sparkles', 22, 'icon-svg--gold' ); ?></div>
 							<div>
 								<h3 class="about-alliance-card__title" style="font-size: 1.1rem; margin-bottom: 0.35rem;">
 									Federazione Italiana Cuochi · Delegazione Lussemburgo
@@ -291,7 +291,7 @@ $pdf_presentation_url = function_exists( 'frignanis_get_presentation_pdf_url' )
 				<!-- Botões de Ação -->
 				<div class="about-final-cta-row">
 					<a href="<?php echo esc_url( $pdf_presentation_url ); ?>" class="btn btn-primary" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
-						<span>📥</span> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
+						<?php frignanis_icon( 'download', 18 ); ?> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 					</a>
 					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-secondary" style="color: var(--color-navy); border-color: rgba(20, 41, 74, 0.4);">
 						<?php esc_html_e( 'ENTRE EM CONTATO', 'frignanis' ); ?>

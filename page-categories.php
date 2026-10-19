@@ -326,7 +326,7 @@ $categories_data = array(
 				</p>
 			</div>
 			<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn-folder-download" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
-				<span>📥</span>
+				<?php frignanis_icon( 'download', 18 ); ?>
 				<span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 			</a>
 		</div>

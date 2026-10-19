@@ -183,6 +183,38 @@ ol {
   color: var(--color-gold) !important;
 }
 
+/* Vector SVG Icon & Flag Utilities (replaces raw emojis) */
+.icon-svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  stroke-width: 1.8;
+  fill: none;
+  stroke: currentColor;
+  transition: transform var(--transition-fast), stroke var(--transition-fast);
+}
+
+.icon-svg--gold {
+  color: var(--color-gold);
+  stroke: var(--color-gold);
+}
+
+.icon-svg--navy {
+  color: var(--color-navy);
+  stroke: var(--color-navy);
+}
+
+.icon-svg--white {
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.flag-svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
 .italic-serif {
   font-family: var(--font-serif);
   font-style: italic;

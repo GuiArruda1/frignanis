@@ -99,7 +99,7 @@ $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_cop
 					<li><a href="<?php echo esc_url( home_url( '/categories/#vinhos' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Terroir Wines & Prosecco', 'frignanis' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/categories/#gourmet' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Gourmet & Biological Delicacies', 'frignanis' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/categories/#cooking-supreme' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Art Décor · Cooking Supreme', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="site-footer__link text-gold" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">✦ <?php esc_html_e( 'Frignani Apresentation (PDF)', 'frignanis' ); ?></a></li>
+					<li><a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="site-footer__link text-gold" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer"><?php frignanis_icon( 'download', 14, 'icon-svg--gold' ); ?> <span><?php esc_html_e( 'Frignani Apresentation (PDF)', 'frignanis' ); ?></span></a></li>
 				</ul>
 			</div>
 
@@ -109,24 +109,27 @@ $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_cop
 				
 				<?php if ( ! empty( $footer_email ) ) : ?>
 					<div class="site-footer__contact-item">
-						<a href="mailto:<?php echo esc_attr( $footer_email ); ?>">
-							✉ <?php echo esc_html( $footer_email ); ?>
+						<a href="mailto:<?php echo esc_attr( $footer_email ); ?>" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+							<?php frignanis_icon( 'mail', 16, 'icon-svg--gold' ); ?>
+							<span><?php echo esc_html( $footer_email ); ?></span>
 						</a>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( ! empty( $footer_phone ) ) : ?>
 					<div class="site-footer__contact-item">
-						<a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer">
-							☎ <?php echo esc_html( $footer_phone ); ?> (WhatsApp)
+						<a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+							<?php frignanis_icon( 'phone', 16, 'icon-svg--gold' ); ?>
+							<span><?php echo esc_html( $footer_phone ); ?> (WhatsApp)</span>
 						</a>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( ! empty( $footer_location ) ) : ?>
 					<div class="site-footer__contact-item">
-						<span style="color: var(--color-text-muted-light); font-size: 0.85rem;">
-							📍 <?php echo esc_html( $footer_location ); ?>
+						<span style="color: var(--color-text-muted-light); font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+							<?php frignanis_icon( 'map-pin', 16, 'icon-svg--gold' ); ?>
+							<span><?php echo esc_html( $footer_location ); ?></span>
 						</span>
 					</div>
 				<?php endif; ?>

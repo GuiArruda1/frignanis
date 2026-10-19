@@ -185,8 +185,9 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 				<!-- Phone & WhatsApp Item -->
 				<div class="contact-info__item">
 					<span class="contact-info__label"><?php echo esc_html( $contact_phone_label ); ?></span>
-					<a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer" class="contact-info__value contact-info__value--insta" style="color: #25D366;">
-						☎ <?php echo esc_html( $contact_phone_number ); ?>
+					<a href="https://wa.me/352621766684" target="_blank" rel="noopener noreferrer" class="contact-info__value contact-info__value--insta" style="color: #25D366; display: inline-flex; align-items: center; gap: 0.5rem;">
+						<?php frignanis_icon( 'phone', 18 ); ?>
+						<span><?php echo esc_html( $contact_phone_number ); ?></span>
 					</a>
 					<p class="contact-info__subtext"><?php esc_html_e( 'Direct assistance via international phone and WhatsApp.', 'frignanis' ); ?></p>
 				</div>
@@ -218,12 +219,12 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 
 				<!-- Download Presentation Box -->
 				<div class="contact-info__item contact-info__item--download" style="background: rgba(168, 132, 58, 0.08); padding: 1.25rem; border: 1px solid rgba(168, 132, 58, 0.35); border-radius: 4px; margin-top: 0.5rem;">
-					<span class="contact-info__label" style="color: var(--color-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">✦ <?php esc_html_e( 'INSTITUTIONAL DOSSIER', 'frignanis' ); ?></span>
+					<span class="contact-info__label" style="color: var(--color-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;"><?php esc_html_e( 'INSTITUTIONAL DOSSIER', 'frignanis' ); ?></span>
 					<p style="font-size: 0.9rem; color: var(--color-ivory); margin: 0.5rem 0 1rem; line-height: 1.45;">
 						<?php esc_html_e( 'Download our complete executive presentation with operational guidelines and export procedures.', 'frignanis' ); ?>
 					</p>
 					<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn btn-primary" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer" style="width: 100%; text-align: center; justify-content: center; font-size: 0.8rem; padding: 0.75rem 1rem;">
-						<span>📥</span> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
+						<?php frignanis_icon( 'download', 18 ); ?> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 					</a>
 				</div>
 

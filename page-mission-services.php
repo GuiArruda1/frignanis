@@ -238,7 +238,7 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 							 height="1599" 
 							 loading="lazy" />
 						<div class="ms-archival-tag">
-							<span class="ms-archival-tag__icon">🏛️</span>
+							<span class="ms-archival-tag__icon"><?php frignanis_icon( 'landmark', 18 ); ?></span>
 							<div class="ms-archival-tag__text">
 								<strong><?php esc_html_e( 'Archivio Storico', 'frignanis' ); ?></strong>
 								<span><?php esc_html_e( 'Tradizione & Raccolta', 'frignanis' ); ?></span>
@@ -505,7 +505,7 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 			<!-- 4 Pillars of Distinction -->
 			<div class="ms-why__grid">
 				<div class="ms-why__card">
-					<div class="ms-why__icon">✦</div>
+					<div class="ms-why__icon"><?php frignanis_icon( 'landmark', 24, 'icon-svg--gold' ); ?></div>
 					<h3 class="ms-why__card-title"><?php esc_html_e( 'Direct Estate Access', 'frignanis' ); ?></h3>
 					<p class="ms-why__card-text">
 						<?php esc_html_e( 'Direct partnerships with artisan producers and historical wineries rarely accessible outside Italy.', 'frignanis' ); ?>
@@ -513,7 +513,7 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 				</div>
 
 				<div class="ms-why__card">
-					<div class="ms-why__icon">✦</div>
+					<div class="ms-why__icon"><?php frignanis_icon( 'check', 24, 'icon-svg--gold' ); ?></div>
 					<h3 class="ms-why__card-title"><?php esc_html_e( 'Uncompromising Authenticity', 'frignanis' ); ?></h3>
 					<p class="ms-why__card-text">
 						<?php esc_html_e( 'Guaranteed provenance and certified standards from the Italian terroir through to final delivery.', 'frignanis' ); ?>
@@ -521,7 +521,7 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 				</div>
 
 				<div class="ms-why__card">
-					<div class="ms-why__icon">✦</div>
+					<div class="ms-why__icon"><?php frignanis_icon( 'sparkles', 24, 'icon-svg--gold' ); ?></div>
 					<h3 class="ms-why__card-title"><?php esc_html_e( 'Family Maison Care', 'frignanis' ); ?></h3>
 					<p class="ms-why__card-text">
 						<?php esc_html_e( 'An enduring relationship built with the warmth, discretion, and personal dedication of a noble family house.', 'frignanis' ); ?>
@@ -529,7 +529,7 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 				</div>
 
 				<div class="ms-why__card">
-					<div class="ms-why__icon">✦</div>
+					<div class="ms-why__icon"><?php frignanis_icon( 'globe', 24, 'icon-svg--gold' ); ?></div>
 					<h3 class="ms-why__card-title"><?php esc_html_e( 'Single Strategic Interlocutor', 'frignanis' ); ?></h3>
 					<p class="ms-why__card-text">
 						<?php esc_html_e( 'One trusted contact for curation, negotiation, customs documentation, and seamless international logistics.', 'frignanis' ); ?>
@@ -567,7 +567,7 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 					<?php esc_html_e( 'REQUEST A PRESENTATION', 'frignanis' ); ?>
 				</a>
 				<a href="<?php echo esc_url( $pdf_folder_url ); ?>" class="btn btn-secondary ms-cta__btn" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
-					<span>📥</span>
+					<?php frignanis_icon( 'download', 18 ); ?>
 					<span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 				</a>
 			</div>

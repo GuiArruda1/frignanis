@@ -15,6 +15,7 @@ define( 'FRIGNANIS_VERSION', file_exists( FRIGNANIS_DIR . '/style.css' ) ? (stri
 
 // Include Modular Inc Files
 require_once FRIGNANIS_DIR . '/inc/theme-setup.php';
+require_once FRIGNANIS_DIR . '/inc/icons.php';
 require_once FRIGNANIS_DIR . '/inc/acf-fields.php';
 
 /**

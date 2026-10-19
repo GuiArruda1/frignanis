@@ -103,15 +103,15 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 
 				<!-- International Market Chips (9 Countries Served) -->
 				<div class="presentation-countries" aria-label="<?php esc_attr_e( 'International Markets Served', 'frignanis' ); ?>">
-					<span class="country-chip">🇱🇺 Luxembourg</span>
-					<span class="country-chip">🇧🇪 Belgium</span>
-					<span class="country-chip">🇩🇪 Germany</span>
-					<span class="country-chip">🇪🇸 Spain</span>
-					<span class="country-chip">🇳🇱 Netherlands</span>
-					<span class="country-chip">🇺🇸 United States</span>
-					<span class="country-chip">🇧🇷 Brazil</span>
-					<span class="country-chip">🇨🇱 Chile</span>
-					<span class="country-chip">🇨🇴 Colombia</span>
+					<span class="country-chip"><?php frignanis_flag( 'lu' ); ?> <span>Luxembourg</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'be' ); ?> <span>Belgium</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'de' ); ?> <span>Germany</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'es' ); ?> <span>Spain</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'nl' ); ?> <span>Netherlands</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'us' ); ?> <span>United States</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'br' ); ?> <span>Brazil</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'cl' ); ?> <span>Chile</span></span>
+					<span class="country-chip"><?php frignanis_flag( 'co' ); ?> <span>Colombia</span></span>
 				</div>
 
 				<!-- Action Buttons -->
@@ -120,7 +120,7 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 						<?php echo esc_html( $pres_cta_primary_text ); ?>
 					</a>
 					<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn btn-outline-dark" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
-						<span>📥</span> <?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?>
+						<?php frignanis_icon( 'download', 18 ); ?> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 					</a>
 				</div>
 
@@ -167,7 +167,7 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 							 height="1599" 
 							 loading="lazy" />
 						<div class="mission__archival-tag">
-							<span class="mission__tag-icon">🏛️</span>
+							<span class="mission__tag-icon"><?php frignanis_icon( 'landmark', 18 ); ?></span>
 							<div class="mission__tag-text">
 								<strong><?php esc_html_e( 'Archivio Storico', 'frignanis' ); ?></strong>
 								<span><?php esc_html_e( 'Ferrara · Dal 1626', 'frignanis' ); ?></span>
