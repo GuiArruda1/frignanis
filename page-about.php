@@ -3,9 +3,9 @@
  * Template Name: About Us / Sobre Nós
  * Template Post Type: page
  *
- * The template for displaying the "About Us" page.
- * Centered editorial maison layout with warm heritage photography, generous whitespace,
- * uppercase section dividers, and a gold-accented grand closing block.
+ * The template for displaying the "About Us / Sobre Nós" page.
+ * Editorial maison layout with authentic heritage storytelling, 
+ * historical milestone badges, and gold-accented grand closing block.
  *
  * @package Frignanis
  */
@@ -17,83 +17,56 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 
 // --------------------------------------------------
-// Dynamic ACF Fields with Official English Copy Fallbacks
+// Official Text & Dynamic ACF Fields
 // --------------------------------------------------
 
 $about_hero_eyebrow = function_exists( 'get_field' ) && get_field( 'about_hero_eyebrow' )
 	? get_field( 'about_hero_eyebrow' )
-	: esc_html__( 'ABOUT US · A FAMILY HISTORY & INTERNATIONAL VISION', 'frignanis' );
+	: esc_html__( 'SOBRE NÓS · UMA HISTÓRIA FAMILIAR & VISÃO INTERNACIONAL', 'frignanis' );
 
 $about_hero_title_lead = function_exists( 'get_field' ) && get_field( 'about_hero_title_lead' )
 	? get_field( 'about_hero_title_lead' )
-	: esc_html__( 'A story spanning generations,', 'frignanis' );
+	: esc_html__( 'Uma herança italiana.', 'frignanis' );
 
 $about_hero_title_highlight = function_exists( 'get_field' ) && get_field( 'about_hero_title_highlight' )
 	? get_field( 'about_hero_title_highlight' )
-	: esc_html__( 'continents and flavours.', 'frignanis' );
+	: esc_html__( 'Uma história que atravessa gerações e continentes.', 'frignanis' );
 
-// Section 1: A Story Spanning Generations, Continents and Flavours
+// Section Roots: Ferrara, Emilia-Romagna
+$about_roots_text = esc_html__( 'Nas terras verdejantes do norte da Itália, na Emilia-Romagna, província de Ferrara, encontram-se as raízes da família Frignani. Uma região onde a tradição, a arte de viver e a excelência gastronômica fazem parte de um patrimônio cultural transmitido ao longo dos séculos.', 'frignanis' );
+
+// Section 1: Linhagem Histórica & A Travessia do Atlântico
 $about_sec1_title = function_exists( 'get_field' ) && get_field( 'about_section_1_title' )
 	? get_field( 'about_section_1_title' )
-	: esc_html__( 'A STORY SPANNING GENERATIONS, CONTINENTS AND FLAVOURS', 'frignanis' );
+	: esc_html__( 'LINHAGEM HISTÓRICA & A TRAVESSIA DO ATLÂNTICO', 'frignanis' );
 
-$about_sec1_p1 = function_exists( 'get_field' ) && get_field( 'about_section_1_p1' )
-	? get_field( 'about_section_1_p1' )
-	: esc_html__( 'From the plains of Ferrara in Northern Italy was born a story defined by tradition, courage, and a spirit of discovery.', 'frignanis' );
+$about_sec1_p1 = esc_html__( 'A história do nome Frignani, entretanto, ultrapassa as fronteiras italianas. Sua presença nos registros históricos europeus remonta a séculos anteriores, incluindo a criação da Baronia de Frignani e Frignestani, em 30 de agosto de 1626, em Valência, Espanha, durante o reinado de Filipe IV, concedida a Gaspar Palavicino y Centurión.', 'frignanis' );
 
-$about_sec1_p2 = function_exists( 'get_field' ) && get_field( 'about_section_1_p2' )
-	? get_field( 'about_section_1_p2' )
-	: esc_html__( 'One day, the Frignani family crossed the Atlantic carrying recipes, memories, and Italy in their hearts. In Brazil and later across the Americas, Italian cuisine became a language of affection, identity, and excellence — a heritage handed down from generation to generation.', 'frignanis' );
+$about_sec1_p2 = esc_html__( 'Em 29 de setembro de 1891, um novo capítulo dessa história familiar começou quando nossos antepassados, vindos da Itália, desembarcaram no Porto de Santa Cruz, no Espírito Santo, Brasil. Trouxeram consigo suas tradições, seus valores, os sabores da terra natal e o espírito empreendedor que atravessaria gerações.', 'frignanis' );
 
-$about_sec1_p3 = function_exists( 'get_field' ) && get_field( 'about_section_1_p3' )
-	? get_field( 'about_section_1_p3' )
-	: esc_html__( 'The Frignani name also carries a history spanning centuries. On August 30, 1626, in Valencia, King Philip IV created the Barony of Frignani and Frignestani, granted to Gaspar Palavicino y Centurión, leaving a historical record that forms part of the name’s journey and tradition.', 'frignanis' );
+$about_sec1_p3 = esc_html__( 'Mais de um século depois, em Vitória, Espírito Santo, Sabrina Frignani cresceu entre a herança cultural italiana e o dinamismo de uma cidade portuária conectada ao comércio internacional. Sua trajetória profissional entre o Brasil e a Europa, especialmente na Espanha, fortaleceu uma visão empresarial pautada pela excelência, pelo conhecimento de diferentes mercados e pela valorização das relações humanas.', 'frignanis' );
 
-$about_sec1_p4 = function_exists( 'get_field' ) && get_field( 'about_section_1_p4' )
-	? get_field( 'about_section_1_p4' )
-	: esc_html__( 'Generations later, beside one of Brazil’s great ports in Vitória, Espírito Santo, Sabrina Frignani grew up between the family dining table and the rhythm of ships connecting continents. It was in this environment, suspended between Italian roots and an international vocation, that a worldview grounded in connection, trade, and excellence was born.', 'frignanis' );
-
-$about_sec1_p5 = function_exists( 'get_field' ) && get_field( 'about_section_1_p5' )
-	? get_field( 'about_section_1_p5' )
-	: esc_html__( 'Following a distinguished international career in Spain, Sabrina united her heritage with extensive experience in management and international trade, inaugurating a new chapter in the family history.', 'frignanis' );
-
-// Section 2: A Journey Back to Our Roots
+// Section 2: O Caminho de Volta às Origens Europeias
 $about_sec2_title = function_exists( 'get_field' ) && get_field( 'about_section_2_title' )
 	? get_field( 'about_section_2_title' )
-	: esc_html__( 'A JOURNEY BACK TO OUR ROOTS', 'frignanis' );
+	: esc_html__( 'O CAMINHO DE VOLTA ÀS ORIGENS EUROPEIAS', 'frignanis' );
 
-$about_sec2_p1 = function_exists( 'get_field' ) && get_field( 'about_section_2_p1' )
-	? get_field( 'about_section_2_p1' )
-	: esc_html__( 'Today, the new Frignani generation makes the journey back.', 'frignanis' );
+$about_sec2_p1 = esc_html__( 'Hoje, a nova geração Frignani realiza simbolicamente o caminho de volta às suas origens europeias.', 'frignanis' );
 
-$about_sec2_p2 = function_exists( 'get_field' ) && get_field( 'about_section_2_p2' )
-	? get_field( 'about_section_2_p2' )
-	: esc_html__( 'From Luxembourg, the heart of Europe, Frignani’s was created with the purpose of connecting producers, brands, restaurants, and markets through an international import and export service crafted with proximity, deep knowledge, and meticulous attention to detail.', 'frignanis' );
+$about_sec2_p2 = esc_html__( 'Com sede em Luxemburgo, no coração da Europa, nasce a Frignani’s Import & Export, unindo tradição italiana, experiência em gestão internacional e uma visão contemporânea de negócios.', 'frignanis' );
 
-$about_sec2_p3 = function_exists( 'get_field' ) && get_field( 'about_section_2_p3' )
-	? get_field( 'about_section_2_p3' )
-	: esc_html__( 'With the support of the Federazione Italiana Cuochi – Delegazione Lussemburgo, Frignani’s establishes a bridge between Italian tradition and the contemporary world, curating producers and partners that embody quality, authenticity, and excellence.', 'frignanis' );
+$about_sec2_p3 = esc_html__( 'Com o apoio da Federazione Italiana Cuochi – Delegazione Lussemburgo, estabelecemos pontes entre produtores, marcas e mercados, promovendo produtos selecionados pela sua autenticidade, qualidade e excelência.', 'frignanis' );
 
-$about_sec2_p4 = function_exists( 'get_field' ) && get_field( 'about_section_2_p4' )
-	? get_field( 'about_section_2_p4' )
-	: esc_html__( 'More than simply transporting products across borders, we believe in building lasting connections between people, cultures, and businesses.', 'frignanis' );
+$about_sec2_p4 = esc_html__( 'Mais do que importar e exportar, nossa missão é aproximar culturas, valorizar produtores e construir relações comerciais duradouras, oferecendo um serviço personalizado, criterioso e eficiente, da origem à entrega final.', 'frignanis' );
 
 // Fechamento & Signature
-$about_closing_cadence = function_exists( 'get_field' ) && get_field( 'about_closing_cadence' )
-	? get_field( 'about_closing_cadence' )
-	: "From Italy to the world.\nFrom the world to Luxembourg.\nAnd from Luxembourg back to the world.";
+$about_closing_cadence = "Da Itália às Américas.\nDas Américas à Europa.\nDa Europa para o mundo.";
 
-$about_closing_synthesis = function_exists( 'get_field' ) && get_field( 'about_closing_synthesis' )
-	? get_field( 'about_closing_synthesis' )
-	: esc_html__( 'Expertise in international management. Elegance in curation. Forward-thinking vision. Excellence at every stage — through to final delivery.', 'frignanis' );
+$about_closing_synthesis = esc_html__( 'Mais do que importar e exportar, nossa missão é aproximar culturas, valorizar produtores e construir relações comerciais duradouras — com um serviço personalizado, criterioso e eficiente, da origem à entrega final.', 'frignanis' );
 
-$about_closing_brand = function_exists( 'get_field' ) && get_field( 'about_closing_brand' )
-	? get_field( 'about_closing_brand' )
-	: 'FRIGNANI’S';
+$about_closing_brand = 'FRIGNANI’S IMPORT & EXPORT';
 
-$about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closing_motto' )
-	? get_field( 'about_closing_motto' )
-	: esc_html__( 'A family history. An international vision. A passion that transcends borders.', 'frignanis' );
+$about_closing_motto = esc_html__( 'A ponte entre a Itália e o mundo.', 'frignanis' );
 ?>
 
 <div class="about-page-editorial">
@@ -140,7 +113,7 @@ $about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closi
 		<div class="site-container site-container--wide">
 
 			<!-- ----------------------------------------
-			     FEATURED SHOWCASE: OUR ITALIAN HERITAGE
+			     FEATURED SHOWCASE: AS RAÍZES EM FERRARA
 			     ---------------------------------------- -->
 			<section class="about-heritage-showcase" aria-labelledby="heritage-showcase-title">
 				<!-- Gold Leaf Texture Accent Bar -->
@@ -151,24 +124,21 @@ $about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closi
 					<!-- Left Narrative Column -->
 					<div class="about-heritage-showcase__content">
 						<div class="about-heritage-showcase__pill-row">
-							<span class="about-heritage-showcase__pill"><?php esc_html_e( 'ABOUT US', 'frignanis' ); ?></span>
+							<span class="about-heritage-showcase__pill"><?php esc_html_e( 'AS RAÍZES FAMILIARES', 'frignanis' ); ?></span>
 							<span class="about-heritage-showcase__pill-line" aria-hidden="true"></span>
 						</div>
 
 						<h2 id="heritage-showcase-title" class="about-heritage-showcase__title">
-							<?php esc_html_e( 'Our Italian heritage', 'frignanis' ); ?>
+							Ferrara · Emilia-Romagna
 						</h2>
 
 						<div class="about-heritage-showcase__text">
 							<p>
-								<?php esc_html_e( 'Rooted in Ferrara, Italy, the Frignani family carried its culinary traditions to Brazil, passing a love of Italian culture from one generation to the next.', 'frignanis' ); ?>
-							</p>
-							<p>
-								<?php esc_html_e( 'Raised in Vitória, Espírito Santo, Sabrina Frignani brings this family heritage and her international experience to a new chapter of the Frignani story.', 'frignanis' ); ?>
+								<?php echo esc_html( $about_roots_text ); ?>
 							</p>
 						</div>
 
-						<!-- Discreet Grandmother Tribute (Gentila Frignani) -->
+						<!-- Tribute to Gentila Frignani -->
 						<div class="about-heritage-tribute" aria-label="<?php esc_attr_e( 'Tribute to Gentila Frignani', 'frignanis' ); ?>">
 							<div class="about-heritage-tribute__arch">
 								<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gentila-frignani-portrait.png' ); ?>" 
@@ -191,7 +161,7 @@ $about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closi
 						<div class="about-heritage-showcase__navy-block"></div>
 						<div class="about-heritage-showcase__arch-frame">
 							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-ferrara-estate-arch.jpg' ); ?>" 
-								 alt="<?php esc_attr_e( 'Italian terroir and architectural heritage of Ferrara', 'frignanis' ); ?>" 
+								 alt="<?php esc_attr_e( 'Terras verdejantes e patrimônio de Ferrara, Emilia-Romagna', 'frignanis' ); ?>" 
 								 class="about-heritage-showcase__arch-img" 
 								 width="1179" 
 								 height="1105" 
@@ -207,7 +177,7 @@ $about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closi
 		<div class="about-editorial__container">
 
 			<!-- ----------------------------------------
-			     SECTION 1: NOBLE HISTORICAL LINEAGE (DAL 1626)
+			     SECTION 1: LINHAGEM HISTÓRICA & A TRAVESSIA DO ATLÂNTICO
 			     ---------------------------------------- -->
 			<section class="about-editorial__section" aria-labelledby="sec1-title">
 				<h2 id="sec1-title" class="about-editorial__subtitle">
@@ -215,28 +185,58 @@ $about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closi
 				</h2>
 
 				<div class="about-editorial__body">
-					<?php if ( ! empty( $about_sec1_p3 ) ) : ?>
-						<p class="about-lead-paragraph">
-							<?php echo esc_html( $about_sec1_p3 ); ?>
-						</p>
-					<?php endif; ?>
+					<p class="about-lead-paragraph">
+						<?php echo esc_html( $about_sec1_p1 ); ?>
+					</p>
 
-					<?php if ( ! empty( $about_sec1_p4 ) ) : ?>
-						<p>
-							<?php echo esc_html( $about_sec1_p4 ); ?>
-						</p>
-					<?php endif; ?>
+					<p>
+						<?php echo esc_html( $about_sec1_p2 ); ?>
+					</p>
 
-					<?php if ( ! empty( $about_sec1_p5 ) ) : ?>
-						<p>
-							<?php echo esc_html( $about_sec1_p5 ); ?>
+					<p>
+						<?php echo esc_html( $about_sec1_p3 ); ?>
+					</p>
+				</div>
+
+				<!-- Milestones Grid: 1626 · 1891 · Século XXI -->
+				<div class="about-milestones-grid" aria-label="<?php esc_attr_e( 'Marcos Históricos da Família Frignani', 'frignanis' ); ?>">
+					<!-- 1626 -->
+					<div class="about-milestone-card">
+						<div class="about-milestone-card__year-badge">
+							<span>🏛️</span> 1626
+						</div>
+						<span class="about-milestone-card__tag"><?php esc_html_e( 'Valência · Espanha', 'frignanis' ); ?></span>
+						<p class="about-milestone-card__text">
+							<?php esc_html_e( 'Criação da Baronia de Frignani e Frignestani por Filipe IV, outorgada a Gaspar Palavicino y Centurión.', 'frignanis' ); ?>
 						</p>
-					<?php endif; ?>
+					</div>
+
+					<!-- 1891 -->
+					<div class="about-milestone-card">
+						<div class="about-milestone-card__year-badge">
+							<span>🚢</span> 1891
+						</div>
+						<span class="about-milestone-card__tag"><?php esc_html_e( 'Porto de Santa Cruz · Brasil', 'frignanis' ); ?></span>
+						<p class="about-milestone-card__text">
+							<?php esc_html_e( 'Desembarque dos antepassados italianos com suas tradições, valores, sabores da terra natal e espírito empreendedor.', 'frignanis' ); ?>
+						</p>
+					</div>
+
+					<!-- Hoje / Internacional -->
+					<div class="about-milestone-card">
+						<div class="about-milestone-card__year-badge">
+							<span>🌐</span> Século XXI
+						</div>
+						<span class="about-milestone-card__tag"><?php esc_html_e( 'Vitória, Espanha & Luxemburgo', 'frignanis' ); ?></span>
+						<p class="about-milestone-card__text">
+							<?php esc_html_e( 'Sabrina Frignani une raízes culturais italianas, vocação portuária e sólida trajetória corporativa internacional.', 'frignanis' ); ?>
+						</p>
+					</div>
 				</div>
 			</section>
 
 			<!-- ----------------------------------------
-			     SECTION 2: A JOURNEY BACK TO OUR ROOTS
+			     SECTION 2: O CAMINHO DE VOLTA ÀS ORIGENS EUROPEIAS
 			     ---------------------------------------- -->
 			<section class="about-editorial__section" aria-labelledby="sec2-title">
 				<h2 id="sec2-title" class="about-editorial__subtitle">
@@ -244,41 +244,32 @@ $about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closi
 				</h2>
 
 				<div class="about-editorial__body">
-					<?php if ( ! empty( $about_sec2_p1 ) ) : ?>
-						<p class="about-lead-paragraph">
-							<?php echo esc_html( $about_sec2_p1 ); ?>
-						</p>
-					<?php endif; ?>
+					<p class="about-lead-paragraph">
+						<?php echo esc_html( $about_sec2_p1 ); ?>
+					</p>
 
-					<?php if ( ! empty( $about_sec2_p2 ) ) : ?>
-						<p>
-							<?php echo esc_html( $about_sec2_p2 ); ?>
-						</p>
-					<?php endif; ?>
-
-					<?php if ( ! empty( $about_sec2_p3 ) ) : ?>
-						<p>
-							<?php echo esc_html( $about_sec2_p3 ); ?>
-						</p>
-					<?php endif; ?>
-
-					<?php if ( ! empty( $about_sec2_p4 ) ) : ?>
-						<p>
-							<?php echo esc_html( $about_sec2_p4 ); ?>
-						</p>
-					<?php endif; ?>
+					<p>
+						<?php echo esc_html( $about_sec2_p2 ); ?>
+					</p>
 				</div>
 
-				<!-- Institutional Partnership Duo -->
-				<div class="about-heritage-duo">
-					<div class="about-heritage-duo__quote" style="grid-column: 1 / -1; text-align: center; border-left: none; border-top: 2px solid var(--color-gold); border-bottom: 2px solid var(--color-gold); padding: 2rem 1.5rem; background-color: rgba(168, 132, 58, 0.05); border-radius: 4px;">
-						<p class="about-heritage-duo__quote-text" style="font-size: 1.25rem; max-width: 680px; margin: 0 auto 0.75rem auto;">
-							« <?php esc_html_e( 'With the support of Federazione Italiana Cuochi – Delegazione Lussemburgo, we build the bridge between authentic Italian heritage and the contemporary world.', 'frignanis' ); ?> »
+				<!-- Alliance Callout: Federazione Italiana Cuochi – Delegazione Lussemburgo -->
+				<div class="about-alliance-card" role="region" aria-label="<?php esc_attr_e( 'Parceria Institucional Federazione Italiana Cuochi', 'frignanis' ); ?>">
+					<div class="about-alliance-card__icon" aria-hidden="true">✦</div>
+					<div>
+						<h3 class="about-alliance-card__title">
+							Federazione Italiana Cuochi · Delegazione Lussemburgo
+						</h3>
+						<p class="about-alliance-card__text">
+							<?php echo esc_html( $about_sec2_p3 ); ?>
 						</p>
-						<span class="about-heritage-duo__quote-author">
-							✦ <?php esc_html_e( 'Frignani’s · Luxembourg', 'frignanis' ); ?>
-						</span>
 					</div>
+				</div>
+
+				<div class="about-editorial__body">
+					<p>
+						<?php echo esc_html( $about_sec2_p4 ); ?>
+					</p>
 				</div>
 			</section>
 
@@ -314,13 +305,13 @@ $about_closing_motto = function_exists( 'get_field' ) && get_field( 'about_closi
 					</p>
 				<?php endif; ?>
 
-				<!-- Presentation Request CTA -->
+				<!-- Action CTAs -->
 				<div class="about-fechamento__cta">
-					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary">
-						<?php esc_html_e( 'REQUEST A PRESENTATION', 'frignanis' ); ?>
+					<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn btn-primary" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
+						<span>📥</span> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
 					</a>
-					<a href="<?php echo esc_url( home_url( '/mission-and-services/' ) ); ?>" class="btn btn-secondary">
-						<?php esc_html_e( 'OUR SERVICES', 'frignanis' ); ?>
+					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-secondary">
+						<?php esc_html_e( 'ENTRE EM CONTATO', 'frignanis' ); ?>
 					</a>
 				</div>
 
