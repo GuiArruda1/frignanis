@@ -145,15 +145,24 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 			<div class="about-wireframe-container">
 
-				<!-- Row 1: Valência, 1626 (Card Left) + História (Right) -->
+				<!-- Row 1: Valência, 1626 (Card Left with Image) + História (Right) -->
 				<div class="about-wireframe-row">
-					<div class="about-wireframe-card">
-						<div class="about-wireframe-card__icon" aria-hidden="true">
-							<?php frignanis_icon('landmark', 28); ?></div>
-						<h3 class="about-wireframe-card__label"><?php esc_html_e('Valência, 1626', 'frignanis'); ?>
-						</h3>
-						<span
-							style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Baronia Nobiliárquica', 'frignanis'); ?></span>
+					<div class="about-wireframe-card about-wireframe-card--has-image">
+						<div class="about-wireframe-card__thumb">
+							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/frignanis_valencia.jpeg'); ?>" 
+								 alt="<?php esc_attr_e('Valência e os registros históricos da Baronia de Frignani', 'frignanis'); ?>" 
+								 class="about-wireframe-card__img" 
+								 width="1179" 
+								 height="796" 
+								 loading="lazy" />
+						</div>
+						<div class="about-wireframe-card__body">
+							<div class="about-wireframe-card__icon" aria-hidden="true">
+								<?php frignanis_icon('landmark', 24); ?>
+							</div>
+							<h3 class="about-wireframe-card__label"><?php esc_html_e('Valência, 1626', 'frignanis'); ?></h3>
+							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Baronia Nobiliárquica', 'frignanis'); ?></span>
+						</div>
 					</div>
 
 					<div class="about-wireframe-content">
@@ -264,6 +273,16 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 					<p class="about-lux-subtitle">
 						<?php esc_html_e('Sede internacional no coração da Europa · Luxemburgo', 'frignanis'); ?>
 					</p>
+				</div>
+
+				<!-- Panorâmica de Luxemburgo: Cidade sede e centro de operações -->
+				<div class="about-lux-visual">
+					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/luxembourg_img.jpeg'); ?>" 
+						 alt="<?php esc_attr_e('Panorâmica de Luxemburgo, sede da Frignani’s Import & Export', 'frignanis'); ?>" 
+						 class="about-lux-visual__img" 
+						 width="1160" 
+						 height="460" 
+						 loading="lazy" />
 				</div>
 
 				<!-- Apresentação Comercial Editorial -->
