@@ -85,7 +85,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 				<div class="about-heritage-showcase__text">
 					<p>
-						<?php esc_html_e('Nas terras de Ferrara, na Emilia-Romagna, norte da Itália, encontram-se as raízes da família FRIGNANI. Uma região de extraordinária tradição agrícola e gastronômica, onde, entre os séculos XVIII e XIX, gerações de agricultores cultivaram trigo, vinhedos e hortas, preservando valores familiares, saberes artesanais e os sabores autênticos da cultura italiana.', 'frignanis'); ?>
+						<?php esc_html_e('Nas terras de Ferrara, na Emilia-Romagna, norte da Itália, encontram-se as raízes da família FRIGNANI. Uma região de extraordinária tradição agrícola e gastronômica, onde, entre os séculos XVIII e XIX, gerações de agricultores cultivaram trigo, vinhedos e hortas, preservando valores familiares, talentos artesanais e os sabores autênticos da cultura italiana.', 'frignanis'); ?>
 					</p>
 				</div>
 
@@ -160,7 +160,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 							<div class="about-wireframe-card__icon" aria-hidden="true">
 								<?php frignanis_icon('landmark', 24); ?>
 							</div>
-							<h3 class="about-wireframe-card__label"><?php esc_html_e('Valência, 1626', 'frignanis'); ?></h3>
+							<h3 class="about-wireframe-card__label notranslate"><?php esc_html_e('Valência, 1626', 'frignanis'); ?></h3>
 							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Baronia Nobiliárquica', 'frignanis'); ?></span>
 						</div>
 					</div>
@@ -293,7 +293,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 							<?php esc_html_e('Hoje, a nova geração Frignani realiza simbolicamente o caminho de volta às suas origens europeias.', 'frignanis'); ?>
 						</p>
 						<p class="about-lux-text" style="margin-top: 1.25rem; font-size: 1.05rem;">
-							<?php esc_html_e('Com sede em Luxemburgo, no coração da Europa, nasce a Frignani’s Import & Export, unindo tradição italiana, experiência internacional e uma visão contemporânea dos negócios.', 'frignanis'); ?>
+							<?php esc_html_e('Com sede em Luxemburgo, no coração da Europa, nasce a Frignani’s Import & Export, fundada por Sabrina Frignani, unindo tradição italiana, experiência internacional e uma visão contemporânea dos negócios.', 'frignanis'); ?>
 						</p>
 
 						<!-- Institutional Quote Block -->
