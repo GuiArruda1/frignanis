@@ -28,6 +28,26 @@ function initSplashScreen() {
     return;
   }
 
+  // Synchronize tagline text according to active user language (prevents duplication)
+  const taglineEl = splash.querySelector('.splash-screen__tagline-phrase');
+  if (taglineEl && taglineEl.dataset) {
+    let activeLang = 'en';
+    try {
+      const gtSaved = JSON.parse(localStorage.getItem('__GT_TRANSLATE_LANGS'));
+      if (gtSaved && gtSaved.tgtLang) {
+        activeLang = gtSaved.tgtLang.toLowerCase();
+      } else {
+        activeLang = localStorage.getItem('frignanis_lang') || (navigator.language && navigator.language.toLowerCase().startsWith('pt') ? 'pt' : 'en');
+      }
+    } catch (e) {
+      activeLang = localStorage.getItem('frignanis_lang') || (navigator.language && navigator.language.toLowerCase().startsWith('pt') ? 'pt' : 'en');
+    }
+
+    if (taglineEl.dataset[activeLang]) {
+      taglineEl.textContent = taglineEl.dataset[activeLang];
+    }
+  }
+
   let isDismissed = false;
 
   const dismissSplash = () => {

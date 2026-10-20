@@ -13,14 +13,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
-$splash_tagline_1 = function_exists( 'get_field' ) && get_field( 'splash_tagline_line1' )
-	? get_field( 'splash_tagline_line1' )
+// Language and ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
+$current_locale = function_exists( 'get_locale' ) ? get_locale() : 'en_US';
+$is_pt = str_starts_with( $current_locale, 'pt' )
+	|| ( ! empty( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) && str_starts_with( strtolower( substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 ) ), 'pt' ) );
+
+$default_splash_tagline = $is_pt
+	? esc_html__( 'A ponte entre a Itália e o mundo', 'frignanis' )
 	: esc_html__( 'The bridge between Italy and the world', 'frignanis' );
 
-$splash_tagline_2 = function_exists( 'get_field' ) && get_field( 'splash_tagline_line2' )
-	? get_field( 'splash_tagline_line2' )
-	: esc_html__( 'A ponte entre a Itália e o mundo', 'frignanis' );
+$splash_tagline = function_exists( 'get_field' ) && get_field( 'splash_tagline' )
+	? get_field( 'splash_tagline' )
+	: ( function_exists( 'get_field' ) && get_field( 'splash_tagline_line1' ) ? get_field( 'splash_tagline_line1' ) : $default_splash_tagline );
 ?>
 
 <!-- ==========================================
@@ -119,8 +123,13 @@ $splash_tagline_2 = function_exists( 'get_field' ) && get_field( 'splash_tagline
 		<!-- 3. Italian Script Tagline & Noble Heritage Signature -->
 		<div class="splash-screen__tagline-wrap">
 			<p class="splash-screen__tagline-text">
-				<span class="splash-screen__tagline-text--1"><?php echo esc_html( $splash_tagline_1 ); ?></span>
-				<span class="splash-screen__tagline-text--2"><?php echo esc_html( $splash_tagline_2 ); ?></span>
+				<span class="splash-screen__tagline-phrase" 
+					  data-en="<?php echo esc_attr__( 'The bridge between Italy and the world', 'frignanis' ); ?>" 
+					  data-pt="<?php echo esc_attr__( 'A ponte entre a Itália e o mundo', 'frignanis' ); ?>" 
+					  data-it="<?php echo esc_attr__( "Il ponte tra l'Italia e il mondo", 'frignanis' ); ?>" 
+					  data-fr="<?php echo esc_attr__( "Le pont entre l'Italie et le monde", 'frignanis' ); ?>" 
+					  data-es="<?php echo esc_attr__( 'El puente entre Italia y el mundo', 'frignanis' ); ?>" 
+					  data-de="<?php echo esc_attr__( 'Die Brücke zwischen Italien und der Welt', 'frignanis' ); ?>"><?php echo esc_html( $splash_tagline ); ?></span>
 			</p>
 		</div>
 
