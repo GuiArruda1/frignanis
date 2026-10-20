@@ -15,41 +15,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Dynamic ACF Fields with agency fallbacks
-$pres_eyebrow = function_exists( 'get_field' ) && get_field( 'presentation_eyebrow' ) 
-	? get_field( 'presentation_eyebrow' ) 
-	: esc_html__( 'LUXEMBOURG · THE HEART OF EUROPE · INTERNATIONAL TRADE MAISON', 'frignanis' );
+$pres_eyebrow = frignanis_field( 'presentation_eyebrow', 'LUXEMBOURG · THE HEART OF EUROPE · INTERNATIONAL TRADE MAISON', 'LUXEMBURGO · O CORAÇÃO DA EUROPA · CASA DE COMÉRCIO INTERNACIONAL' );
 
-$pres_title_lead = function_exists( 'get_field' ) && get_field( 'presentation_title_lead' ) 
-	? get_field( 'presentation_title_lead' ) 
-	: esc_html__( 'Business management and commercial intermediation of', 'frignanis' );
+$pres_title_lead = frignanis_field( 'presentation_title_lead', 'Business management and commercial intermediation of', 'Gestão de negócios e intermediação comercial de' );
 
-$pres_title_highlight = function_exists( 'get_field' ) && get_field( 'presentation_title_highlight' ) 
-	? get_field( 'presentation_title_highlight' ) 
-	: esc_html__( 'Italian excellence', 'frignanis' );
+$pres_title_highlight = frignanis_field( 'presentation_title_highlight', 'Italian excellence', 'excelências italianas' );
 
-$pres_p1 = function_exists( 'get_field' ) && get_field( 'presentation_p1' ) 
-	? get_field( 'presentation_p1' ) 
-	: esc_html__( 'Headquartered in Luxembourg, in the heart of Europe, Frignani’s Import & Export is dedicated to business management and commercial intermediation of what Italy produces finest: terroir wines and proseccos, gourmet and biological delicacies from selected producers, and art décor pieces that elevate haute cuisine kitchens and high-end tables. Each partnership is conducted according to the standard operating procedure of each producer and client.', 'frignanis' );
+$pres_p1 = frignanis_field(
+	'presentation_p1',
+	'Headquartered in Luxembourg, in the heart of Europe, Frignani’s Import & Export is dedicated to business management and commercial intermediation of what Italy produces finest: terroir wines and proseccos, gourmet and biological delicacies from selected producers, and art décor pieces that elevate haute cuisine kitchens and high-end tables. Each partnership is conducted according to the standard operating procedure of each producer and client.',
+	'Com sede em Luxemburgo, no coração da Europa, a Frignani’s Import & Export dedica-se à gestão de negócios e intermediação comercial do que a Itália produz de mais refinado: vinhos e proseccos de terroir, iguarias gourmet e biológicas de produtores selecionados e peças de art décor que elevam cozinhas de alta gastronomia e mesas requintadas. Cada parceria é conduzida segundo o procedimento padrão de cada produtor e cliente.'
+);
 
-$pres_p2 = function_exists( 'get_field' ) && get_field( 'presentation_p2' ) 
-	? get_field( 'presentation_p2' ) 
-	: esc_html__( 'We represent traditional Italian producers before distributors, fine dining restaurants, institutions, and major corporations in Luxembourg, Belgium, Germany, Spain, Netherlands, United States, Brazil, Chile, and Colombia.', 'frignanis' );
+$pres_p2 = frignanis_field(
+	'presentation_p2',
+	'We represent traditional Italian producers before distributors, fine dining restaurants, institutions, and major corporations in Luxembourg, Belgium, Germany, Spain, Netherlands, United States, Brazil, Chile, and Colombia.',
+	'Representamos produtores tradicionais italianos perante distribuidores, restaurantes de alta gastronomia, instituições e grandes corporações em Luxemburgo, Bélgica, Alemanha, Espanha, Países Baixos, Estados Unidos, Brasil, Chile e Colômbia.'
+);
 
-$pres_tagline = function_exists( 'get_field' ) && get_field( 'presentation_tagline' ) 
-	? get_field( 'presentation_tagline' ) 
-	: esc_html__( 'Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais. A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios.', 'frignanis' );
+$pres_tagline = frignanis_field(
+	'presentation_tagline',
+	'« We connect you to the finest of Italy! From prestigious Italian brands to international markets. From Luxembourg, in the heart of Europe, we transform tradition, quality, innovation, and vanguard into strategic business opportunities. »',
+	'« Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais. A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios. »'
+);
 
-$pres_cta_primary_text = function_exists( 'get_field' ) && get_field( 'presentation_cta_primary_text' ) 
-	? get_field( 'presentation_cta_primary_text' ) 
-	: esc_html__( 'REQUEST A PRESENTATION', 'frignanis' );
+$pres_cta_primary_text = frignanis_field( 'presentation_cta_primary_text', 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO' );
 
 $pres_cta_primary_url = function_exists( 'get_field' ) && get_field( 'presentation_cta_primary_url' ) 
 	? get_field( 'presentation_cta_primary_url' ) 
 	: home_url( '/contact/' );
 
-$pres_cta_secondary_text = function_exists( 'get_field' ) && get_field( 'presentation_cta_secondary_text' ) 
-	? get_field( 'presentation_cta_secondary_text' ) 
-	: esc_html__( 'EXPLORE OUR SERVICES', 'frignanis' );
+$pres_cta_secondary_text = frignanis_field( 'presentation_cta_secondary_text', 'EXPLORE OUR SERVICES', 'CONHECER NOSSOS SERVIÇOS' );
 
 $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presentation_cta_secondary_url' ) 
 	? get_field( 'presentation_cta_secondary_url' ) 
@@ -120,7 +116,7 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 						<?php echo esc_html( $pres_cta_primary_text ); ?>
 					</a>
 					<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn btn-outline-dark" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
-						<?php frignanis_icon( 'download', 18 ); ?> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
+						<?php frignanis_icon( 'download', 18 ); ?> <span><?php frignanis_e( 'Frignani Presentation', 'Apresentação Frignani' ); ?></span>
 					</a>
 				</div>
 
@@ -134,8 +130,8 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 					<div class="presentation-manifesto-card__inner">
 						<span class="presentation-manifesto-card__quote-mark" aria-hidden="true">«</span>
 						<blockquote class="presentation-manifesto-card__quote">
-							<span class="presentation-manifesto-card__lead"><?php esc_html_e( 'Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais.', 'frignanis' ); ?></span>
-							<span class="presentation-manifesto-card__body"><?php esc_html_e( 'A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios.', 'frignanis' ); ?></span>
+							<span class="presentation-manifesto-card__lead"><?php frignanis_e( 'We connect you to the finest of Italy! From prestigious Italian brands to international markets.', 'Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais.' ); ?></span>
+							<span class="presentation-manifesto-card__body"><?php frignanis_e( 'From Luxembourg, in the heart of Europe, we transform tradition, quality, innovation, and vanguard into strategic business opportunities.', 'A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios.' ); ?></span>
 						</blockquote>
 						<div class="presentation-manifesto-card__seal">
 							<span>✦</span> <?php esc_html_e( "FRIGNANI'S IMPORT & EXPORT · LUXEMBOURG", 'frignanis' ); ?> <span>✦</span>
@@ -147,14 +143,14 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 				<div class="mission__frame-main">
 					<div class="mission__image-wrapper mission__image-wrapper--primary">
 						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/italian-grapes-sunlit-vine.jpg' ); ?>" 
-							 alt="<?php esc_attr_e( 'Italian Vineyard Terroir & Noble Grape Curation', 'frignanis' ); ?>" 
+							 alt="<?php frignanis_attr_e( 'Italian Vineyard Terroir & Noble Grape Curation', 'Terroir de vinhedos italianos e curadoria de uvas nobres' ); ?>" 
 							 class="mission__image" 
 							 width="1600" 
 							 height="1066" 
 							 loading="lazy" />
 						<div class="mission__image-badge">
 							<span class="mission__badge-origin"><?php esc_html_e( "TERROIR D'ITALIA", 'frignanis' ); ?></span>
-							<span class="mission__badge-title"><?php esc_html_e( 'B2B Intermediation', 'frignanis' ); ?></span>
+							<span class="mission__badge-title"><?php frignanis_e( 'B2B Intermediation', 'Intermediação B2B' ); ?></span>
 						</div>
 					</div>
 				</div>
@@ -162,7 +158,7 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 				<div class="mission__frame-overlap">
 					<div class="mission__image-wrapper mission__image-wrapper--secondary">
 						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-harvest-heritage.png' ); ?>" 
-							 alt="<?php esc_attr_e( 'Historic Italian Grape Harvest and Tradition', 'frignanis' ); ?>" 
+							 alt="<?php frignanis_attr_e( 'Historic Italian Grape Harvest and Tradition', 'Colheita histórica de uvas e tradição italiana' ); ?>" 
 							 class="mission__image" 
 							 width="1179" 
 							 height="1599" 
@@ -170,8 +166,8 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 						<div class="mission__archival-tag">
 							<span class="mission__tag-icon"><?php frignanis_icon( 'landmark', 18 ); ?></span>
 							<div class="mission__tag-text">
-								<strong><?php esc_html_e( 'Archivio Storico', 'frignanis' ); ?></strong>
-								<span><?php esc_html_e( 'Ferrara · Século XIX', 'frignanis' ); ?></span>
+								<strong><?php frignanis_e( 'Historical Archive', 'Arquivo Histórico', 'Archivio Storico' ); ?></strong>
+								<span><?php frignanis_e( 'Ferrara · 19th Century', 'Ferrara · Século XIX' ); ?></span>
 							</div>
 						</div>
 					</div>

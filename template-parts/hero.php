@@ -13,37 +13,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
-$hero_eyebrow = function_exists( 'get_field' ) && get_field( 'hero_eyebrow' ) 
-	? get_field( 'hero_eyebrow' ) 
-	: esc_html__( 'LUXEMBOURG · THE BRIDGE BETWEEN ITALY AND THE WORLD', 'frignanis' );
+$hero_eyebrow = frignanis_field( 'hero_eyebrow', 'LUXEMBOURG · THE BRIDGE BETWEEN ITALY AND THE WORLD', 'LUXEMBURGO · A PONTE ENTRE A ITÁLIA E O MUNDO' );
 
-$hero_title_lead = function_exists( 'get_field' ) && get_field( 'hero_title_lead' ) 
-	? get_field( 'hero_title_lead' ) 
-	: esc_html__( 'Authentic Italy, brought to the', 'frignanis' );
+$hero_title_lead = frignanis_field( 'hero_title_lead', 'Authentic Italy, brought to the', 'A Itália autêntica, conduzida às' );
 
-$hero_title_highlight = function_exists( 'get_field' ) && get_field( 'hero_title_highlight' ) 
-	? get_field( 'hero_title_highlight' ) 
-	: esc_html__( 'most demanding tables', 'frignanis' );
+$hero_title_highlight = frignanis_field( 'hero_title_highlight', 'most demanding tables', 'mesas mais exigentes' );
 
-$hero_title_end = function_exists( 'get_field' ) && get_field( 'hero_title_end' ) 
-	? get_field( 'hero_title_end' ) 
-	: esc_html__( 'of the world.', 'frignanis' );
+$hero_title_end = frignanis_field( 'hero_title_end', 'of the world.', 'do mundo.' );
 
-$hero_description = function_exists( 'get_field' ) && get_field( 'hero_description' ) 
-	? get_field( 'hero_description' ) 
-	: esc_html__( 'Business management and commercial intermediation of Italian excellence, following the standard procedure of each producer and client. From Luxembourg to the world.', 'frignanis' );
+$hero_description = frignanis_field( 'hero_description', 'Business management and commercial intermediation of Italian excellence, following the standard procedure of each producer and client. From Luxembourg to the world.', 'Gestão de negócios e intermediação comercial de excelências italianas, segundo o procedimento padrão de cada produtor e cliente. De Luxemburgo para o mundo.' );
 
-$hero_primary_btn_text = function_exists( 'get_field' ) && get_field( 'hero_primary_btn_text' ) 
-	? get_field( 'hero_primary_btn_text' ) 
-	: esc_html__( 'REQUEST A PRESENTATION', 'frignanis' );
+$hero_primary_btn_text = frignanis_field( 'hero_primary_btn_text', 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO' );
 
 $hero_primary_btn_url = function_exists( 'get_field' ) && get_field( 'hero_primary_btn_url' ) 
 	? get_field( 'hero_primary_btn_url' ) 
 	: home_url( '/contact/' );
 
-$hero_secondary_btn_text = function_exists( 'get_field' ) && get_field( 'hero_secondary_btn_text' ) 
-	? get_field( 'hero_secondary_btn_text' ) 
-	: esc_html__( 'OUR SERVICES', 'frignanis' );
+$hero_secondary_btn_text = frignanis_field( 'hero_secondary_btn_text', 'OUR SERVICES', 'NOSSOS SERVIÇOS' );
 
 $hero_secondary_btn_url = function_exists( 'get_field' ) && get_field( 'hero_secondary_btn_url' ) 
 	? get_field( 'hero_secondary_btn_url' ) 
@@ -129,15 +115,15 @@ $hero_bg_image = get_template_directory_uri() . '/assets/images/italian-hero-est
 				<div class="hero__badges">
 					<div class="hero__badge-item">
 						<span class="hero__badge-icon" aria-hidden="true">✦</span>
-						<span class="hero__badge-text"><?php esc_html_e( 'Business Management & Intermediation', 'frignanis' ); ?></span>
+						<span class="hero__badge-text"><?php frignanis_e( 'Business Management & Intermediation', 'Gestão de Negócios & Intermediação Comercial' ); ?></span>
 					</div>
 					<div class="hero__badge-item">
 						<span class="hero__badge-icon" aria-hidden="true">✦</span>
-						<span class="hero__badge-text"><?php esc_html_e( 'B2B Standard Procedure', 'frignanis' ); ?></span>
+						<span class="hero__badge-text"><?php frignanis_e( 'B2B Standard Procedure', 'Procedimento Padrão B2B' ); ?></span>
 					</div>
 					<div class="hero__badge-item">
 						<span class="hero__badge-icon" aria-hidden="true">✦</span>
-						<span class="hero__badge-text"><?php esc_html_e( '9 International Markets', 'frignanis' ); ?></span>
+						<span class="hero__badge-text"><?php frignanis_e( '9 International Markets', '9 Mercados Internacionais' ); ?></span>
 					</div>
 				</div>
 
@@ -152,20 +138,20 @@ $hero_bg_image = get_template_directory_uri() . '/assets/images/italian-hero-est
 			<div class="hero__stats-grid">
 				<div class="hero__stat-block">
 					<span class="hero__stat-number">9</span>
-					<span class="hero__stat-title"><?php esc_html_e( 'Countries Served', 'frignanis' ); ?></span>
-					<span class="hero__stat-sub"><?php esc_html_e( 'Europe, Americas & Global Hubs', 'frignanis' ); ?></span>
+					<span class="hero__stat-title"><?php frignanis_e( 'Countries Served', 'Países Atendidos' ); ?></span>
+					<span class="hero__stat-sub"><?php frignanis_e( 'Europe, Americas & Global Hubs', 'Europa, Américas & Centros Globais' ); ?></span>
 				</div>
 				<div class="hero__stat-divider" aria-hidden="true"></div>
 				<div class="hero__stat-block">
 					<span class="hero__stat-number">100%</span>
-					<span class="hero__stat-title"><?php esc_html_e( 'Excellence & Terroir Origin', 'frignanis' ); ?></span>
-					<span class="hero__stat-sub"><?php esc_html_e( 'Selected Italian Family Estates', 'frignanis' ); ?></span>
+					<span class="hero__stat-title"><?php frignanis_e( 'Excellence & Terroir Origin', 'Excelência & Origem de Terroir' ); ?></span>
+					<span class="hero__stat-sub"><?php frignanis_e( 'Selected Italian Family Estates', 'Propriedades Familiares Selecionadas' ); ?></span>
 				</div>
 				<div class="hero__stat-divider" aria-hidden="true"></div>
 				<div class="hero__stat-block">
 					<span class="hero__stat-number">B2B</span>
-					<span class="hero__stat-title"><?php esc_html_e( 'Direct Representation', 'frignanis' ); ?></span>
-					<span class="hero__stat-sub"><?php esc_html_e( 'A single interlocutor across Italy', 'frignanis' ); ?></span>
+					<span class="hero__stat-title"><?php frignanis_e( 'Direct Representation', 'Representação Direta' ); ?></span>
+					<span class="hero__stat-sub"><?php frignanis_e( 'A single interlocutor across Italy', 'Um único interlocutor para toda a Itália' ); ?></span>
 				</div>
 			</div>
 		</div>

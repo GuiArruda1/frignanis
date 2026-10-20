@@ -75,24 +75,27 @@ get_header();
 // Hero Section
 $contact_hero_eyebrow = function_exists( 'get_field' ) && get_field( 'contact_hero_eyebrow' )
 	? get_field( 'contact_hero_eyebrow' )
-	: esc_html__( '04 / CONTACT & INQUIRY', 'frignanis' );
+	: frignanis_t( '04 / CONTACT & INQUIRY', '04 / CONTATO & ATENDIMENTO' );
 
 $contact_hero_title_lead = function_exists( 'get_field' ) && get_field( 'contact_hero_title_lead' )
 	? get_field( 'contact_hero_title_lead' )
-	: esc_html__( 'Let\'s', 'frignanis' );
+	: frignanis_t( 'Let\'s', 'Vamos' );
 
 $contact_hero_title_highlight = function_exists( 'get_field' ) && get_field( 'contact_hero_title_highlight' )
 	? get_field( 'contact_hero_title_highlight' )
-	: esc_html__( 'talk.', 'frignanis' );
+	: frignanis_t( 'talk.', 'conversar.' );
 
 $contact_hero_desc = function_exists( 'get_field' ) && get_field( 'contact_hero_desc' )
 	? get_field( 'contact_hero_desc' )
-	: esc_html__( 'It will be an honor to bring Italy to your table. Business management and commercial representation for distributors, restaurants, institutions, and corporations.', 'frignanis' );
+	: frignanis_t(
+		'It will be an honor to bring Italy to your table. Business management and commercial representation for distributors, restaurants, institutions, and corporations.',
+		'Será uma honra levar a Itália à sua mesa. Gestão de negócios e representação comercial para distribuidores, restaurantes, instituições e corporações.'
+	);
 
 // Left Column Info
 $contact_email_label   = function_exists( 'get_field' ) && get_field( 'contact_email_label' )
 	? get_field( 'contact_email_label' )
-	: esc_html__( 'EMAIL', 'frignanis' );
+	: frignanis_t( 'EMAIL', 'E-MAIL' );
 
 $contact_email_address = function_exists( 'get_field' ) && get_field( 'contact_email_address' )
 	? get_field( 'contact_email_address' )
@@ -100,7 +103,7 @@ $contact_email_address = function_exists( 'get_field' ) && get_field( 'contact_e
 
 $contact_phone_label   = function_exists( 'get_field' ) && get_field( 'contact_phone_label' )
 	? get_field( 'contact_phone_label' )
-	: esc_html__( 'PHONE & WHATSAPP', 'frignanis' );
+	: frignanis_t( 'PHONE & WHATSAPP', 'TELEFONE E WHATSAPP' );
 
 $contact_phone_number  = function_exists( 'get_field' ) && get_field( 'contact_phone_number' )
 	? get_field( 'contact_phone_number' )
@@ -108,7 +111,7 @@ $contact_phone_number  = function_exists( 'get_field' ) && get_field( 'contact_p
 
 $contact_insta_label   = function_exists( 'get_field' ) && get_field( 'contact_insta_label' )
 	? get_field( 'contact_insta_label' )
-	: esc_html__( 'INSTAGRAM', 'frignanis' );
+	: 'INSTAGRAM';
 
 $contact_insta_handle  = function_exists( 'get_field' ) && get_field( 'contact_insta_handle' )
 	? get_field( 'contact_insta_handle' )
@@ -120,15 +123,15 @@ $contact_insta_url     = function_exists( 'get_field' ) && get_field( 'contact_i
 
 $contact_location_label = function_exists( 'get_field' ) && get_field( 'contact_location_label' )
 	? get_field( 'contact_location_label' )
-	: esc_html__( 'HEADQUARTERS & OPERATIONS', 'frignanis' );
+	: frignanis_t( 'HEADQUARTERS & OPERATIONS', 'SEDE E OPERAÇÕES' );
 
 $contact_location_text = function_exists( 'get_field' ) && get_field( 'contact_location_text' )
 	? get_field( 'contact_location_text' )
-	: esc_html__( 'Luxembourg · Europe (Serving 9 countries)', 'frignanis' );
+	: frignanis_t( 'Luxembourg · Europe (Serving 9 countries)', 'Luxemburgo · Europa (Atendendo 9 países)' );
 
 $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_form_btn_text' )
 	? get_field( 'contact_form_btn_text' )
-	: esc_html__( 'SEND MESSAGE', 'frignanis' );
+	: frignanis_t( 'SEND MESSAGE', 'ENVIAR MENSAGEM' );
 ?>
 
 <!-- ==========================================
@@ -189,7 +192,7 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 						<?php frignanis_icon( 'phone', 18 ); ?>
 						<span><?php echo esc_html( $contact_phone_number ); ?></span>
 					</a>
-					<p class="contact-info__subtext"><?php esc_html_e( 'Direct assistance via international phone and WhatsApp.', 'frignanis' ); ?></p>
+					<p class="contact-info__subtext"><?php frignanis_e( 'Direct assistance via international phone and WhatsApp.', 'Atendimento direto via telefone internacional e WhatsApp.' ); ?></p>
 				</div>
 
 				<div class="contact-info__divider" aria-hidden="true"></div>
@@ -219,12 +222,12 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 
 				<!-- Download Presentation Box -->
 				<div class="contact-info__item contact-info__item--download" style="background: rgba(168, 132, 58, 0.08); padding: 1.25rem; border: 1px solid rgba(168, 132, 58, 0.35); border-radius: 4px; margin-top: 0.5rem;">
-					<span class="contact-info__label" style="color: var(--color-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;"><?php esc_html_e( 'INSTITUTIONAL DOSSIER', 'frignanis' ); ?></span>
+					<span class="contact-info__label" style="color: var(--color-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;"><?php frignanis_e( 'INSTITUTIONAL DOSSIER', 'DOSSIÊ INSTITUCIONAL' ); ?></span>
 					<p style="font-size: 0.9rem; color: var(--color-ivory); margin: 0.5rem 0 1rem; line-height: 1.45;">
-						<?php esc_html_e( 'Download our complete executive presentation with operational guidelines and export procedures.', 'frignanis' ); ?>
+						<?php frignanis_e( 'Download our complete executive presentation with operational guidelines and export procedures.', 'Baixe nossa apresentação executiva completa com diretrizes operacionais e procedimentos de exportação.' ); ?>
 					</p>
 					<a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="btn btn-primary" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer" style="width: 100%; text-align: center; justify-content: center; font-size: 0.8rem; padding: 0.75rem 1rem;">
-						<?php frignanis_icon( 'download', 18 ); ?> <span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
+						<?php frignanis_icon( 'download', 18 ); ?> <span><?php frignanis_e( 'Frignani Presentation', 'Apresentação Frignani' ); ?></span>
 					</a>
 				</div>
 
@@ -245,47 +248,47 @@ $contact_form_btn_text = function_exists( 'get_field' ) && get_field( 'contact_f
 					<div class="contact-form__row contact-form__row--split">
 						<!-- Your Name -->
 						<div class="contact-form__field">
-							<label for="contact_name" class="contact-form__label"><?php esc_html_e( 'FULL NAME *', 'frignanis' ); ?></label>
-							<input type="text" id="contact_name" name="contact_name" class="contact-form__input" placeholder="<?php esc_attr_e( 'Sabrina Frignani', 'frignanis' ); ?>" required />
+							<label for="contact_name" class="contact-form__label"><?php frignanis_e( 'FULL NAME *', 'NOME COMPLETO *' ); ?></label>
+							<input type="text" id="contact_name" name="contact_name" class="contact-form__input" placeholder="<?php frignanis_attr_e( 'Sabrina Frignani', 'Sabrina Frignani' ); ?>" required />
 						</div>
 
 						<!-- Company -->
 						<div class="contact-form__field">
-							<label for="contact_company" class="contact-form__label"><?php esc_html_e( 'COMPANY / ORGANIZATION', 'frignanis' ); ?></label>
-							<input type="text" id="contact_company" name="contact_company" class="contact-form__input" placeholder="<?php esc_attr_e( 'Maison Gourmet Luxembourg', 'frignanis' ); ?>" />
+							<label for="contact_company" class="contact-form__label"><?php frignanis_e( 'COMPANY / ORGANIZATION', 'EMPRESA / ORGANIZAÇÃO' ); ?></label>
+							<input type="text" id="contact_company" name="contact_company" class="contact-form__input" placeholder="<?php frignanis_attr_e( 'Maison Gourmet Luxembourg', 'Maison Gourmet Luxembourg' ); ?>" />
 						</div>
 					</div>
 
 					<div class="contact-form__row contact-form__row--split">
 						<!-- Country -->
 						<div class="contact-form__field">
-							<label for="contact_country" class="contact-form__label"><?php esc_html_e( 'COUNTRY OF OPERATION *', 'frignanis' ); ?></label>
-							<input type="text" id="contact_country" name="contact_country" class="contact-form__input" placeholder="<?php esc_attr_e( 'Luxembourg, Belgium, Brazil...', 'frignanis' ); ?>" required />
+							<label for="contact_country" class="contact-form__label"><?php frignanis_e( 'COUNTRY OF OPERATION *', 'PAÍS DE ATUAÇÃO *' ); ?></label>
+							<input type="text" id="contact_country" name="contact_country" class="contact-form__input" placeholder="<?php frignanis_attr_e( 'Luxembourg, Belgium, Brazil...', 'Luxemburgo, Bélgica, Brasil...' ); ?>" required />
 						</div>
 
 						<!-- Client Type -->
 						<div class="contact-form__field">
-							<label for="contact_client_type" class="contact-form__label"><?php esc_html_e( 'CLIENT TYPE', 'frignanis' ); ?></label>
+							<label for="contact_client_type" class="contact-form__label"><?php frignanis_e( 'CLIENT TYPE', 'TIPO DE CLIENTE' ); ?></label>
 							<select id="contact_client_type" name="contact_client_type" class="contact-form__select">
-								<option value="Distributor / Supermarket"><?php esc_html_e( 'Distributor / Supermarket', 'frignanis' ); ?></option>
-								<option value="Fine Dining Restaurant / Chef"><?php esc_html_e( 'Fine Dining Restaurant / Chef', 'frignanis' ); ?></option>
-								<option value="Embassy / Institution / Federation"><?php esc_html_e( 'Embassy / Institution / Federation', 'frignanis' ); ?></option>
-								<option value="Corporate (Executive Gifts & Hampers)"><?php esc_html_e( 'Corporate (Executive Gifts & Hampers)', 'frignanis' ); ?></option>
-								<option value="Other"><?php esc_html_e( 'Other Segment', 'frignanis' ); ?></option>
+								<option value="Distributor / Supermarket"><?php frignanis_e( 'Distributor / Supermarket', 'Distribuidor / Supermercado' ); ?></option>
+								<option value="Fine Dining Restaurant / Chef"><?php frignanis_e( 'Fine Dining Restaurant / Chef', 'Restaurante de Alta Gastronomia / Chef' ); ?></option>
+								<option value="Embassy / Institution / Federation"><?php frignanis_e( 'Embassy / Institution / Federation', 'Embaixada / Instituição / Federação' ); ?></option>
+								<option value="Corporate (Executive Gifts & Hampers)"><?php frignanis_e( 'Corporate (Executive Gifts & Hampers)', 'Corporativo (Presentes Executivos & Cestas)' ); ?></option>
+								<option value="Other"><?php frignanis_e( 'Other Segment', 'Outro Segmento' ); ?></option>
 							</select>
 						</div>
 					</div>
 
 					<!-- Email -->
 					<div class="contact-form__field">
-						<label for="contact_email" class="contact-form__label"><?php esc_html_e( 'CORPORATE EMAIL *', 'frignanis' ); ?></label>
+						<label for="contact_email" class="contact-form__label"><?php frignanis_e( 'CORPORATE EMAIL *', 'E-MAIL CORPORATIVO *' ); ?></label>
 						<input type="email" id="contact_email" name="contact_email" class="contact-form__input" placeholder="<?php esc_attr_e( 'contact@company.com', 'frignanis' ); ?>" required />
 					</div>
 
 					<!-- Message -->
 					<div class="contact-form__field">
-						<label for="contact_message" class="contact-form__label"><?php esc_html_e( 'MESSAGE / IMPORT REQUIREMENTS *', 'frignanis' ); ?></label>
-						<textarea id="contact_message" name="contact_message" rows="4" class="contact-form__textarea" placeholder="<?php esc_attr_e( 'Describe your interest in our categories (Terroir Wines, Gourmet/Organic Delicacies, Cooking Supreme) or request an institutional presentation...', 'frignanis' ); ?>" required></textarea>
+						<label for="contact_message" class="contact-form__label"><?php frignanis_e( 'MESSAGE / IMPORT REQUIREMENTS *', 'MENSAGEM / DEMANDAS DE IMPORTAÇÃO *' ); ?></label>
+						<textarea id="contact_message" name="contact_message" rows="4" class="contact-form__textarea" placeholder="<?php frignanis_attr_e( 'Describe your interest in our categories (Terroir Wines, Gourmet/Organic Delicacies, Cooking Supreme) or request an institutional presentation...', 'Descreva seu interesse em nossas categorias (Vinhos de Terroir, Iguarias Gourmet/Biológicas, Cooking Supreme) ou solicite uma apresentação institucional...' ); ?>" required></textarea>
 					</div>
 
 					<!-- Submit Button -->

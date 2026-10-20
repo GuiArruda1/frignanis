@@ -32,22 +32,22 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 		 ========================================== -->
 	<section class="about-panoramic-hero" aria-labelledby="about-hero-title">
 		<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-ferrara-terroir.jpg'); ?>"
-			alt="<?php esc_attr_e('Fotografia panorâmica dos campos de Ferrara - Itália 🇮🇹, Emília Romagna', 'frignanis'); ?>"
+			alt="<?php frignanis_attr_e('Panoramic photography of the fields of Ferrara - Italy, Emilia-Romagna', 'Fotografia panorâmica dos campos de Ferrara - Itália 🇮🇹, Emília Romagna'); ?>"
 			class="about-panoramic-hero__bg" width="1920" height="720" fetchpriority="high" />
 		<div class="about-panoramic-hero__overlay" aria-hidden="true"></div>
 
 		<div class="about-panoramic-hero__content">
 			<div class="about-panoramic-hero__badge">
 				<?php frignanis_icon('folder', 16, 'icon-svg--gold'); ?>
-				<span><?php esc_html_e('QUEM SOMOS', 'frignanis'); ?></span>
+				<span><?php frignanis_e('ABOUT US', 'QUEM SOMOS'); ?></span>
 			</div>
 
 			<h1 id="about-hero-title" class="about-panoramic-hero__title">
-				<?php esc_html_e('FRIGNANI’S — Uma herança italiana que atravessa gerações e continentes', 'frignanis'); ?>
+				<?php frignanis_e('FRIGNANI’S — An Italian heritage spanning generations and continents', 'FRIGNANI’S — Uma herança italiana que atravessa gerações e continentes'); ?>
 			</h1>
 
 			<p class="about-panoramic-hero__subtitle">
-				<?php esc_html_e('Nossa história começa na Itália. Nossa tradição atravessa oceanos. Nossa visão conecta o mundo.', 'frignanis'); ?>
+				<?php frignanis_e('Our story begins in Italy. Our tradition crosses oceans. Our vision connects the world.', 'Nossa história começa na Itália. Nossa tradição atravessa oceanos. Nossa visão conecta o mundo.'); ?>
 			</p>
 
 			<!-- Italian Flag Ribbon -->
@@ -61,12 +61,8 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 	<!-- ==========================================
 		 MOMENTO 1: FERRARA — AS NOSSAS RAÍZES
-		 Fotografia panorâmica dos campos italianos,
-		 acompanhada dos primeiros parágrafos sobre
-		 agricultura e gastronomia.
 		 ========================================== -->
 	<section class="about-heritage-showcase" aria-labelledby="heritage-showcase-title">
-		<!-- Gold Leaf Texture Accent Bar -->
 		<div class="about-heritage-showcase__gold-bar" aria-hidden="true"></div>
 
 		<div class="about-heritage-showcase__inner">
@@ -74,32 +70,33 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 			<!-- Left Narrative Column -->
 			<div class="about-heritage-showcase__content">
 				<div class="about-heritage-showcase__pill-row">
-					<span
-						class="about-heritage-showcase__pill"><?php esc_html_e('1- FERRARA - ITÁLIA 🇮🇹 — AS NOSSAS RAÍZES', 'frignanis'); ?></span>
+					<span class="about-heritage-showcase__pill"><?php frignanis_e('1- FERRARA - ITALY 🇮🇹 — OUR ROOTS', '1- FERRARA - ITÁLIA 🇮🇹 — AS NOSSAS RAÍZES'); ?></span>
 					<span class="about-heritage-showcase__pill-line" aria-hidden="true"></span>
 				</div>
 
 				<h2 id="heritage-showcase-title" class="about-heritage-showcase__title">
-					Ferrara - Itália 🇮🇹 · <span class="notranslate">Emília Romagna</span>
+					Ferrara - <?php frignanis_e('Italy', 'Itália'); ?> 🇮🇹 · <span class="notranslate">Emilia-Romagna</span>
 				</h2>
 
 				<div class="about-heritage-showcase__text">
 					<p>
-						<?php esc_html_e('Nas terras de Ferrara - Itália 🇮🇹, na', 'frignanis'); ?> <span class="notranslate">Emília Romagna</span><?php esc_html_e(', norte da Itália, encontram-se as raízes da família FRIGNANI. Uma região de extraordinária tradição agrícola e gastronômica, onde, entre os séculos XVIII e XIX, gerações de agricultores cultivaram trigo, vinhedos e hortas, preservando valores familiares, talentos artesanais e os sabores autênticos da cultura italiana.', 'frignanis'); ?>
+						<?php frignanis_e(
+							'In the lands of Ferrara, in Emilia-Romagna, northern Italy, lie the roots of the FRIGNANI family. A region of extraordinary agricultural and gastronomic tradition, where between the 18th and 19th centuries, generations of farmers cultivated wheat, vineyards, and orchards, preserving family values, artisan skills, and the authentic flavours of Italian culture.',
+							'Nas terras de Ferrara - Itália 🇮🇹, na Emília Romagna, norte da Itália, encontram-se as raízes da família FRIGNANI. Uma região de extraordinária tradição agrícola e gastronômica, onde, entre os séculos XVIII e XIX, gerações de agricultores cultivaram trigo, vinhedos e hortas, preservando valores familiares, talentos artesanais e os sabores autênticos da cultura italiana.'
+						); ?>
 					</p>
 				</div>
 
 				<!-- Tribute to Gentila Frignani -->
 				<div class="about-heritage-tribute"
-					aria-label="<?php esc_attr_e('Tributo a Gentila Frignani', 'frignanis'); ?>">
+					aria-label="<?php frignanis_attr_e('Tribute to Gentila Frignani', 'Tributo a Gentila Frignani'); ?>">
 					<div class="about-heritage-tribute__arch">
 						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/gentila-frignani-portrait.png'); ?>"
 							alt="<?php esc_attr_e('Gentila Frignani', 'frignanis'); ?>"
 							class="about-heritage-tribute__img" width="125" height="145" loading="lazy" />
 					</div>
 					<div class="about-heritage-tribute__info">
-						<span
-							class="about-heritage-tribute__intro"><?php esc_html_e('In amorevole ricordo di', 'frignanis'); ?></span>
+						<span class="about-heritage-tribute__intro"><?php esc_html_e('In amorevole ricordo di', 'frignanis'); ?></span>
 						<h3 class="about-heritage-tribute__name">Gentila Frignani</h3>
 						<p class="about-heritage-tribute__dedication">
 							<?php esc_html_e('Le nostre radici, sempre nel cuore.', 'frignanis'); ?></p>
@@ -112,7 +109,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 				<div class="about-heritage-showcase__navy-block"></div>
 				<div class="about-heritage-showcase__arch-frame">
 					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-ferrara-estate-arch.jpg'); ?>"
-						alt="<?php esc_attr_e('Campos e tradição de Ferrara - Itália 🇮🇹, Emília Romagna', 'frignanis'); ?>"
+						alt="<?php frignanis_attr_e('Fields and tradition of Ferrara - Italy, Emilia-Romagna', 'Campos e tradição de Ferrara - Itália 🇮🇹, Emília Romagna'); ?>"
 						class="about-heritage-showcase__arch-img" width="1179" height="1105" loading="lazy" />
 				</div>
 			</div>
@@ -122,21 +119,19 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 	<!-- ==========================================
 		 MOMENTO 2: 1626–1891 — UMA HISTÓRIA ENTRE CONTINENTES
-		 Imagem histórica discreta de Valência e fotografia
-		 de imigração italiana, acompanhadas dos acontecimentos.
 		 ========================================== -->
 	<section class="about-wireframe-section"
-		aria-label="<?php esc_attr_e('1626–1891 — Uma história entre continentes', 'frignanis'); ?>">
+		aria-label="<?php frignanis_attr_e('1626–1891 — A story between continents', '1626–1891 — Uma história entre continentes'); ?>">
 		<div class="site-container">
 
 			<div class="about-section-header" style="text-align: center; margin-bottom: 3.5rem;">
 				<div class="eyebrow"
 					style="color: var(--color-gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem;">
-					<?php esc_html_e('2- 1626–1891 — UMA HISTÓRIA ENTRE CONTINENTES', 'frignanis'); ?>
+					<?php frignanis_e('2- 1626–1891 — A STORY BETWEEN CONTINENTS', '2- 1626–1891 — UMA HISTÓRIA ENTRE CONTINENTES'); ?>
 				</div>
 				<h2 class="section-title"
 					style="color: var(--color-navy); font-size: clamp(2rem, 3.2vw, 2.6rem); margin: 0 auto; max-width: 760px;">
-					<?php esc_html_e('Registros Históricos & A Travessia Atlântica', 'frignanis'); ?>
+					<?php frignanis_e('Historical Records & The Atlantic Crossing', 'Registros Históricos & A Travessia Atlântica'); ?>
 				</h2>
 				<div class="ornament-divider" aria-hidden="true" style="margin: 1.25rem auto 0; max-width: 180px;">
 					<span class="ornament-divider__symbol">❖</span>
@@ -150,7 +145,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 					<div class="about-wireframe-card about-wireframe-card--has-image">
 						<div class="about-wireframe-card__thumb">
 							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/frignanis_valencia.jpeg'); ?>" 
-								 alt="<?php esc_attr_e('Valência e os registros históricos da Baronia de Frignani', 'frignanis'); ?>" 
+								 alt="<?php frignanis_attr_e('Valencia and historical records of the Barony of Frignani', 'Valência e os registros históricos da Baronia de Frignani'); ?>" 
 								 class="about-wireframe-card__img" 
 								 width="1179" 
 								 height="796" 
@@ -160,18 +155,21 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 							<div class="about-wireframe-card__icon" aria-hidden="true">
 								<?php frignanis_icon('landmark', 24); ?>
 							</div>
-							<h3 class="about-wireframe-card__label notranslate"><?php esc_html_e('Valência, 1626', 'frignanis'); ?></h3>
-							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Baronia Nobiliárquica', 'frignanis'); ?></span>
+							<h3 class="about-wireframe-card__label notranslate"><?php frignanis_e('Valencia, 1626', 'Valência, 1626'); ?></h3>
+							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php frignanis_e('Noble Barony', 'Baronia Nobiliárquica'); ?></span>
 						</div>
 					</div>
 
 					<div class="about-wireframe-content">
 						<h3 class="about-wireframe-content__heading">
-							<?php esc_html_e('Baronia de Frignani e Frignestani', 'frignanis'); ?></h3>
+							<?php frignanis_e('Barony of Frignani and Frignestani', 'Baronia de Frignani e Frignestani'); ?></h3>
 						<span
-							class="about-wireframe-content__tag"><?php esc_html_e('Valência, Espanha · Reinado de Filipe IV', 'frignanis'); ?></span>
+							class="about-wireframe-content__tag"><?php frignanis_e('Valencia, Spain · Reign of Philip IV', 'Valência, Espanha · Reinado de Filipe IV'); ?></span>
 						<p class="about-wireframe-content__text">
-							<?php esc_html_e('A história do nome Frignani atravessa séculos e fronteiras. Em 1626, em Valência, Espanha, durante o reinado de Filipe IV, foi criada a Baronia de Frignani e Frignestani, concedida a Gaspar Palavicino y Centurión, um registro histórico da presença do nome na Europa.', 'frignanis'); ?>
+							<?php frignanis_e(
+								'The history of the Frignani name spans centuries and borders. In 1626, in Valencia, Spain, during the reign of King Philip IV, the Barony of Frignani and Frignestani was created and granted to Gaspar Palavicino y Centurión, an enduring historical record of the name’s nobility and presence in Europe.',
+								'A história do nome Frignani atravessa séculos e fronteiras. Em 1626, em Valência, Espanha, durante o reinado de Filipe IV, foi criada a Baronia de Frignani e Frignestani, concedida a Gaspar Palavicino y Centurión, um registro histórico da presença do nome na Europa.'
+							); ?>
 						</p>
 					</div>
 				</div>
@@ -180,18 +178,21 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 				<div class="about-wireframe-row about-wireframe-row--reverse">
 					<div class="about-wireframe-content">
 						<h3 class="about-wireframe-content__heading">
-							<?php esc_html_e('A Travessia Atlântica de 1891', 'frignanis'); ?></h3>
+							<?php frignanis_e('The 1891 Atlantic Crossing', 'A Travessia Atlântica de 1891'); ?></h3>
 						<span
-							class="about-wireframe-content__tag"><?php esc_html_e('29 de setembro de 1891 · Porto de Santa Cruz, Brasil', 'frignanis'); ?></span>
+							class="about-wireframe-content__tag"><?php frignanis_e('September 29, 1891 · Port of Santa Cruz, Brazil', '29 de setembro de 1891 · Porto de Santa Cruz, Brasil'); ?></span>
 						<p class="about-wireframe-content__text">
-							<?php esc_html_e('Em 29 de setembro de 1891, nossos antepassados deixaram a Itália e desembarcaram no Porto de Santa Cruz, Espírito Santo, Brasil, levando consigo suas tradições, valores e o espírito empreendedor que atravessaria gerações.', 'frignanis'); ?>
+							<?php frignanis_e(
+								'On September 29, 1891, our ancestors departed Italy and disembarked at the Port of Santa Cruz, Espírito Santo, Brazil, bringing with them their traditions, recipes, memories, and the entrepreneurial spirit that would inspire future generations.',
+								'Em 29 de setembro de 1891, nossos antepassados deixaram a Itália e desembarcaram no Porto de Santa Cruz, Espírito Santo, Brasil, levando consigo suas tradições, valores e o espírito empreendedor que atravessaria gerações.'
+							); ?>
 						</p>
 					</div>
 
 					<div class="about-wireframe-card about-wireframe-card--has-image">
 						<div class="about-wireframe-card__thumb">
 							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/italia_imigracao.jpeg'); ?>" 
-								 alt="<?php esc_attr_e('Imigração italiana e a travessia atlântica de 1891', 'frignanis'); ?>" 
+								 alt="<?php frignanis_attr_e('Italian immigration and the 1891 Atlantic crossing', 'Imigração italiana e a travessia atlântica de 1891'); ?>" 
 								 class="about-wireframe-card__img" 
 								 width="1448" 
 								 height="1086" 
@@ -202,9 +203,9 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 								<?php frignanis_icon('ship', 24); ?>
 							</div>
 							<h3 class="about-wireframe-card__label">
-								<?php esc_html_e('Imigração italiana', 'frignanis'); ?>
+								<?php frignanis_e('Italian Immigration', 'Imigração italiana'); ?>
 							</h3>
-							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Desembarque no Brasil', 'frignanis'); ?></span>
+							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php frignanis_e('Arrival in Brazil', 'Desembarque no Brasil'); ?></span>
 						</div>
 					</div>
 				</div>
@@ -215,20 +216,19 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 	<!-- ==========================================
 		 MOMENTO 3: BRASIL — UMA HERANÇA PRESERVADA
-		 Imagem de Vitória e a trajetória de Sabrina Frignani.
 		 ========================================== -->
 	<section class="about-wireframe-section" style="background: #F8F5EE; padding-top: 1rem;"
-		aria-label="<?php esc_attr_e('Brasil — Uma herança preservada', 'frignanis'); ?>">
+		aria-label="<?php frignanis_attr_e('Brazil — A preserved heritage', 'Brasil — Uma herança preservada'); ?>">
 		<div class="site-container">
 
 			<div class="about-section-header" style="text-align: center; margin-bottom: 3rem;">
 				<div class="eyebrow"
 					style="color: var(--color-gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem;">
-					<?php esc_html_e('3- BRASIL — UMA HERANÇA PRESERVADA', 'frignanis'); ?>
+					<?php frignanis_e('3- BRAZIL 🇧🇷 — A PRESERVED HERITAGE', '3- BRASIL — UMA HERANÇA PRESERVADA'); ?>
 				</div>
 				<h2 class="section-title"
 					style="color: var(--color-navy); font-size: clamp(2rem, 3.2vw, 2.6rem); margin: 0 auto; max-width: 760px;">
-					<?php esc_html_e('Vitória, Espírito Santo & A Trajetória Internacional', 'frignanis'); ?>
+					<?php frignanis_e('Vitória, Espírito Santo & International Vocation', 'Vitória, Espírito Santo & A Trajetória Internacional'); ?>
 				</h2>
 				<div class="ornament-divider" aria-hidden="true" style="margin: 1.25rem auto 0; max-width: 180px;">
 					<span class="ornament-divider__symbol">❖</span>
@@ -242,7 +242,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 						style="border-color: rgba(168, 132, 58, 0.45); background: #FFFFFF;">
 						<div class="about-wireframe-card__thumb">
 							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/vitoria_es.jpeg'); ?>" 
-								 alt="<?php esc_attr_e('Porto de Vitória, Espírito Santo e comércio internacional', 'frignanis'); ?>" 
+								 alt="<?php frignanis_attr_e('Port of Vitória, Espírito Santo and international trade', 'Porto de Vitória, Espírito Santo e comércio internacional'); ?>" 
 								 class="about-wireframe-card__img" 
 								 width="893" 
 								 height="1761" 
@@ -252,19 +252,22 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 							<div class="about-wireframe-card__icon" aria-hidden="true">
 								<?php frignanis_icon('waves', 24); ?>
 							</div>
-							<h3 class="about-wireframe-card__label"><?php esc_html_e('Vitória, Brasil', 'frignanis'); ?></h3>
-							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Comércio Internacional', 'frignanis'); ?></span>
+							<h3 class="about-wireframe-card__label"><?php frignanis_e('Vitória, Brazil', 'Vitória, Brasil'); ?></h3>
+							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php frignanis_e('International Trade', 'Comércio Internacional'); ?></span>
 						</div>
 					</div>
 
 					<div class="about-wireframe-content">
 						<h3 class="about-wireframe-content__heading">
-							<?php esc_html_e('Visão Empresarial & Excelência', 'frignanis'); ?>
+							<?php frignanis_e('Business Vision & Excellence', 'Visão Empresarial & Excelência'); ?>
 						</h3>
 						<span
-							class="about-wireframe-content__tag"><?php esc_html_e('Trajetória entre o Brasil e a Europa · Itália & Espanha', 'frignanis'); ?></span>
+							class="about-wireframe-content__tag"><?php frignanis_e('Career Spanning Brazil and Europe · Italy & Spain', 'Trajetória entre o Brasil e a Europa · Itália & Espanha'); ?></span>
 						<p class="about-wireframe-content__text" style="font-size: 1.05rem; line-height: 1.75;">
-							<?php esc_html_e('Mais de um século depois, em Vitória, Sabrina Frignani cresceu entre a herança gastronômica italiana e o dinamismo do comércio internacional. Sua trajetória profissional entre o Brasil e a Europa, especialmente na Itália e na Espanha, consolidou uma visão empresarial orientada pela excelência e pelas conexões entre diferentes culturas e mercados.', 'frignanis'); ?>
+							<?php frignanis_e(
+								'More than a century later, in Vitória, Sabrina Frignani grew up between Italian gastronomic heritage and the dynamism of international maritime trade. Her professional career between Brazil and Europe, especially in Italy and Spain, consolidated a business vision driven by excellence and connections between diverse cultures and markets.',
+								'Mais de um século depois, em Vitória, Sabrina Frignani cresceu entre a herança gastronômica italiana e o dinamismo do comércio internacional. Sua trajetória profissional entre o Brasil e a Europa, especialmente na Itália e na Espanha, consolidou uma visão empresarial orientada pela excelência e pelas conexões entre diferentes culturas e mercados.'
+							); ?>
 						</p>
 					</div>
 				</div>
@@ -275,8 +278,6 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 	<!-- ==========================================
 		 MOMENTO 4: LUXEMBURGO — O NOVO CAPÍTULO
-		 Fotografia elegante da cidade, apresentação
-		 da empresa e assinatura institucional.
 		 ========================================== -->
 	<section class="about-lux-section" aria-labelledby="lux-heading">
 		<div class="site-container">
@@ -285,20 +286,20 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 				<div class="about-lux-header">
 					<div class="about-lux-badge">
 						<?php frignanis_icon('building', 16, 'icon-svg--gold'); ?>
-						<span><?php esc_html_e('4- LUXEMBURGO — O NOVO CAPÍTULO', 'frignanis'); ?></span>
+						<span><?php frignanis_e('4- LUXEMBOURG 🇱🇺 — THE NEW CHAPTER', '4- LUXEMBURGO — O NOVO CAPÍTULO'); ?></span>
 					</div>
 					<h2 id="lux-heading" class="about-lux-title">
-						<?php esc_html_e('A Ponte entre a Itália e o Mundo', 'frignanis'); ?>
+						<?php frignanis_e('The Bridge Between Italy and the World', 'A Ponte entre a Itália e o Mundo'); ?>
 					</h2>
 					<p class="about-lux-subtitle">
-						<?php esc_html_e('Sede internacional no coração da Europa · Luxemburgo', 'frignanis'); ?>
+						<?php frignanis_e('International headquarters in the heart of Europe · Luxembourg', 'Sede internacional no coração da Europa · Luxemburgo'); ?>
 					</p>
 				</div>
 
 				<!-- Panorâmica de Luxemburgo: Cidade sede e centro de operações -->
 				<div class="about-lux-visual">
 					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/luxembourg_img.jpeg'); ?>" 
-						 alt="<?php esc_attr_e('Panorâmica de Luxemburgo, sede da Frignani’s Import & Export', 'frignanis'); ?>" 
+						 alt="<?php frignanis_attr_e('Panoramic view of Luxembourg, headquarters of Frignani’s Import & Export', 'Panorâmica de Luxemburgo, sede da Frignani’s Import & Export'); ?>" 
 						 class="about-lux-visual__img" 
 						 width="1160" 
 						 height="460" 
@@ -310,10 +311,10 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 					<div>
 						<p class="about-lux-lead"
 							style="font-size: 1.25rem; font-family: var(--font-serif); color: var(--color-navy); line-height: 1.5;">
-							<?php esc_html_e('Hoje, a nova geração Frignani realiza simbolicamente o caminho de volta às suas origens europeias.', 'frignanis'); ?>
+							<?php frignanis_e('Today, the new Frignani generation symbolically makes the return journey to its European roots.', 'Hoje, a nova geração Frignani realiza simbolicamente o caminho de volta às suas origens europeias.'); ?>
 						</p>
 						<p class="about-lux-text" style="margin-top: 1.25rem; font-size: 1.05rem;">
-							<?php esc_html_e('Com sede em Luxemburgo, no coração da Europa, nasce a Frignani’s Import & Export, fundada por Sabrina Frignani, unindo tradição italiana, experiência internacional e uma visão contemporânea dos negócios.', 'frignanis'); ?>
+							<?php frignanis_e('Headquartered in Luxembourg, at the heart of Europe, Frignani’s Import & Export is born, founded by Sabrina Frignani, uniting Italian tradition, international experience, and a contemporary business vision.', 'Com sede em Luxemburgo, no coração da Europa, nasce a Frignani’s Import & Export, fundada por Sabrina Frignani, unindo tradição italiana, experiência internacional e uma visão contemporânea dos negócios.'); ?>
 						</p>
 
 						<!-- Institutional Quote Block -->
@@ -322,7 +323,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 							<p
 								style="margin: 0; font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: var(--color-navy); line-height: 1.6;">
 								«
-								<?php esc_html_e('Porque, para nós, a excelência começa na terra, nas mãos de quem produz e nas tradições que o tempo preserva.', 'frignanis'); ?>
+								<?php frignanis_e('Because, for us, excellence begins in the earth, in the hands of those who produce, and in the traditions that time preserves.', 'Porque, para nós, a excelência começa na terra, nas mãos de quem produz e nas tradições que o tempo preserva.'); ?>
 								»
 							</p>
 						</div>
@@ -336,16 +337,16 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 							<div>
 								<h3 class="about-alliance-card__title"
 									style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--color-navy);">
-									<?php esc_html_e('Alianças & Apoios Institucionais em Luxemburgo', 'frignanis'); ?>
+									<?php frignanis_e('Alliances & Institutional Support in Luxembourg', 'Alianças & Apoios Institucionais em Luxemburgo'); ?>
 								</h3>
 								<p class="about-alliance-card__text" style="font-size: 0.95rem; line-height: 1.65;">
-									<?php esc_html_e('Com o apoio da Federazione Italiana Cuochi – Delegazione Lussemburgo, da Câmara de Comércio Italiana em Luxemburgo e da Embaixada da Itália em Luxemburgo, estabelecemos pontes entre produtores, marcas e mercados internacionais, valorizando a autenticidade, a qualidade e a excelência em cada etapa, da seleção à entrega final.', 'frignanis'); ?>
+									<?php frignanis_e('With the support of the Federazione Italiana Cuochi – Delegazione Lussemburgo, the Italian Chamber of Commerce in Luxembourg, and the Embassy of Italy in Luxembourg, we establish bridges between producers, brands, and international markets, upholding authenticity, quality, and excellence at every stage, from selection to final delivery.', 'Com o apoio da Federazione Italiana Cuochi – Delegazione Lussemburgo, da Câmara de Comércio Italiana em Luxemburgo e da Embaixada da Itália em Luxemburgo, estabelecemos pontes entre produtores, marcas e mercados internacionais, valorizando a autenticidade, a qualidade e a excelência em cada etapa, da seleção à entrega final.'); ?>
 								</p>
 							</div>
 						</div>
 
 						<p class="about-lux-text" style="font-size: 1.05rem;">
-							<?php esc_html_e('Mais do que importar e exportar, acreditamos em preservar tradições, valorizar produtores e construir relações comerciais duradouras.', 'frignanis'); ?>
+							<?php frignanis_e('More than importing and exporting, we believe in preserving traditions, valuing producers, and building enduring trade relationships.', 'Mais do que importar e exportar, acreditamos em preservar tradições, valorizar produtores e construir relações comerciais duradouras.'); ?>
 						</p>
 					</div>
 				</div>
@@ -356,12 +357,9 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 	<!-- ==========================================
 		 ASSINATURA INSTITUCIONAL
-		 Grande fechamento em fundo branco/marfim
-		 Logomarca preta + cadência continental
-		 + FRASE FINAL EM DOURADO destacada
 		 ========================================== -->
 	<section class="about-final-ivory-section"
-		aria-label="<?php esc_attr_e('Identidade Visual & Assinatura Frignani’s', 'frignanis'); ?>">
+		aria-label="<?php frignanis_attr_e('Visual Identity & Institutional Signature', 'Identidade Visual & Assinatura Frignani’s'); ?>">
 		<div class="site-container">
 			<div class="about-final-ivory-container">
 
@@ -374,15 +372,15 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 				<!-- Subtítulo Institucional -->
 				<div class="about-final-brand-lockup">
-					<?php esc_html_e('FRIGNANI’S — Italian Heritage. International Excellence.', 'frignanis'); ?>
+					<?php frignanis_e('FRIGNANI’S — Italian Heritage. International Excellence.', 'FRIGNANI’S — Herança Italiana. Excelência Internacional.'); ?>
 				</div>
 
 				<!-- Cadência Continental de 3 Linhas -->
 				<div class="about-final-cadence">
-					<?php esc_html_e('Da Itália às Américas.', 'frignanis'); ?><br />
-					<?php esc_html_e('Das Américas à Europa.', 'frignanis'); ?><br />
+					<?php frignanis_e('From Italy to the Americas.', 'Da Itália às Américas.'); ?><br />
+					<?php frignanis_e('From the Americas to Europe.', 'Das Américas à Europa.'); ?><br />
 					<span class="text-gold italic-serif"
-						style="font-size: 1.15em;"><?php esc_html_e('Da Europa para o mundo.', 'frignanis'); ?></span>
+						style="font-size: 1.15em;"><?php frignanis_e('From Europe to the world.', 'Da Europa para o mundo.'); ?></span>
 				</div>
 
 				<!-- Divisor Dourado -->
@@ -393,7 +391,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 				<!-- FRASE FINAL EM DOURADO (Destaque do Briefing) -->
 				<blockquote class="about-final-gold-phrase">
 					«
-					<?php esc_html_e('Uma história de família. Uma tradição que permanece. Uma visão que ultrapassa fronteiras.', 'frignanis'); ?>
+					<?php frignanis_e('A family story. A lasting tradition. A vision that crosses borders.', 'Uma história de família. Uma tradição que permanece. Uma visão que ultrapassa fronteiras.'); ?>
 					»
 				</blockquote>
 
@@ -402,18 +400,16 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 					<a href="<?php echo esc_url($pdf_presentation_url); ?>" class="btn btn-primary"
 						download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
 						<?php frignanis_icon('download', 18); ?>
-						<span><?php esc_html_e('Frignani Apresentation', 'frignanis'); ?></span>
+						<span><?php frignanis_e('Frignani Presentation', 'Apresentação Frignani'); ?></span>
 					</a>
 					<a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-secondary"
 						style="color: var(--color-navy); border-color: rgba(20, 41, 74, 0.4);">
-						<?php esc_html_e('ENTRE EM CONTATO', 'frignanis'); ?>
+						<?php frignanis_e('GET IN TOUCH', 'ENTRE EM CONTATO'); ?>
 					</a>
 				</div>
 
 			</div>
 		</div>
-	</section>
-
 </div>
 
 <?php

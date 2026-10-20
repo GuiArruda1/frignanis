@@ -175,16 +175,45 @@ function initSmoothScroll() {
 }
 
 /**
- * Custom Language Switcher integration with GTranslate
- * Automatically translates the entire site via GTranslate lib without manual translation effort.
+ * Custom Language Switcher:
+ * - PT: Preserves authentic human-written noble briefing text (served directly by WordPress/PHP)
+ * - EN: Preserves authentic human-written international trade text (served directly by WordPress/PHP)
+ * - FR, IT, ES, DE: Translates from pure English base via GTranslate without mixed-language artifacts.
  */
 function initLanguageSwitcher() {
   const langSelects = document.querySelectorAll('.lang-select');
   if (!langSelects.length) return;
 
-  const defaultLang = 'en';
+  const supported = ['en', 'pt', 'it', 'fr', 'es', 'de'];
+  const serverLang = (document.body.getAttribute('data-server-lang') || 'en').toLowerCase();
+  const bodyTargetLang = (document.body.getAttribute('data-target-lang') || serverLang).toLowerCase();
 
-  // Load GTranslate Translation Engine Lib dynamically if not already loaded
+  // Helper to read cookie
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+    return match ? decodeURIComponent(match[3]).toLowerCase() : null;
+  }
+
+  // Helper to set cookie
+  function setCookie(name, value, days) {
+    const expires = days ? '; max-age=' + (days * 86400) : '';
+    document.cookie = name + '=' + encodeURIComponent(value) + '; path=/' + expires + '; SameSite=Lax';
+  }
+
+  // Helper to clear GTranslate cookies
+  function clearGTCookies() {
+    const hostname = window.location.hostname;
+    const domains = [hostname, '.' + hostname.replace(/^www\./, ''), ''];
+    domains.forEach((d) => {
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;' + (d ? ' domain=' + d + ';' : '');
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + window.location.pathname + ';' + (d ? ' domain=' + d + ';' : '');
+    });
+    try {
+      localStorage.removeItem('__GT_TRANSLATE_LANGS');
+    } catch (e) {}
+  }
+
+  // Load GTranslate Translation Engine Lib dynamically
   function loadGTLib(callback) {
     if (window.__GT && window.__GT.translator) {
       callback && callback();
@@ -204,62 +233,108 @@ function initLanguageSwitcher() {
     }
   }
 
-  // Translate function wrapper
-  function switchLanguage(targetLang) {
-    targetLang = (targetLang || defaultLang).toLowerCase();
-    
-    // Store in localStorage for GTranslate and theme persistence
+  // Active language resolution
+  let initialLang = bodyTargetLang;
+  const cookieLang = getCookie('frignanis_lang');
+  if (cookieLang && supported.includes(cookieLang)) {
+    initialLang = cookieLang;
+  }
+
+  // Synchronize all selects to the active language
+  langSelects.forEach((select) => {
+    select.value = initialLang;
+  });
+
+  // Execute translation or restoration on initial page load
+  if (['fr', 'it', 'es', 'de'].includes(initialLang)) {
+    if (serverLang !== 'en') {
+      // If server rendered Portuguese, we reload to English base so GTranslate has a clean source
+      setCookie('frignanis_lang', initialLang, 365);
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', 'en');
+      window.location.href = url.toString();
+      return;
+    }
+    loadGTLib(() => {
+      if (window.__GT && window.__GT.translator) {
+        window.__GT.translator.translate('en', initialLang);
+      } else if (typeof window.doGTranslate === 'function') {
+        window.doGTranslate('en|' + initialLang);
+      }
+    });
+  } else {
+    // PT or EN: Clear any lingering machine translation cookies
+    clearGTCookies();
+  }
+
+  // Handle user selecting a language
+  function handleLanguageChange(targetLang) {
+    targetLang = (targetLang || 'en').toLowerCase();
+    if (!supported.includes(targetLang)) return;
+
+    // Persist choice in cookie and localStorage
+    setCookie('frignanis_lang', targetLang, 365);
     try {
-      localStorage.setItem('__GT_TRANSLATE_LANGS', JSON.stringify({ srcLang: defaultLang, tgtLang: targetLang }));
       localStorage.setItem('frignanis_lang', targetLang);
     } catch (e) {}
 
-    // Update all select dropdowns across headers (desktop and mobile)
-    langSelects.forEach((select) => {
-      select.value = targetLang;
+    // Update all selects
+    langSelects.forEach((s) => {
+      s.value = targetLang;
     });
 
+    if (targetLang === 'pt') {
+      clearGTCookies();
+      if (serverLang !== 'pt') {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', 'pt');
+        window.location.href = url.toString();
+      } else {
+        window.location.reload();
+      }
+      return;
+    }
+
+    if (targetLang === 'en') {
+      clearGTCookies();
+      if (serverLang !== 'en') {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', 'en');
+        window.location.href = url.toString();
+      } else {
+        window.location.reload();
+      }
+      return;
+    }
+
+    // Target is FR, IT, ES, DE:
+    if (serverLang !== 'en') {
+      // Must switch server to English first so GTranslate translates from clean English
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', 'en');
+      window.location.href = url.toString();
+      return;
+    }
+
+    // Server is already in English: translate immediately via GTranslate
     loadGTLib(() => {
+      try {
+        localStorage.setItem('__GT_TRANSLATE_LANGS', JSON.stringify({ srcLang: 'en', tgtLang: targetLang }));
+      } catch (e) {}
       if (window.__GT && window.__GT.translator) {
-        window.__GT.translator.translate(defaultLang, targetLang);
+        window.__GT.translator.translate('en', targetLang);
       } else if (typeof window.doGTranslate === 'function') {
-        window.doGTranslate(defaultLang + '|' + targetLang);
+        window.doGTranslate('en|' + targetLang);
       }
     });
   }
 
-  // Pre-fetch on user interaction (hover/focus) for instant translation
+  // Attach event listeners
   langSelects.forEach((select) => {
     select.addEventListener('pointerenter', () => loadGTLib(), { once: true });
     select.addEventListener('focusin', () => loadGTLib(), { once: true });
-
-    // Handle change event
     select.addEventListener('change', (e) => {
-      const selected = e.target.value;
-      switchLanguage(selected);
+      handleLanguageChange(e.target.value);
     });
   });
-
-  // Restore active language from saved session/localStorage
-  let savedLang = defaultLang;
-  try {
-    const gtSaved = JSON.parse(localStorage.getItem('__GT_TRANSLATE_LANGS'));
-    if (gtSaved && gtSaved.tgtLang) {
-      savedLang = gtSaved.tgtLang.toLowerCase();
-    } else {
-      savedLang = localStorage.getItem('frignanis_lang') || defaultLang;
-    }
-  } catch (e) {
-    savedLang = localStorage.getItem('frignanis_lang') || defaultLang;
-  }
-
-  if (savedLang && savedLang !== defaultLang) {
-    langSelects.forEach((select) => {
-      select.value = savedLang;
-    });
-    // Trigger auto-translate for returning visitors
-    loadGTLib(() => {
-      switchLanguage(savedLang);
-    });
-  }
 }

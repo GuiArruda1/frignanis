@@ -12,23 +12,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 // ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
 $footer_lead          = function_exists( 'get_field' ) && get_field( 'footer_lead' )
 	? get_field( 'footer_lead' )
-	: esc_html__( 'Excelência italiana. Conexões globais.', 'frignanis' );
+	: frignanis_t( 'Italian excellence. Global connections.', 'Excelência italiana. Conexões globais.' );
 
 $footer_tagline       = function_exists( 'get_field' ) && get_field( 'footer_tagline' ) 
 	? get_field( 'footer_tagline' ) 
-	: esc_html__( 'Gestão estratégica, representação e intermediação comercial de marcas italianas de prestígio, projetando o Made in Italy nos mercados mais exclusivos da Europa e das Américas.', 'frignanis' );
+	: frignanis_t( 'Strategic management, representation and commercial intermediation of prestigious Italian brands, projecting Made in Italy into the most exclusive markets of Europe and the Americas.', 'Gestão estratégica, representação e intermediação comercial de marcas italianas de prestígio, projetando o Made in Italy nos mercados mais exclusivos da Europa e das Américas.' );
 
 $footer_text_p2       = function_exists( 'get_field' ) && get_field( 'footer_text_p2' )
 	? get_field( 'footer_text_p2' )
-	: esc_html__( 'A partir de Luxemburgo, conectamos marcas que traduzem tradição, autenticidade, inovação e vanguarda a parceiros estratégicos e oportunidades de crescimento no cenário internacional.', 'frignanis' );
+	: frignanis_t( 'From Luxembourg, we connect brands embodying tradition, authenticity, innovation and vanguard to strategic partners and growth opportunities on the international stage.', 'A partir de Luxemburgo, conectamos marcas que traduzem tradição, autenticidade, inovação e vanguarda a parceiros estratégicos e oportunidades de crescimento no cenário internacional.' );
 
 $footer_closing       = function_exists( 'get_field' ) && get_field( 'footer_closing' )
 	? get_field( 'footer_closing' )
-	: esc_html__( 'De Luxemburgo para o mundo.', 'frignanis' );
+	: frignanis_t( 'From Luxembourg to the world.', 'De Luxemburgo para o mundo.' );
 
 $footer_cta_label     = function_exists( 'get_field' ) && get_field( 'footer_cta_label' ) 
 	? get_field( 'footer_cta_label' ) 
-	: esc_html__( 'REQUEST A PRESENTATION', 'frignanis' );
+	: frignanis_t( 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO' );
 
 $footer_cta_url       = function_exists( 'get_field' ) && get_field( 'footer_cta_url' ) 
 	? get_field( 'footer_cta_url' ) 
@@ -44,7 +44,7 @@ $footer_phone         = function_exists( 'get_field' ) && get_field( 'footer_con
 
 $footer_location      = function_exists( 'get_field' ) && get_field( 'footer_location' ) 
 	? get_field( 'footer_location' ) 
-	: esc_html__( 'Luxembourg · Europe', 'frignanis' );
+	: frignanis_t( 'Luxembourg · Europe', 'Luxemburgo · Europa' );
 
 $footer_insta_handle  = function_exists( 'get_field' ) && get_field( 'footer_instagram_handle' ) 
 	? get_field( 'footer_instagram_handle' ) 
@@ -56,7 +56,7 @@ $footer_insta_url     = function_exists( 'get_field' ) && get_field( 'footer_ins
 
 $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_copyright' ) 
 	? get_field( 'footer_copyright' ) 
-	: sprintf( '© %s %s', date( 'Y' ), esc_html__( "Frignani's Import & Export · The bridge between Italy and the world", 'frignanis' ) );
+	: sprintf( '© %s %s', date( 'Y' ), frignanis_t( "Frignani's Import & Export · The bridge between Italy and the world", "Frignani's Import & Export · A ponte entre a Itália e o mundo" ) );
 ?>
 
 </main><!-- #primary-content -->
@@ -113,29 +113,29 @@ $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_cop
 
 			<!-- Column 2: Navigation -->
 			<div class="site-footer__col">
-				<h3 class="site-footer__heading"><?php esc_html_e( 'NAVIGATION', 'frignanis' ); ?></h3>
+				<h3 class="site-footer__heading"><?php frignanis_e( 'NAVIGATION', 'NAVEGAÇÃO' ); ?></h3>
 				<ul class="site-footer__menu-list">
-					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Home', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/mission-and-services/' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Mission & Services', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'About Us', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Contact', 'frignanis' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Home', 'Início' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/mission-and-services/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Mission & Services', 'Missão e Serviços' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'About Us', 'Sobre Nós' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Contact', 'Contato' ); ?></a></li>
 				</ul>
 			</div>
 
 			<!-- Column 3: Categories -->
 			<div class="site-footer__col">
-				<h3 class="site-footer__heading"><?php esc_html_e( 'CATEGORIES', 'frignanis' ); ?></h3>
+				<h3 class="site-footer__heading"><?php frignanis_e( 'CATEGORIES', 'CATEGORIAS' ); ?></h3>
 				<ul class="site-footer__menu-list">
-					<li><a href="<?php echo esc_url( home_url( '/categories/#vinhos' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Terroir Wines & Prosecco', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/categories/#gourmet' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Gourmet & Biological Delicacies', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/categories/#cooking-supreme' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Art Décor · Cooking Supreme', 'frignanis' ); ?></a></li>
-					<li><a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="site-footer__link text-gold" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer"><?php frignanis_icon( 'download', 14, 'icon-svg--gold' ); ?> <span><?php esc_html_e( 'Frignani Apresentation (PDF)', 'frignanis' ); ?></span></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/categories/#vinhos' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Terroir Wines & Prosecco', 'Vinhos e Proseccos de Terroir' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/categories/#gourmet' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Gourmet & Biological Delicacies', 'Iguarias Gourmet e Biológicas' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/categories/#cooking-supreme' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Art Décor · Cooking Supreme', 'Art Décor · Linha Cooking Supreme' ); ?></a></li>
+					<li><a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="site-footer__link text-gold" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer"><?php frignanis_icon( 'download', 14, 'icon-svg--gold' ); ?> <span><?php frignanis_e( 'Frignani Presentation (PDF)', 'Apresentação Frignani (PDF)' ); ?></span></a></li>
 				</ul>
 			</div>
 
 			<!-- Column 4: Official Contact -->
 			<div class="site-footer__col">
-				<h3 class="site-footer__heading"><?php esc_html_e( 'CONTACT & HEADQUARTERS', 'frignanis' ); ?></h3>
+				<h3 class="site-footer__heading"><?php frignanis_e( 'CONTACT & HEADQUARTERS', 'CONTATO E SEDE' ); ?></h3>
 				
 				<?php if ( ! empty( $footer_email ) ) : ?>
 					<div class="site-footer__contact-item">

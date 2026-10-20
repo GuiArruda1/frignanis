@@ -14,13 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Language and ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
-$current_locale = function_exists( 'get_locale' ) ? get_locale() : 'en_US';
-$is_pt = str_starts_with( $current_locale, 'pt' )
-	|| ( ! empty( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) && str_starts_with( strtolower( substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 ) ), 'pt' ) );
-
-$default_splash_tagline = $is_pt
-	? esc_html__( 'A ponte entre a Itália e o mundo', 'frignanis' )
-	: esc_html__( 'The bridge between Italy and the world', 'frignanis' );
+$default_splash_tagline = frignanis_t( 'The bridge between Italy and the world', 'A ponte entre a Itália e o mundo' );
 
 $splash_tagline = function_exists( 'get_field' ) && get_field( 'splash_tagline' )
 	? get_field( 'splash_tagline' )
