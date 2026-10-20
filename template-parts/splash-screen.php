@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 // ACF Fields with fallbacks (Agency Rule 1: No hardcoded text)
 $splash_tagline_1 = function_exists( 'get_field' ) && get_field( 'splash_tagline_line1' )
 	? get_field( 'splash_tagline_line1' )
-	: esc_html__( 'Una passione ...', 'frignanis' );
+	: esc_html__( 'The bridge between Italy and the world', 'frignanis' );
 
 $splash_tagline_2 = function_exists( 'get_field' ) && get_field( 'splash_tagline_line2' )
 	? get_field( 'splash_tagline_line2' )
-	: esc_html__( '... Mille Sapori', 'frignanis' );
+	: esc_html__( 'A ponte entre a Itália e o mundo', 'frignanis' );
 ?>
 
 <!-- ==========================================
@@ -121,9 +121,6 @@ $splash_tagline_2 = function_exists( 'get_field' ) && get_field( 'splash_tagline
 			<p class="splash-screen__tagline-text">
 				<span class="splash-screen__tagline-text--1"><?php echo esc_html( $splash_tagline_1 ); ?></span>
 				<span class="splash-screen__tagline-text--2"><?php echo esc_html( $splash_tagline_2 ); ?></span>
-			</p>
-			<p class="splash-screen__motto">
-				<?php esc_html_e( 'A ponte entre a Itália e o mundo', 'frignanis' ); ?>
 			</p>
 		</div>
 

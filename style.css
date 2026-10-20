@@ -3148,14 +3148,19 @@ body.page-template-page-categories .site-main {
 .splash-screen__tagline-text {
   font-family: 'Pinyon Script', cursive, serif;
   color: #E2C07D;
-  font-size: clamp(2rem, 5.5vw, 2.65rem);
-  line-height: 1.2;
-  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.6rem, 4.2vw, 2.35rem);
+  line-height: 1.35;
+  margin: 0;
+  text-align: center;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9), 0 0 25px rgba(168, 132, 58, 0.45);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.35rem;
+}
+
+.splash-screen__tagline-text--2 {
+  opacity: 0.95;
 }
 
 .splash-screen__motto {
