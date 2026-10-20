@@ -550,27 +550,46 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 	<div class="site-container">
 		
 		<div class="ms-cta__box">
-			<div class="ms-cta__header">
-				<div class="eyebrow"><?php esc_html_e( 'OFFICIAL INSTITUTIONAL PRESENTATION', 'frignanis' ); ?></div>
-				<h2 id="ms-cta-heading" class="ms-cta__title">
-					<?php esc_html_e( 'Begin a Bespoke Trade Partnership', 'frignanis' ); ?>
-				</h2>
-				<div class="ornament-divider" aria-hidden="true">
-					<span class="ornament-divider__symbol">❖</span>
+			<div class="ms-cta__grid">
+				
+				<!-- Visual Illustration Frame -->
+				<div class="ms-cta__visual">
+					<div class="ms-cta__img-frame">
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about_us_partners.jpeg' ); ?>" 
+							 alt="<?php esc_attr_e( 'Notre Objectif · Parceria Comercial Internacional', 'frignanis' ); ?>" 
+							 class="ms-cta__img" 
+							 width="1638" 
+							 height="2048" 
+							 loading="lazy" />
+					</div>
 				</div>
-				<p class="ms-cta__desc">
-					<?php esc_html_e( 'We invite you to download our complete institutional PDF dossier or get in touch with our Luxembourg headquarters to discuss tailored supply, wine curation, or executive gifting.', 'frignanis' ); ?>
-				</p>
-			</div>
 
-			<div class="ms-cta__actions">
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary ms-cta__btn">
-					<?php esc_html_e( 'REQUEST A PRESENTATION', 'frignanis' ); ?>
-				</a>
-				<a href="<?php echo esc_url( $pdf_folder_url ); ?>" class="btn btn-secondary ms-cta__btn" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
-					<?php frignanis_icon( 'download', 18 ); ?>
-					<span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
-				</a>
+				<!-- Content Column -->
+				<div class="ms-cta__content">
+					<div class="ms-cta__header">
+						<div class="eyebrow"><?php esc_html_e( 'OFFICIAL INSTITUTIONAL PRESENTATION', 'frignanis' ); ?></div>
+						<h2 id="ms-cta-heading" class="ms-cta__title">
+							<?php esc_html_e( 'Begin a Bespoke Trade Partnership', 'frignanis' ); ?>
+						</h2>
+						<div class="ornament-divider" aria-hidden="true">
+							<span class="ornament-divider__symbol">❖</span>
+						</div>
+						<p class="ms-cta__desc">
+							<?php esc_html_e( 'We invite you to download our complete institutional PDF dossier or get in touch with our Luxembourg headquarters to discuss tailored supply, wine curation, or executive gifting.', 'frignanis' ); ?>
+						</p>
+					</div>
+
+					<div class="ms-cta__actions">
+						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary ms-cta__btn">
+							<?php esc_html_e( 'REQUEST A PRESENTATION', 'frignanis' ); ?>
+						</a>
+						<a href="<?php echo esc_url( $pdf_folder_url ); ?>" class="btn btn-secondary ms-cta__btn" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer">
+							<?php frignanis_icon( 'download', 18 ); ?>
+							<span><?php esc_html_e( 'Frignani Apresentation', 'frignanis' ); ?></span>
+						</a>
+					</div>
+				</div>
+
 			</div>
 		</div>
 

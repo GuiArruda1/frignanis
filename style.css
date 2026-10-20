@@ -4479,16 +4479,51 @@ body.page-template-page-categories .site-main {
   background: var(--color-navy);
   border: 1px solid var(--color-gold);
   border-radius: var(--radius-sm);
-  padding: clamp(2.5rem, 5vw, 4.5rem);
-  text-align: center;
+  padding: clamp(2rem, 4vw, 3.5rem);
   box-shadow: 0 20px 48px rgba(20, 41, 74, 0.2);
   position: relative;
   overflow: hidden;
 }
 
+.ms-cta__grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 400px) 1fr;
+  gap: clamp(2rem, 4vw, 3.75rem);
+  align-items: center;
+}
+
+.ms-cta__visual {
+  position: relative;
+}
+
+.ms-cta__img-frame {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(168, 132, 58, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  background: #0B192C;
+}
+
+.ms-cta__img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ms-cta__img-frame:hover .ms-cta__img {
+  transform: scale(1.03);
+}
+
+.ms-cta__content {
+  text-align: left;
+}
+
 .ms-cta__header {
-  max-width: 760px;
-  margin: 0 auto clamp(2rem, 3.5vw, 3rem);
+  margin: 0 0 clamp(1.5rem, 2.5vw, 2.25rem);
 }
 
 .ms-cta__title {
@@ -4497,6 +4532,52 @@ body.page-template-page-categories .site-main {
   color: #FFFFFF;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.ms-cta__desc {
+  color: var(--color-text-muted-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.ms-cta__actions {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .ms-cta__grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .ms-cta__visual {
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .ms-cta__content {
+    text-align: center;
+  }
+
+  .ms-cta__content .ornament-divider {
+    text-align: center;
+    margin: 1.25rem auto;
+  }
+
+  .ms-cta__content .ms-cta__desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ms-cta__actions {
+    justify-content: center;
+  }
 }
 
 /* Responsive Rules for Mission & Services */
