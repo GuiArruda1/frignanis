@@ -171,7 +171,7 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 							<span class="mission__tag-icon"><?php frignanis_icon( 'landmark', 18 ); ?></span>
 							<div class="mission__tag-text">
 								<strong><?php esc_html_e( 'Archivio Storico', 'frignanis' ); ?></strong>
-								<span><?php esc_html_e( 'Ferrara · Dal 1626', 'frignanis' ); ?></span>
+								<span><?php esc_html_e( 'Ferrara · Século XIX', 'frignanis' ); ?></span>
 							</div>
 						</div>
 					</div>
