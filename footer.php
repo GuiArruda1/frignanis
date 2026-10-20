@@ -48,11 +48,11 @@ $footer_location      = function_exists( 'get_field' ) && get_field( 'footer_loc
 
 $footer_insta_handle  = function_exists( 'get_field' ) && get_field( 'footer_instagram_handle' ) 
 	? get_field( 'footer_instagram_handle' ) 
-	: '@frignanis_import_export';
+	: '@frignanisgourmet';
 
 $footer_insta_url     = function_exists( 'get_field' ) && get_field( 'footer_instagram_url' ) 
 	? get_field( 'footer_instagram_url' ) 
-	: 'https://www.instagram.com/frignanis_import_export';
+	: 'https://www.instagram.com/frignanisgourmet';
 
 $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_copyright' ) 
 	? get_field( 'footer_copyright' ) 
