@@ -165,16 +165,10 @@ $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_cop
 				<?php endif; ?>
 
 				<?php if ( ! empty( $footer_insta_handle ) ) : ?>
-					<div class="site-footer__contact-item" style="margin-top: 0.5rem;">
-						<span class="site-footer__contact-icon">
-							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/icons/instagram.svg' ); ?>" 
-								 alt="" 
-								 width="18" 
-								 height="18" 
-								 loading="lazy" />
-						</span>
-						<a href="<?php echo esc_url( $footer_insta_url ); ?>" target="_blank" rel="noopener noreferrer">
-							<?php echo esc_html( $footer_insta_handle ); ?>
+					<div class="site-footer__contact-item">
+						<a href="<?php echo esc_url( $footer_insta_url ); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+							<?php frignanis_icon( 'instagram', 16, 'icon-svg--gold' ); ?>
+							<span><?php echo esc_html( $footer_insta_handle ); ?></span>
 						</a>
 					</div>
 				<?php endif; ?>

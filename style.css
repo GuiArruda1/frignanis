@@ -1494,7 +1494,20 @@ ol {
   margin-bottom: 1rem;
 }
 
+.site-footer__contact-item a {
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
 .site-footer__contact-item a:hover {
+  color: var(--color-gold-light, #C5A059);
+  opacity: 0.85;
+}
+
+.site-footer__contact-item .icon-svg--gold {
   color: var(--color-gold);
 }
 
