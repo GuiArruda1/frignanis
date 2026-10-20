@@ -85,8 +85,8 @@ add_action( 'init', 'frignanis_cleanup_head' );
  * Get Institutional Presentation (PDF Folder) URL
  */
 function frignanis_get_presentation_pdf_url() {
-	if ( file_exists( FRIGNANIS_DIR . '/assets/docs/Frignani-Apresentation.pdf' ) ) {
-		return FRIGNANIS_URI . '/assets/docs/Frignani-Apresentation.pdf';
+	if ( function_exists( 'get_field' ) && get_field( 'presentation_pdf_url', 'option' ) ) {
+		return esc_url( get_field( 'presentation_pdf_url', 'option' ) );
 	}
-	return FRIGNANIS_URI . '/assets/docs/Frignani-Apresentation.pdf';
+	return 'https://frignanis.instawp.site/wp-content/uploads/2026/10/Frignani-Apresentation.pdf';
 }

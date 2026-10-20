@@ -21,7 +21,7 @@ get_header();
 
 $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 	? frignanis_get_presentation_pdf_url()
-	: get_template_directory_uri() . '/assets/docs/Frignani-Apresentation.pdf';
+	: 'https://frignanis.instawp.site/wp-content/uploads/2026/10/Frignani-Apresentation.pdf';
 ?>
 
 <div class="about-page-wireframe">
