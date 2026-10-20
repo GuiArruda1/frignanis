@@ -91,8 +91,8 @@ $ms_why_quote = function_exists( 'get_field' ) && get_field( 'ms_why_quote' )
 
 // Assets URIs (Authentic Client Photography)
 $img_vineyard_estate  = get_template_directory_uri() . '/assets/images/italian-grapes-sunlit-vine.jpg';
-$img_archival_harvest = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9868.PNG';
-$img_world_map        = get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/1349EB2A-5455-44E4-837E-4A49ED57E6B3.png';
+$img_archival_harvest = get_template_directory_uri() . '/assets/images/about-harvest-heritage.png';
+$img_world_map        = get_template_directory_uri() . '/assets/images/hero-world-map-web.png';
 
 $img_audience_retail      = get_template_directory_uri() . '/assets/images/italian-grape-harvest-workers.jpg';
 $img_audience_restaurants = get_template_directory_uri() . '/assets/images/italian-fine-dining-dinner.jpg';

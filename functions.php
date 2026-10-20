@@ -88,5 +88,5 @@ function frignanis_get_presentation_pdf_url() {
 	if ( file_exists( FRIGNANIS_DIR . '/assets/docs/Frignani-Apresentation.pdf' ) ) {
 		return FRIGNANIS_URI . '/assets/docs/Frignani-Apresentation.pdf';
 	}
-	return FRIGNANIS_URI . '/assets/images/drive-download-20260922T073657Z-1-001/Folder%20-%20Site/FOLDER.pdf';
+	return FRIGNANIS_URI . '/assets/docs/Frignani-Apresentation.pdf';
 }

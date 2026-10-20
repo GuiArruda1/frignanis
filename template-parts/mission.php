@@ -160,7 +160,7 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 
 				<div class="mission__frame-overlap">
 					<div class="mission__image-wrapper mission__image-wrapper--secondary">
-						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/drive-download-20260922T073657Z-1-001/IMG_9868.PNG' ); ?>" 
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-harvest-heritage.png' ); ?>" 
 							 alt="<?php esc_attr_e( 'Historic Italian Grape Harvest and Tradition', 'frignanis' ); ?>" 
 							 class="mission__image" 
 							 width="1179" 
