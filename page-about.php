@@ -239,7 +239,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 
 					<div class="about-wireframe-content">
 						<h3 class="about-wireframe-content__heading">
-							<?php esc_html_e('Sabrina Frignani · Visão Empresarial & Excelência', 'frignanis'); ?>
+							<?php esc_html_e('Visão Empresarial & Excelência', 'frignanis'); ?>
 						</h3>
 						<span
 							class="about-wireframe-content__tag"><?php esc_html_e('Trajetória entre o Brasil e a Europa · Itália & Espanha', 'frignanis'); ?></span>
