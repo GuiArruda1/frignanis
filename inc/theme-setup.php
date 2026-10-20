@@ -60,20 +60,42 @@ function frignanis_theme_setup() {
 add_action( 'after_setup_theme', 'frignanis_theme_setup' );
 
 /**
- * Filter primary navigation items: replace Categories with Mission & Services
+ * Filter primary navigation items: translate all menu items according to active language
  */
 function frignanis_filter_primary_nav_menu_items( $items, $args ) {
 	if ( ! empty( $args->theme_location ) && 'primary' === $args->theme_location ) {
-		$has_mission = false;
 		foreach ( $items as $key => $item ) {
-			// If item is Categories / Categorias, transform it to Mission & Services
-			if ( stripos( $item->title, 'Categories' ) !== false || stripos( $item->title, 'Categorias' ) !== false || stripos( $item->url, 'categories' ) !== false || stripos( $item->url, 'categorias' ) !== false ) {
-				$item->title = esc_html__( 'Mission & Services', 'frignanis' );
-				$item->url   = home_url( '/mission-and-services/' );
-				$has_mission = true;
+			$title = trim( $item->title );
+			$url   = $item->url ? $item->url : '';
+
+			// 1. Home / Início
+			if ( '/' === rtrim( (string) parse_url( $url, PHP_URL_PATH ), '/' ) || '' === (string) parse_url( $url, PHP_URL_PATH ) || strcasecmp( $title, 'Home' ) === 0 || strcasecmp( $title, 'Início' ) === 0 ) {
+				$item->title = frignanis_t( 'Home', 'Início', 'Home', 'Accueil', 'Inicio', 'Startseite' );
+				continue;
 			}
-			if ( stripos( $item->title, 'Mission' ) !== false || stripos( $item->title, 'Missão' ) !== false || stripos( $item->url, 'mission' ) !== false || stripos( $item->url, 'missao' ) !== false ) {
-				$has_mission = true;
+
+			// 2. Mission & Services / Missão e Serviços
+			if ( stripos( $url, 'mission' ) !== false || stripos( $url, 'missao' ) !== false || stripos( $title, 'Mission' ) !== false || stripos( $title, 'Missão' ) !== false ) {
+				$item->title = frignanis_t( 'Mission & Services', 'Missão e Serviços', 'Missione e Servizi', 'Mission et Services', 'Misión y Servicios', 'Mission & Dienstleistungen' );
+				continue;
+			}
+
+			// 3. Categories / Categorias
+			if ( stripos( $url, 'categor' ) !== false || stripos( $title, 'Categor' ) !== false ) {
+				$item->title = frignanis_t( 'Categories', 'Categorias', 'Categorie', 'Catégories', 'Categorías', 'Kategorien' );
+				continue;
+			}
+
+			// 4. About Us / Sobre Nós / Quem Somos
+			if ( stripos( $url, 'about' ) !== false || stripos( $url, 'sobre' ) !== false || stripos( $url, 'quem-somos' ) !== false || stripos( $title, 'About' ) !== false || stripos( $title, 'Sobre' ) !== false || stripos( $title, 'Quem Somos' ) !== false ) {
+				$item->title = frignanis_t( 'About Us', 'Sobre Nós', 'Chi Siamo', 'À Propos', 'Sobre Nosotros', 'Über Uns' );
+				continue;
+			}
+
+			// 5. Contact / Contato
+			if ( stripos( $url, 'contact' ) !== false || stripos( $url, 'contat' ) !== false || stripos( $title, 'Contact' ) !== false || stripos( $title, 'Contato' ) !== false ) {
+				$item->title = frignanis_t( 'Contact', 'Contato', 'Contatto', 'Contact', 'Contacto', 'Kontakt' );
+				continue;
 			}
 		}
 	}

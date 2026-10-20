@@ -85,22 +85,22 @@ $server_lang = ( 'pt' === $cur_lang ) ? 'pt' : 'en';
 					<ul class="site-header__nav-list">
 						<li class="site-header__nav-item">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-header__nav-link <?php echo is_front_page() ? 'is-active' : ''; ?>">
-								<?php frignanis_e( 'Home', 'Início' ); ?>
+								<?php frignanis_e( 'Home', 'Início', 'Home', 'Accueil', 'Inicio', 'Startseite' ); ?>
 							</a>
 						</li>
 						<li class="site-header__nav-item">
 							<a href="<?php echo esc_url( home_url( '/mission-and-services/' ) ); ?>" class="site-header__nav-link <?php echo $is_mission ? 'is-active' : ''; ?>">
-								<?php frignanis_e( 'Mission & Services', 'Missão e Serviços' ); ?>
+								<?php frignanis_e( 'Mission & Services', 'Missão e Serviços', 'Missione e Servizi', 'Mission et Services', 'Misión y Servicios', 'Mission & Dienstleistungen' ); ?>
 							</a>
 						</li>
 						<li class="site-header__nav-item">
 							<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="site-header__nav-link <?php echo $is_about ? 'is-active' : ''; ?>">
-								<?php frignanis_e( 'About Us', 'Sobre Nós' ); ?>
+								<?php frignanis_e( 'About Us', 'Sobre Nós', 'Chi Siamo', 'À Propos', 'Sobre Nosotros', 'Über Uns' ); ?>
 							</a>
 						</li>
 						<li class="site-header__nav-item">
 							<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="site-header__nav-link <?php echo $is_contact ? 'is-active' : ''; ?>">
-								<?php frignanis_e( 'Contact', 'Contato' ); ?>
+								<?php frignanis_e( 'Contact', 'Contato', 'Contatto', 'Contact', 'Contacto', 'Kontakt' ); ?>
 							</a>
 						</li>
 					</ul>
@@ -125,7 +125,7 @@ $server_lang = ( 'pt' === $cur_lang ) ? 'pt' : 'en';
 			<!-- Header Action Button -->
 			<div class="site-header__action">
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-header-contact">
-					<?php frignanis_e( 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO' ); ?>
+					<?php frignanis_e( 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO', 'RICHIEDI UNA PRESENTAZIONE', 'DEMANDER UNE PRÉSENTATION', 'SOLICITAR UNA PRESENTACIÓN', 'PRÄSENTATION ANFORDERN' ); ?>
 				</a>
 			</div>
 

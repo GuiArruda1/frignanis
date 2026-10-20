@@ -175,10 +175,113 @@ function initSmoothScroll() {
 }
 
 /**
+ * Header and Navigation Translations Dictionary for all 6 official languages
+ */
+const FRIGNANIS_NAV_TRANSLATIONS = {
+  home: {
+    en: 'Home',
+    pt: 'Início',
+    it: 'Home',
+    fr: 'Accueil',
+    es: 'Inicio',
+    de: 'Startseite'
+  },
+  mission: {
+    en: 'Mission & Services',
+    pt: 'Missão e Serviços',
+    it: 'Missione e Servizi',
+    fr: 'Mission et Services',
+    es: 'Misión y Servicios',
+    de: 'Mission & Dienstleistungen'
+  },
+  categories: {
+    en: 'Categories',
+    pt: 'Categorias',
+    it: 'Categorie',
+    fr: 'Catégories',
+    es: 'Categorías',
+    de: 'Kategorien'
+  },
+  about: {
+    en: 'About Us',
+    pt: 'Sobre Nós',
+    it: 'Chi Siamo',
+    fr: 'À Propos',
+    es: 'Sobre Nosotros',
+    de: 'Über Uns'
+  },
+  contact: {
+    en: 'Contact',
+    pt: 'Contato',
+    it: 'Contatto',
+    fr: 'Contact',
+    es: 'Contacto',
+    de: 'Kontakt'
+  },
+  cta: {
+    en: 'REQUEST A PRESENTATION',
+    pt: 'SOLICITAR UMA APRESENTAÇÃO',
+    it: 'RICHIEDI UNA PRESENTAZIONE',
+    fr: 'DEMANDER UNE PRÉSENTATION',
+    es: 'SOLICITAR UNA PRESENTACIÓN',
+    de: 'PRÄSENTATION ANFORDERN'
+  }
+};
+
+/**
+ * Updates Header navigation labels and CTA button immediately in DOM
+ */
+function updateHeaderNavLabels(lang) {
+  const supported = ['en', 'pt', 'it', 'fr', 'es', 'de'];
+  if (!supported.includes(lang)) return;
+
+  // 1. Navigation links
+  const navLinks = document.querySelectorAll('.site-header__nav-link, #menu-primary-menu a, .site-header__nav a');
+  navLinks.forEach((link) => {
+    const href = (link.getAttribute('href') || '').toLowerCase();
+    const txt = (link.textContent || '').trim().toLowerCase();
+
+    if (href === '/' || href.endsWith('/preview.html') || href === '#' || txt === 'home' || txt === 'início' || txt === 'inicio' || txt === 'accueil' || txt === 'startseite') {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.home[lang] || 'Home';
+    } else if (href.includes('mission') || href.includes('missao') || txt.includes('mission') || txt.includes('missão')) {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.mission[lang] || 'Mission & Services';
+    } else if (href.includes('categor') || txt.includes('categor')) {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.categories[lang] || 'Categories';
+    } else if (href.includes('about') || href.includes('sobre') || href.includes('quem-somos') || txt.includes('about') || txt.includes('sobre') || txt.includes('chi siamo') || txt.includes('propos') || txt.includes('über uns')) {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.about[lang] || 'About Us';
+    } else if (href.includes('contact') || href.includes('contat') || txt.includes('contact') || txt.includes('contat') || txt.includes('kontakt')) {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.contact[lang] || 'Contact';
+    }
+  });
+
+  // 2. Header action CTA button
+  const ctaBtns = document.querySelectorAll('.btn-header-contact');
+  ctaBtns.forEach((btn) => {
+    btn.textContent = FRIGNANIS_NAV_TRANSLATIONS.cta[lang] || FRIGNANIS_NAV_TRANSLATIONS.cta.en;
+  });
+
+  // 3. Footer navigation links
+  const footerNavLinks = document.querySelectorAll('.site-footer__link');
+  footerNavLinks.forEach((link) => {
+    const href = (link.getAttribute('href') || '').toLowerCase();
+    const txt = (link.textContent || '').trim().toLowerCase();
+    if (href === '/' || href.endsWith('/preview.html') || txt === 'home' || txt === 'início' || txt === 'inicio' || txt === 'accueil' || txt === 'startseite') {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.home[lang] || 'Home';
+    } else if (href.includes('mission') || href.includes('missao') || txt.includes('mission') || txt.includes('missão')) {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.mission[lang] || 'Mission & Services';
+    } else if (href.includes('about') || href.includes('sobre') || txt.includes('about') || txt.includes('sobre') || txt.includes('chi siamo') || txt.includes('propos') || txt.includes('über uns')) {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.about[lang] || 'About Us';
+    } else if (href.includes('contact') || href.includes('contat') || txt.includes('contact') || txt.includes('contat') || txt.includes('kontakt')) {
+      link.textContent = FRIGNANIS_NAV_TRANSLATIONS.contact[lang] || 'Contact';
+    }
+  });
+}
+
+/**
  * Custom Language Switcher:
  * - PT: Preserves authentic human-written noble briefing text (served directly by WordPress/PHP)
  * - EN: Preserves authentic human-written international trade text (served directly by WordPress/PHP)
- * - FR, IT, ES, DE: Translates from pure English base via GTranslate without mixed-language artifacts.
+ * - FR, IT, ES, DE: Clean translated navigation & server endpoints across all 6 languages.
  */
 function initLanguageSwitcher() {
   const langSelects = document.querySelectorAll('.lang-select');
@@ -200,7 +303,7 @@ function initLanguageSwitcher() {
     document.cookie = name + '=' + encodeURIComponent(value) + '; path=/' + expires + '; SameSite=Lax';
   }
 
-  // Helper to clear GTranslate cookies
+  // Helper to clear machine translation cookies
   function clearGTCookies() {
     const hostname = window.location.hostname;
     const domains = [hostname, '.' + hostname.replace(/^www\./, ''), ''];
@@ -211,26 +314,6 @@ function initLanguageSwitcher() {
     try {
       localStorage.removeItem('__GT_TRANSLATE_LANGS');
     } catch (e) {}
-  }
-
-  // Load GTranslate Translation Engine Lib dynamically
-  function loadGTLib(callback) {
-    if (window.__GT && window.__GT.translator) {
-      callback && callback();
-      return;
-    }
-
-    if (!window.gt_translate_script) {
-      window.gt_translate_script = document.createElement('script');
-      window.gt_translate_script.src = 'https://cdn.gtranslate.net/widgets/latest/lib.min.js';
-      window.gt_translate_script.async = true;
-      document.body.appendChild(window.gt_translate_script);
-      window.gt_translate_script.addEventListener('load', () => {
-        callback && callback();
-      }, { once: true });
-    } else {
-      callback && callback();
-    }
   }
 
   // Active language resolution
@@ -245,25 +328,11 @@ function initLanguageSwitcher() {
     select.value = initialLang;
   });
 
-  // Execute translation or restoration on initial page load
-  if (['fr', 'it', 'es', 'de'].includes(initialLang)) {
-    if (serverLang !== 'en') {
-      // If server rendered Portuguese, we reload to English base so GTranslate has a clean source
-      setCookie('frignanis_lang', initialLang, 365);
-      const url = new URL(window.location.href);
-      url.searchParams.set('lang', 'en');
-      window.location.href = url.toString();
-      return;
-    }
-    loadGTLib(() => {
-      if (window.__GT && window.__GT.translator) {
-        window.__GT.translator.translate('en', initialLang);
-      } else if (typeof window.doGTranslate === 'function') {
-        window.doGTranslate('en|' + initialLang);
-      }
-    });
-  } else {
-    // PT or EN: Clear any lingering machine translation cookies
+  // Immediately synchronize header labels in DOM
+  updateHeaderNavLabels(initialLang);
+
+  // If initial language is PT or EN, clear any lingering translation cookies
+  if (initialLang === 'pt' || initialLang === 'en') {
     clearGTCookies();
   }
 
@@ -272,67 +341,44 @@ function initLanguageSwitcher() {
     targetLang = (targetLang || 'en').toLowerCase();
     if (!supported.includes(targetLang)) return;
 
-    // Persist choice in cookie and localStorage
-    setCookie('frignanis_lang', targetLang, 365);
-    try {
-      localStorage.setItem('frignanis_lang', targetLang);
-    } catch (e) {}
+    // Immediately update header labels in DOM
+    updateHeaderNavLabels(targetLang);
 
     // Update all selects
     langSelects.forEach((s) => {
       s.value = targetLang;
     });
 
-    if (targetLang === 'pt') {
-      clearGTCookies();
-      if (serverLang !== 'pt') {
-        const url = new URL(window.location.href);
-        url.searchParams.set('lang', 'pt');
-        window.location.href = url.toString();
-      } else {
-        window.location.reload();
-      }
+    // Persist choice in cookie and localStorage
+    setCookie('frignanis_lang', targetLang, 365);
+    try {
+      localStorage.setItem('frignanis_lang', targetLang);
+    } catch (e) {}
+
+    // Check if running on static preview file
+    const isStaticPreview = window.location.pathname.endsWith('.html') || window.location.protocol === 'file:';
+    if (isStaticPreview) {
+      document.documentElement.lang = targetLang;
       return;
     }
 
-    if (targetLang === 'en') {
+    // Clear machine translation cookies for native languages (PT/EN)
+    if (targetLang === 'pt' || targetLang === 'en') {
       clearGTCookies();
-      if (serverLang !== 'en') {
-        const url = new URL(window.location.href);
-        url.searchParams.set('lang', 'en');
-        window.location.href = url.toString();
-      } else {
-        window.location.reload();
-      }
-      return;
     }
 
-    // Target is FR, IT, ES, DE:
-    if (serverLang !== 'en') {
-      // Must switch server to English first so GTranslate translates from clean English
-      const url = new URL(window.location.href);
-      url.searchParams.set('lang', 'en');
+    // In WordPress environment, reload with target language query parameter
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('lang') !== targetLang) {
+      url.searchParams.set('lang', targetLang);
       window.location.href = url.toString();
-      return;
+    } else {
+      window.location.reload();
     }
-
-    // Server is already in English: translate immediately via GTranslate
-    loadGTLib(() => {
-      try {
-        localStorage.setItem('__GT_TRANSLATE_LANGS', JSON.stringify({ srcLang: 'en', tgtLang: targetLang }));
-      } catch (e) {}
-      if (window.__GT && window.__GT.translator) {
-        window.__GT.translator.translate('en', targetLang);
-      } else if (typeof window.doGTranslate === 'function') {
-        window.doGTranslate('en|' + targetLang);
-      }
-    });
   }
 
   // Attach event listeners
   langSelects.forEach((select) => {
-    select.addEventListener('pointerenter', () => loadGTLib(), { once: true });
-    select.addEventListener('focusin', () => loadGTLib(), { once: true });
     select.addEventListener('change', (e) => {
       handleLanguageChange(e.target.value);
     });

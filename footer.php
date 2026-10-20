@@ -28,7 +28,7 @@ $footer_closing       = function_exists( 'get_field' ) && get_field( 'footer_clo
 
 $footer_cta_label     = function_exists( 'get_field' ) && get_field( 'footer_cta_label' ) 
 	? get_field( 'footer_cta_label' ) 
-	: frignanis_t( 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO' );
+	: frignanis_t( 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO', 'RICHIEDI UNA PRESENTAZIONE', 'DEMANDER UNE PRÉSENTATION', 'SOLICITAR UNA PRESENTACIÓN', 'PRÄSENTATION ANFORDERN' );
 
 $footer_cta_url       = function_exists( 'get_field' ) && get_field( 'footer_cta_url' ) 
 	? get_field( 'footer_cta_url' ) 
@@ -113,29 +113,29 @@ $footer_copyright     = function_exists( 'get_field' ) && get_field( 'footer_cop
 
 			<!-- Column 2: Navigation -->
 			<div class="site-footer__col">
-				<h3 class="site-footer__heading"><?php frignanis_e( 'NAVIGATION', 'NAVEGAÇÃO' ); ?></h3>
+				<h3 class="site-footer__heading"><?php frignanis_e( 'NAVIGATION', 'NAVEGAÇÃO', 'NAVIGAZIONE', 'NAVIGATION', 'NAVEGACIÓN', 'NAVIGATION' ); ?></h3>
 				<ul class="site-footer__menu-list">
-					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Home', 'Início' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/mission-and-services/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Mission & Services', 'Missão e Serviços' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'About Us', 'Sobre Nós' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Contact', 'Contato' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Home', 'Início', 'Home', 'Accueil', 'Inicio', 'Startseite' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/mission-and-services/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Mission & Services', 'Missão e Serviços', 'Missione e Servizi', 'Mission et Services', 'Misión y Servicios', 'Mission & Dienstleistungen' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'About Us', 'Sobre Nós', 'Chi Siamo', 'À Propos', 'Sobre Nosotros', 'Über Uns' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Contact', 'Contato', 'Contatto', 'Contact', 'Contacto', 'Kontakt' ); ?></a></li>
 				</ul>
 			</div>
 
 			<!-- Column 3: Categories -->
 			<div class="site-footer__col">
-				<h3 class="site-footer__heading"><?php frignanis_e( 'CATEGORIES', 'CATEGORIAS' ); ?></h3>
+				<h3 class="site-footer__heading"><?php frignanis_e( 'CATEGORIES', 'CATEGORIAS', 'CATEGORIE', 'CATÉGORIES', 'CATEGORÍAS', 'KATEGORIEN' ); ?></h3>
 				<ul class="site-footer__menu-list">
-					<li><a href="<?php echo esc_url( home_url( '/categories/#vinhos' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Terroir Wines & Prosecco', 'Vinhos e Proseccos de Terroir' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/categories/#gourmet' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Gourmet & Biological Delicacies', 'Iguarias Gourmet e Biológicas' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/categories/#cooking-supreme' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Art Décor · Cooking Supreme', 'Art Décor · Linha Cooking Supreme' ); ?></a></li>
-					<li><a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="site-footer__link text-gold" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer"><?php frignanis_icon( 'download', 14, 'icon-svg--gold' ); ?> <span><?php frignanis_e( 'Frignani Presentation (PDF)', 'Apresentação Frignani (PDF)' ); ?></span></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/categories/#vinhos' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Terroir Wines & Prosecco', 'Vinhos e Proseccos de Terroir', 'Vini e Prosecco di Terroir', 'Vins et Proseccos de Terroir', 'Vinos y Proseccos de Terruño', 'Terroir-Weine & Prosecco' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/categories/#gourmet' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Gourmet & Biological Delicacies', 'Iguarias Gourmet e Biológicas', 'Prelibatezze Gourmet e Biologiche', 'Délices Gourmets et Biologiques', 'Delicias Gourmet y Biológicas', 'Gourmet- & Bio-Delikatessen' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/categories/#cooking-supreme' ) ); ?>" class="site-footer__link"><?php frignanis_e( 'Art Décor · Cooking Supreme', 'Art Décor · Linha Cooking Supreme', 'Art Décor · Cooking Supreme', 'Art Décor · Cooking Supreme', 'Art Décor · Cooking Supreme', 'Art Décor · Cooking Supreme' ); ?></a></li>
+					<li><a href="<?php echo esc_url( frignanis_get_presentation_pdf_url() ); ?>" class="site-footer__link text-gold" download="Frignani-Apresentation.pdf" target="_blank" rel="noopener noreferrer"><?php frignanis_icon( 'download', 14, 'icon-svg--gold' ); ?> <span><?php frignanis_e( 'Frignani Presentation (PDF)', 'Apresentação Frignani (PDF)', 'Presentazione Frignani (PDF)', 'Présentation Frignani (PDF)', 'Presentación Frignani (PDF)', 'Frignani Präsentation (PDF)' ); ?></span></a></li>
 				</ul>
 			</div>
 
 			<!-- Column 4: Official Contact -->
 			<div class="site-footer__col">
-				<h3 class="site-footer__heading"><?php frignanis_e( 'CONTACT & HEADQUARTERS', 'CONTATO E SEDE' ); ?></h3>
+				<h3 class="site-footer__heading"><?php frignanis_e( 'CONTACT & HEADQUARTERS', 'CONTATO E SEDE', 'CONTATTO E SEDE', 'CONTACT ET SIÈGE', 'CONTACTO Y SEDE', 'KONTAKT & HAUPTSITZ' ); ?></h3>
 				
 				<?php if ( ! empty( $footer_email ) ) : ?>
 					<div class="site-footer__contact-item">
