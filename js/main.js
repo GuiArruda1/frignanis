@@ -281,7 +281,7 @@ function updateHeaderNavLabels(lang) {
  * Custom Language Switcher:
  * - PT: Preserves authentic human-written noble briefing text (served directly by WordPress/PHP)
  * - EN: Preserves authentic human-written international trade text (served directly by WordPress/PHP)
- * - FR, IT, ES, DE: Clean translated navigation & server endpoints across all 6 languages.
+ * - FR, IT, ES, DE: Dynamic in-place 100% full-page translation via GTranslate engine from English base.
  */
 function initLanguageSwitcher() {
   const langSelects = document.querySelectorAll('.lang-select');
@@ -303,7 +303,7 @@ function initLanguageSwitcher() {
     document.cookie = name + '=' + encodeURIComponent(value) + '; path=/' + expires + '; SameSite=Lax';
   }
 
-  // Helper to clear machine translation cookies
+  // Helper to clear machine translation state
   function clearGTCookies() {
     const hostname = window.location.hostname;
     const domains = [hostname, '.' + hostname.replace(/^www\./, ''), ''];
@@ -314,6 +314,53 @@ function initLanguageSwitcher() {
     try {
       localStorage.removeItem('__GT_TRANSLATE_LANGS');
     } catch (e) {}
+    if (window.__GT && window.__GT.translator && typeof window.__GT.translator.revert === 'function') {
+      window.__GT.translator.revert();
+    }
+  }
+
+  // Helper to load GTranslate library and ensure it is ready
+  function loadGTLib(callback) {
+    if (window.__GT && window.__GT.translator && window.__GT.translator.libReady) {
+      callback && callback();
+      return;
+    }
+
+    if (!window.gt_translate_script) {
+      window.gt_translate_script = document.createElement('script');
+      window.gt_translate_script.src = 'https://cdn.gtranslate.net/widgets/latest/lib.min.js';
+      window.gt_translate_script.async = true;
+      document.body.appendChild(window.gt_translate_script);
+    }
+
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts++;
+      if (window.__GT && window.__GT.translator && window.__GT.translator.libReady) {
+        clearInterval(timer);
+        callback && callback();
+      } else if (attempts > 50) {
+        clearInterval(timer);
+      }
+    }, 100);
+  }
+
+  // Helper to execute GTranslate live translation across the whole page
+  function executeTranslation(targetLang) {
+    if (targetLang === 'en' || targetLang === 'pt') {
+      clearGTCookies();
+      return;
+    }
+
+    loadGTLib(() => {
+      try {
+        localStorage.setItem('__GT_TRANSLATE_LANGS', JSON.stringify({ srcLang: 'en', tgtLang: targetLang }));
+      } catch (e) {}
+
+      if (window.__GT && window.__GT.translator) {
+        window.__GT.translator.translate('en', targetLang);
+      }
+    });
   }
 
   // Active language resolution
@@ -331,8 +378,17 @@ function initLanguageSwitcher() {
   // Immediately synchronize header labels in DOM
   updateHeaderNavLabels(initialLang);
 
-  // If initial language is PT or EN, clear any lingering translation cookies
-  if (initialLang === 'pt' || initialLang === 'en') {
+  // If initial language is IT, FR, ES, DE, run dynamic translation
+  if (['it', 'fr', 'es', 'de'].includes(initialLang)) {
+    if (serverLang !== 'en') {
+      // Must load English base so GTranslate can translate from clean English
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', 'en');
+      window.location.href = url.toString();
+      return;
+    }
+    executeTranslation(initialLang);
+  } else {
     clearGTCookies();
   }
 
@@ -359,26 +415,47 @@ function initLanguageSwitcher() {
     const isStaticPreview = window.location.pathname.endsWith('.html') || window.location.protocol === 'file:';
     if (isStaticPreview) {
       document.documentElement.lang = targetLang;
+      executeTranslation(targetLang);
       return;
     }
 
-    // Clear machine translation cookies for native languages (PT/EN)
-    if (targetLang === 'pt' || targetLang === 'en') {
+    if (targetLang === 'pt') {
       clearGTCookies();
+      if (serverLang !== 'pt') {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', 'pt');
+        window.location.href = url.toString();
+      }
+      return;
     }
 
-    // In WordPress environment, reload with target language query parameter
-    const url = new URL(window.location.href);
-    if (url.searchParams.get('lang') !== targetLang) {
-      url.searchParams.set('lang', targetLang);
-      window.location.href = url.toString();
-    } else {
-      window.location.reload();
+    if (targetLang === 'en') {
+      clearGTCookies();
+      if (serverLang !== 'en') {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', 'en');
+        window.location.href = url.toString();
+      }
+      return;
     }
+
+    // Target is IT, FR, ES, DE:
+    if (serverLang !== 'en') {
+      // Switch server to clean English base first, then translate
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', 'en');
+      window.location.href = url.toString();
+      return;
+    }
+
+    // Already on English server base: translate in-place immediately!
+    executeTranslation(targetLang);
   }
 
   // Attach event listeners
   langSelects.forEach((select) => {
+    select.addEventListener('pointerenter', () => loadGTLib(), { once: true });
+    select.addEventListener('focusin', () => loadGTLib(), { once: true });
     select.addEventListener('change', (e) => {
       handleLanguageChange(e.target.value);
     });

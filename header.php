@@ -64,13 +64,13 @@ $server_lang = ( 'pt' === $cur_lang ) ? 'pt' : 'en';
 			</button>
 
 			<!-- Primary Navigation -->
-			<nav id="primary-navigation" class="site-header__nav" role="navigation" aria-label="<?php esc_attr_e( 'Main Menu', 'frignanis' ); ?>">
+			<nav id="primary-navigation" class="site-header__nav notranslate" role="navigation" aria-label="<?php esc_attr_e( 'Main Menu', 'frignanis' ); ?>">
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
 					wp_nav_menu(
 						array(
 							'theme_location' => 'primary',
-							'menu_class'     => 'site-header__nav-list',
+							'menu_class'     => 'site-header__nav-list notranslate',
 							'container'      => false,
 							'fallback_cb'    => false,
 							'depth'          => 1,
@@ -82,7 +82,7 @@ $server_lang = ( 'pt' === $cur_lang ) ? 'pt' : 'en';
 					$is_contact = is_page( 'contact' ) || is_page( 'contato' ) || is_page_template( 'page-contact.php' ) || is_page_template( 'page-contato.php' );
 					$active_lang = function_exists( 'frignanis_get_current_language' ) ? frignanis_get_current_language() : 'en';
 					?>
-					<ul class="site-header__nav-list">
+					<ul class="site-header__nav-list notranslate">
 						<li class="site-header__nav-item">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-header__nav-link <?php echo is_front_page() ? 'is-active' : ''; ?>">
 								<?php frignanis_e( 'Home', 'Início', 'Home', 'Accueil', 'Inicio', 'Startseite' ); ?>
@@ -123,8 +123,8 @@ $server_lang = ( 'pt' === $cur_lang ) ? 'pt' : 'en';
 			</div>
 
 			<!-- Header Action Button -->
-			<div class="site-header__action">
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-header-contact">
+			<div class="site-header__action notranslate">
+				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-header-contact notranslate">
 					<?php frignanis_e( 'REQUEST A PRESENTATION', 'SOLICITAR UMA APRESENTAÇÃO', 'RICHIEDI UNA PRESENTAZIONE', 'DEMANDER UNE PRÉSENTATION', 'SOLICITAR UNA PRESENTACIÓN', 'PRÄSENTATION ANFORDERN' ); ?>
 				</a>
 			</div>

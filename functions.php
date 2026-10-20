@@ -50,6 +50,18 @@ function frignanis_enqueue_assets() {
 			'in_footer' => true,
 		)
 	);
+
+	// GTranslate Engine Library for multi-language translation (FR, IT, ES, DE)
+	wp_enqueue_script(
+		'gtranslate-lib',
+		'https://cdn.gtranslate.net/widgets/latest/lib.min.js',
+		array(),
+		'5.0.1',
+		array(
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'frignanis_enqueue_assets' );
 
