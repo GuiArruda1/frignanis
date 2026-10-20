@@ -188,13 +188,24 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 						</p>
 					</div>
 
-					<div class="about-wireframe-card">
-						<div class="about-wireframe-card__icon" aria-hidden="true">
-							<?php frignanis_icon('ship', 28); ?></div>
-						<h3 class="about-wireframe-card__label">
-							<?php esc_html_e('Imigração italiana', 'frignanis'); ?></h3>
-						<span
-							style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Desembarque no Brasil', 'frignanis'); ?></span>
+					<div class="about-wireframe-card about-wireframe-card--has-image">
+						<div class="about-wireframe-card__thumb">
+							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/italia_imigracao.jpeg'); ?>" 
+								 alt="<?php esc_attr_e('Imigração italiana e a travessia atlântica de 1891', 'frignanis'); ?>" 
+								 class="about-wireframe-card__img" 
+								 width="1448" 
+								 height="1086" 
+								 loading="lazy" />
+						</div>
+						<div class="about-wireframe-card__body">
+							<div class="about-wireframe-card__icon" aria-hidden="true">
+								<?php frignanis_icon('ship', 24); ?>
+							</div>
+							<h3 class="about-wireframe-card__label">
+								<?php esc_html_e('Imigração italiana', 'frignanis'); ?>
+							</h3>
+							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Desembarque no Brasil', 'frignanis'); ?></span>
+						</div>
 					</div>
 				</div>
 
@@ -227,14 +238,23 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 			<div class="about-wireframe-container">
 				<!-- Row 3: Vitória, Brasil (Card Left) + Trajetória Sabrina Frignani (Right) -->
 				<div class="about-wireframe-row">
-					<div class="about-wireframe-card"
+					<div class="about-wireframe-card about-wireframe-card--has-image"
 						style="border-color: rgba(168, 132, 58, 0.45); background: #FFFFFF;">
-						<div class="about-wireframe-card__icon" aria-hidden="true">
-							<?php frignanis_icon('waves', 28); ?></div>
-						<h3 class="about-wireframe-card__label"><?php esc_html_e('Vitória, Brasil', 'frignanis'); ?>
-						</h3>
-						<span
-							style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Comércio Internacional', 'frignanis'); ?></span>
+						<div class="about-wireframe-card__thumb">
+							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/vitoria_es.jpeg'); ?>" 
+								 alt="<?php esc_attr_e('Porto de Vitória, Espírito Santo e comércio internacional', 'frignanis'); ?>" 
+								 class="about-wireframe-card__img" 
+								 width="893" 
+								 height="1761" 
+								 loading="lazy" />
+						</div>
+						<div class="about-wireframe-card__body">
+							<div class="about-wireframe-card__icon" aria-hidden="true">
+								<?php frignanis_icon('waves', 24); ?>
+							</div>
+							<h3 class="about-wireframe-card__label"><?php esc_html_e('Vitória, Brasil', 'frignanis'); ?></h3>
+							<span style="display: block; font-size: 0.8rem; color: var(--color-gold); margin-top: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><?php esc_html_e('Comércio Internacional', 'frignanis'); ?></span>
+						</div>
 					</div>
 
 					<div class="about-wireframe-content">
