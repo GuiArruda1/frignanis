@@ -37,7 +37,7 @@ $pres_p2 = function_exists( 'get_field' ) && get_field( 'presentation_p2' )
 
 $pres_tagline = function_exists( 'get_field' ) && get_field( 'presentation_tagline' ) 
 	? get_field( 'presentation_tagline' ) 
-	: esc_html__( 'We do not sell products. We connect excellences.', 'frignanis' );
+	: esc_html__( 'Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais. A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios.', 'frignanis' );
 
 $pres_cta_primary_text = function_exists( 'get_field' ) && get_field( 'presentation_cta_primary_text' ) 
 	? get_field( 'presentation_cta_primary_text' ) 
@@ -129,12 +129,13 @@ $pres_cta_secondary_url = function_exists( 'get_field' ) && get_field( 'presenta
 			<!-- Right Column: Climax Manifesto Card & Dual Heritage Photography -->
 			<div class="mission__visuals">
 
-				<!-- Manifesto Climax Card ("We do not sell products. We connect excellences.") -->
+				<!-- Manifesto Climax Card -->
 				<div class="presentation-manifesto-card" aria-label="<?php esc_attr_e( 'Brand Manifesto', 'frignanis' ); ?>">
 					<div class="presentation-manifesto-card__inner">
 						<span class="presentation-manifesto-card__quote-mark" aria-hidden="true">«</span>
 						<blockquote class="presentation-manifesto-card__quote">
-							<?php echo esc_html( $pres_tagline ); ?>
+							<span class="presentation-manifesto-card__lead"><?php esc_html_e( 'Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais.', 'frignanis' ); ?></span>
+							<span class="presentation-manifesto-card__body"><?php esc_html_e( 'A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios.', 'frignanis' ); ?></span>
 						</blockquote>
 						<div class="presentation-manifesto-card__seal">
 							<span>✦</span> <?php esc_html_e( "FRIGNANI'S IMPORT & EXPORT · LUXEMBOURG", 'frignanis' ); ?> <span>✦</span>

@@ -147,8 +147,9 @@ function frignanis_register_acf_field_groups() {
 					'key'           => 'field_presentation_tagline',
 					'label'         => esc_html__( 'Manifesto Tagline', 'frignanis' ),
 					'name'          => 'presentation_tagline',
-					'type'          => 'text',
-					'default_value' => 'We do not sell products. We connect excellences.',
+					'type'          => 'textarea',
+					'rows'          => 3,
+					'default_value' => 'Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais. A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios.',
 				),
 				array(
 					'key'           => 'field_presentation_cta_primary_text',

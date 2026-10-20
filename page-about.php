@@ -32,7 +32,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 		 ========================================== -->
 	<section class="about-panoramic-hero" aria-labelledby="about-hero-title">
 		<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-ferrara-terroir.jpg'); ?>"
-			alt="<?php esc_attr_e('Fotografia panorâmica dos campos de Ferrara, Emilia-Romagna', 'frignanis'); ?>"
+			alt="<?php esc_attr_e('Fotografia panorâmica dos campos de Ferrara - Itália 🇮🇹, Emília Romagna', 'frignanis'); ?>"
 			class="about-panoramic-hero__bg" width="1920" height="720" fetchpriority="high" />
 		<div class="about-panoramic-hero__overlay" aria-hidden="true"></div>
 
@@ -75,17 +75,17 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 			<div class="about-heritage-showcase__content">
 				<div class="about-heritage-showcase__pill-row">
 					<span
-						class="about-heritage-showcase__pill"><?php esc_html_e('1- FERRARA — AS NOSSAS RAÍZES', 'frignanis'); ?></span>
+						class="about-heritage-showcase__pill"><?php esc_html_e('1- FERRARA - ITÁLIA 🇮🇹 — AS NOSSAS RAÍZES', 'frignanis'); ?></span>
 					<span class="about-heritage-showcase__pill-line" aria-hidden="true"></span>
 				</div>
 
 				<h2 id="heritage-showcase-title" class="about-heritage-showcase__title">
-					Ferrara · Emilia-Romagna
+					Ferrara - Itália 🇮🇹 · <span class="notranslate">Emília Romagna</span>
 				</h2>
 
 				<div class="about-heritage-showcase__text">
 					<p>
-						<?php esc_html_e('Nas terras de Ferrara, na Emilia-Romagna, norte da Itália, encontram-se as raízes da família FRIGNANI. Uma região de extraordinária tradição agrícola e gastronômica, onde, entre os séculos XVIII e XIX, gerações de agricultores cultivaram trigo, vinhedos e hortas, preservando valores familiares, talentos artesanais e os sabores autênticos da cultura italiana.', 'frignanis'); ?>
+						<?php esc_html_e('Nas terras de Ferrara - Itália 🇮🇹, na', 'frignanis'); ?> <span class="notranslate">Emília Romagna</span><?php esc_html_e(', norte da Itália, encontram-se as raízes da família FRIGNANI. Uma região de extraordinária tradição agrícola e gastronômica, onde, entre os séculos XVIII e XIX, gerações de agricultores cultivaram trigo, vinhedos e hortas, preservando valores familiares, talentos artesanais e os sabores autênticos da cultura italiana.', 'frignanis'); ?>
 					</p>
 				</div>
 
@@ -112,7 +112,7 @@ $pdf_presentation_url = function_exists('frignanis_get_presentation_pdf_url')
 				<div class="about-heritage-showcase__navy-block"></div>
 				<div class="about-heritage-showcase__arch-frame">
 					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-ferrara-estate-arch.jpg'); ?>"
-						alt="<?php esc_attr_e('Campos e tradição de Ferrara, Emilia-Romagna', 'frignanis'); ?>"
+						alt="<?php esc_attr_e('Campos e tradição de Ferrara - Itália 🇮🇹, Emília Romagna', 'frignanis'); ?>"
 						class="about-heritage-showcase__arch-img" width="1179" height="1105" loading="lazy" />
 				</div>
 			</div>

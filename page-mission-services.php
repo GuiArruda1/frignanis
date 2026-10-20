@@ -200,7 +200,8 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 
 				<div class="ms-mission__quote-box">
 					<blockquote class="ms-mission__quote">
-						« <?php esc_html_e( 'We do not sell products. We connect excellences.', 'frignanis' ); ?> »
+						<span class="ms-mission__quote-lead">« <?php esc_html_e( 'Conectamos você ao melhor da Itália! De marcas italianas de prestígio a mercados internacionais.', 'frignanis' ); ?></span>
+						<span class="ms-mission__quote-body"><?php esc_html_e( 'A partir de Luxemburgo, no coração da Europa, transformamos tradição, qualidade, inovação e vanguarda em oportunidades estratégicas de negócios.', 'frignanis' ); ?> »</span>
 					</blockquote>
 					<cite class="ms-mission__cite"><?php esc_html_e( "FRIGNANI'S IMPORT & EXPORT · LUXEMBOURG", 'frignanis' ); ?></cite>
 				</div>
