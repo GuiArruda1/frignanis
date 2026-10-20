@@ -242,7 +242,7 @@ $pdf_folder_url = frignanis_get_presentation_pdf_url();
 							<span class="ms-archival-tag__icon"><?php frignanis_icon( 'landmark', 18 ); ?></span>
 							<div class="ms-archival-tag__text">
 								<strong><?php esc_html_e( 'Archivio Storico', 'frignanis' ); ?></strong>
-								<span><?php esc_html_e( 'Tradizione & Raccolta', 'frignanis' ); ?></span>
+								<span><?php esc_html_e( 'Ferrara · Século XIX', 'frignanis' ); ?></span>
 							</div>
 						</div>
 					</div>
