@@ -25,7 +25,7 @@ def build_packages():
     # Build frignanis-compact.zip (Ultra-fast for InstaWP / Cloud)
     compact_files = []
     for item in os.listdir('.'):
-        if item.endswith('.php') or item in ['style.css', 'screenshot.png', 'README.md']:
+        if item.endswith('.php') or item in ['style.css', 'screenshot.png', 'README.md', 'email-signature.html']:
             compact_files.append(item)
 
     for sub in ['inc', 'template-parts', 'acf-json', 'css', 'js']:
