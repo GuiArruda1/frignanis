@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showcase de Assinaturas de E-mail (Outlook Bulletproof) — FRIGNANI'S IMPORT & EXPORT</title>
+    <title>Showcase de Assinaturas de E-mail (Responsivas &amp; Outlook Bulletproof) — FRIGNANI'S</title>
     <!--[if mso]>
     <style type="text/css">
         body, table, td, span, a { font-family: Georgia, Arial, sans-serif !important; }
     </style>
     <![endif]-->
     <style>
+        /* ESTILOS DE INTERFACE DO SHOWCASE */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #0b1728;
@@ -18,7 +19,7 @@
             color: #333333;
         }
         .container {
-            max-width: 820px;
+            max-width: 860px;
             margin: 0 auto;
             background: #ffffff;
             padding: 35px;
@@ -31,7 +32,7 @@
             justify-content: space-between;
             border-bottom: 2px solid #A8843A;
             padding-bottom: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         h1 {
             margin: 0;
@@ -51,36 +52,68 @@
             text-transform: uppercase;
             border: 1px solid #A8843A;
         }
-        .instructions {
-            background-color: #F6F1E6;
-            border-left: 4px solid #A8843A;
-            padding: 16px 20px;
-            margin-bottom: 25px;
-            border-radius: 0 6px 6px 0;
-            font-size: 13.5px;
-            line-height: 1.6;
-            color: #14294A;
+        .badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
         }
-        .instructions ol {
-            margin: 8px 0 0 18px;
-            padding: 0;
-        }
-        .instructions li {
-            margin-bottom: 6px;
-        }
-        .bulletproof-badge {
+        .tag-pill {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #ecfdf5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 12px;
             font-weight: 600;
-            margin-bottom: 16px;
         }
+        .tag-pill--green {
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        .tag-pill--gold {
+            background: #fdf8eb;
+            color: #855d14;
+            border: 1px solid #f4dfab;
+        }
+
+        /* SIMULADOR DE DISPOSITIVO (DESKTOP VS MOBILE) */
+        .simulator-bar {
+            background: #14294A;
+            padding: 12px 18px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .sim-btn-group {
+            display: flex;
+            gap: 8px;
+        }
+        .sim-btn {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff;
+            padding: 6px 14px;
+            font-size: 12.5px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .sim-btn:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        .sim-btn.active {
+            background: #A8843A;
+            border-color: #A8843A;
+            color: #14294A;
+        }
+
+        /* SELEÇÃO DE ABAS */
         .tabs {
             display: flex;
             flex-wrap: wrap;
@@ -106,14 +139,30 @@
             border-color: #14294A;
             box-shadow: 0 2px 6px rgba(20,41,74,0.25);
         }
+
+        /* CONTAINER DO PREVIEW RESPONSIVO */
+        .preview-wrapper {
+            margin: 0 auto;
+            transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .preview-wrapper.desktop-view {
+            max-width: 100%;
+        }
+        .preview-wrapper.mobile-view {
+            max-width: 375px;
+            box-shadow: 0 0 0 10px #1e293b, 0 15px 30px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 10px;
+            background: #ffffff;
+        }
         .signature-card {
             border: 1px solid #e5e7eb;
-            padding: 24px;
+            padding: 22px;
             background-color: #ffffff;
             border-radius: 8px;
             margin-bottom: 18px;
             box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);
-            overflow-x: auto;
+            overflow: hidden;
         }
         .model-description {
             font-size: 13px;
@@ -170,6 +219,42 @@
         .tab-content.active {
             display: block;
         }
+
+        /* ========================================================
+           CSS RESPONSIVO NATIVO EMBUTIDO NAS ASSINATURAS DE EMAIL
+           (Funciona no Apple Mail, iOS, Gmail App e Webmail)
+           ======================================================== */
+        @media only screen and (max-width: 480px) {
+            .frignanis-resp-table {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .frignanis-stack-col {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .frignanis-logo-col {
+                padding-bottom: 12px !important;
+                text-align: left !important;
+            }
+            .frignanis-divider-col {
+                display: none !important;
+            }
+            .frignanis-mobile-divider {
+                display: block !important;
+                height: 2px !important;
+                width: 100% !important;
+                background-color: #A8843A !important;
+                margin: 10px 0 14px 0 !important;
+            }
+            .frignanis-mobile-break {
+                word-break: break-word !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -177,25 +262,28 @@
 <div class="container">
     <div class="header-title">
         <h1>FRIGNANI'S IMPORT &amp; EXPORT</h1>
-        <span class="badge">Outlook Bulletproof &middot; 4 Opções</span>
+        <span class="badge">Assinaturas Responsivas</span>
     </div>
 
-    <div class="bulletproof-badge">
-        <span>🛡️ <strong>100% Outlook Bulletproof:</strong> Testado e blindado contra o motor de renderização Microsoft Word (Outlook Desktop 2016-2024 / M365, Webmail Hostinger, Gmail e Apple Mail).</span>
-    </div>
-    
-    <div class="instructions">
-        <strong>📌 Garantias de Compatibilidade com o Outlook (Word Engine):</strong>
-        <ol>
-            <li><strong>Sem distorção de imagens (DPI Scaling):</strong> O logotipo possui atributos HTML nativos (<code>width="68" height="86"</code>) combinados com travas inline de <code>max-width</code> e <code>max-height</code> para que o Outlook nunca expanda a imagem.</li>
-            <li><strong>Divisor Vertical em Coluna Dedicada:</strong> Não utilizamos bordas CSS simples (que o Outlook frequentemente descarta). Criamos uma coluna de tabela dedicada de 2px com cor sólida, garantindo linha perfeita em qualquer versão do Outlook.</li>
-            <li><strong>Faixa Tricolor com <code>mso-line-height-rule: exactly</code>:</strong> O Outlook tem um bug clássico que estica células finas para 12px; travamos o tamanho exato de 2px via regra MSO.</li>
-            <li><strong>Fallback de Fontes Seguro:</strong> Evita a substituição automática para Times New Roman através da declaração direta de <code>Georgia, 'Times New Roman', serif</code> e <code>Arial, sans-serif</code>.</li>
-            <li><strong>Botão Retangular Bulletproof:</strong> Na Opção 3, o botão de download do Folder utiliza tabela aninhada com preenchimento em <code>&lt;td&gt;</code>, compatível com todos os clientes de email.</li>
-        </ol>
+    <div class="badges-row">
+        <div class="tag-pill tag-pill--green">
+            <span>📱 <strong>100% Responsivo:</strong> Empilhamento inteligente em telas de smartphones (< 480px) sem quebra de texto.</span>
+        </div>
+        <div class="tag-pill tag-pill--gold">
+            <span>🛡️ <strong>Outlook Bulletproof:</strong> 2 colunas travadas no Desktop via comentários condicionais MSO Word.</span>
+        </div>
     </div>
 
-    <!-- SELETOR DE ABAS -->
+    <!-- BARRA DO SIMULADOR RESPONSIVO (INTERATIVO) -->
+    <div class="simulator-bar">
+        <span style="font-size: 13px;">👁️ <strong>Simular Dispositivo:</strong> Veja como o cliente enxerga no computador ou no celular</span>
+        <div class="sim-btn-group">
+            <button class="sim-btn active" id="btn-view-desktop" onclick="setDeviceView('desktop')">🖥️ Desktop / Webmail (600px)</button>
+            <button class="sim-btn" id="btn-view-mobile" onclick="setDeviceView('mobile')">📱 Smartphone (375px)</button>
+        </div>
+    </div>
+
+    <!-- SELETOR DE ABAS DOS 4 MODELOS -->
     <div class="tabs">
         <button class="tab-btn active" onclick="switchTab(0)">1. Executiva Clássica</button>
         <button class="tab-btn" onclick="switchTab(1)">2. Institucional Corporativa</button>
@@ -203,377 +291,375 @@
         <button class="tab-btn" onclick="switchTab(3)">4. Minimalista Europeu Clean</button>
     </div>
 
-    <!-- ==========================================
-         OPÇÃO 1: EXECUTIVA CLÁSSICA (OUTLOOK BULLETPROOF)
-         ========================================== -->
-    <div id="tab-0" class="tab-content active">
-        <div class="model-description">Estilo tradicional nobre: divisor dourado vertical em coluna blindada para o Outlook, nome, cargo, contatos e citação institucional.</div>
-        <div class="signature-card" id="sig-0">
-            <!-- INÍCIO OPÇÃO 1 -->
-            <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 600px; width: 100%;">
-                <tr>
-                    <!-- COLUNA 1: LOGOTIPO (TRAVA ESTRITA DE LARGURA/ALTURA) -->
-                    <td valign="top" width="70" style="width: 70px; max-width: 70px; padding: 0 16px 0 0; text-align: center;">
-                        <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: block;">
-                            <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
-                                 onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
-                                 alt="Frignani's Import &amp; Export" 
-                                 width="68" 
-                                 height="86" 
-                                 style="display: block; width: 68px; max-width: 68px; height: 86px; max-height: 86px; border: 0; outline: none; text-decoration: none; margin: 0 auto;" />
-                        </a>
-                    </td>
+    <!-- WRAPPER COM LARGURA DINÂMICA PARA O TESTE RESPONSIVO -->
+    <div id="preview-wrapper" class="preview-wrapper desktop-view">
 
-                    <!-- COLUNA 2: DIVISOR VERTICAL BLINDADO PARA OUTLOOK (CELULA DEDICADA 2PX) -->
-                    <td valign="top" width="2" style="width: 2px; min-width: 2px; max-width: 2px; background-color: #A8843A; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;" aria-hidden="true">&nbsp;</td>
+        <!-- ==========================================
+             OPÇÃO 1: EXECUTIVA CLÁSSICA (RESPONSIVA)
+             ========================================== -->
+        <div id="tab-0" class="tab-content active">
+            <div class="model-description">Estilo nobre tradicional: no desktop exibe divisor dourado vertical; em smartphones empilha o logo elegantemente no topo com linha adaptativa.</div>
+            <div class="signature-card" id="sig-0">
+                <!-- INÍCIO ASSINATURA 1 (RESPONSIVA & OUTLOOK BULLETPROOF) -->
+                <table class="frignanis-resp-table" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 580px; width: 100%;">
+                    <tr>
+                        <!-- BLOCO ESQUERDA: LOGO -->
+                        <td class="frignanis-stack-col frignanis-logo-col" valign="top" width="72" style="width: 72px; padding: 0 16px 0 0; text-align: center;">
+                            <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: inline-block;">
+                                <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
+                                     onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
+                                     alt="Frignani's Import &amp; Export" 
+                                     width="68" 
+                                     height="86" 
+                                     style="display: block; width: 68px; max-width: 68px; height: 86px; max-height: 86px; border: 0; outline: none; text-decoration: none; margin: 0;" />
+                            </a>
+                        </td>
 
-                    <!-- COLUNA 3: DADOS CORPORATIVOS -->
-                    <td valign="top" style="padding: 0 0 0 18px;">
-                        <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
-                            <tr>
-                                <td style="padding-bottom: 2px;">
-                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold; color: #14294A; letter-spacing: 0.5px;">
-                                        Guilherme Frignani
-                                    </span>
-                                    <span style="font-size: 12px; color: #777777; margin-left: 6px;">|</span>
-                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12.5px; font-weight: bold; color: #A8843A; margin-left: 6px; letter-spacing: 0.5px;">
-                                        Diretoria de Relações Internacionais
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 6px;">
-                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12.5px; font-weight: bold; letter-spacing: 1.5px; color: #14294A; text-transform: uppercase;">
-                                        FRIGNANI’S IMPORT &amp; EXPORT
-                                    </span>
-                                    <span style="font-size: 11px; color: #666666; font-style: italic; margin-left: 6px; font-family: Georgia, 'Times New Roman', serif;">
-                                        &middot; Luxembourg
-                                    </span>
-                                </td>
-                            </tr>
-                            <!-- FAIXA DA BANDEIRA ITALIANA DISCRETA (BLINDADA PARA OUTLOOK) -->
-                            <tr>
-                                <td style="padding-bottom: 8px;">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 140px; height: 2px; max-height: 2px; line-height: 2px; font-size: 1px; mso-line-height-rule: exactly; border-collapse: collapse;">
-                                        <tr>
-                                            <td width="46" style="background-color: #2E7D4F; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
-                                            <td width="48" style="background-color: #A8843A; width: 48px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
-                                            <td width="46" style="background-color: #B3261E; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #333333; padding-bottom: 6px;">
-                                    📍 <strong>Sede:</strong> Luxemburgo &middot; Europa<br />
-                                    📞 <strong>Tel / WhatsApp:</strong> 
-                                    <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
-                                        +352 621 766 684
-                                    </a><br />
-                                    ✉️ <strong>E-mail:</strong> 
-                                    <a href="mailto:info@frignanis.com" style="color: #A8843A; text-decoration: none; font-weight: 600;">
-                                        info@frignanis.com
-                                    </a> &nbsp;|&nbsp; 
-                                    🌐 <strong>Website:</strong> 
-                                    <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 600;">
-                                        www.frignanis.com
-                                    </a><br />
-                                    📸 <strong>Instagram:</strong> 
-                                    <a href="https://www.instagram.com/frignanis_import_export" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none;">
-                                        @frignanis_import_export
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-top: 6px; border-top: 1px solid #EFEAE0; font-size: 11px; font-style: italic; color: #777777; font-family: Georgia, 'Times New Roman', serif;">
-                                    &ldquo;Não vendemos produtos. Conectamos excelências.&rdquo;
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <!-- FIM OPÇÃO 1 -->
+                        <!-- DIVISOR DESKTOP (OUTLOOK/WEBMAIL) -->
+                        <td class="frignanis-divider-col" valign="top" width="2" style="width: 2px; min-width: 2px; max-width: 2px; background-color: #A8843A; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;" aria-hidden="true">&nbsp;</td>
+
+                        <!-- BLOCO DIREITA: CONTEÚDO -->
+                        <td class="frignanis-stack-col" valign="top" style="padding: 0 0 0 18px;">
+                            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="padding-bottom: 2px;">
+                                        <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold; color: #14294A; letter-spacing: 0.5px;">
+                                            Guilherme Frignani
+                                        </span>
+                                        <span style="font-size: 12px; color: #777777; margin-left: 6px;">|</span>
+                                        <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12.5px; font-weight: bold; color: #A8843A; margin-left: 6px; letter-spacing: 0.5px;">
+                                            Diretoria de Relações Internacionais
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 6px;">
+                                        <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12.5px; font-weight: bold; letter-spacing: 1.5px; color: #14294A; text-transform: uppercase;">
+                                            FRIGNANI’S IMPORT &amp; EXPORT
+                                        </span>
+                                        <span style="font-size: 11px; color: #666666; font-style: italic; margin-left: 6px; font-family: Georgia, 'Times New Roman', serif;">
+                                            &middot; Luxembourg
+                                        </span>
+                                    </td>
+                                </tr>
+                                <!-- FAIXA ITALIANA TRICOLOR -->
+                                <tr>
+                                    <td style="padding-bottom: 8px;">
+                                        <table cellpadding="0" cellspacing="0" border="0" style="width: 140px; height: 2px; max-height: 2px; line-height: 2px; font-size: 1px; mso-line-height-rule: exactly; border-collapse: collapse;">
+                                            <tr>
+                                                <td width="46" style="background-color: #2E7D4F; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
+                                                <td width="48" style="background-color: #A8843A; width: 48px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
+                                                <td width="46" style="background-color: #B3261E; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 19px; color: #333333; padding-bottom: 6px;">
+                                        📍 <strong>Sede:</strong> Luxemburgo &middot; Europa<br />
+                                        📞 <strong>Tel / WhatsApp:</strong> 
+                                        <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
+                                            +352 621 766 684
+                                        </a><br />
+                                        ✉️ <strong>E-mail:</strong> 
+                                        <a href="mailto:info@frignanis.com" style="color: #A8843A; text-decoration: none; font-weight: 600;">
+                                            info@frignanis.com
+                                        </a> &nbsp;|&nbsp; 
+                                        🌐 <strong>Website:</strong> 
+                                        <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 600;">
+                                            www.frignanis.com
+                                        </a><br />
+                                        📸 <strong>Instagram:</strong> 
+                                        <a href="https://www.instagram.com/frignanis_import_export" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none;">
+                                            @frignanis_import_export
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 6px; border-top: 1px solid #EFEAE0; font-size: 11px; font-style: italic; color: #777777; font-family: Georgia, 'Times New Roman', serif;">
+                                        &ldquo;Não vendemos produtos. Conectamos excelências.&rdquo;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIM ASSINATURA 1 -->
+            </div>
+            <div class="actions-row">
+                <button class="copy-btn" onclick="copySignature('sig-0', 'msg-0')">📋 Copiar Assinatura Formatada</button>
+                <span id="msg-0" class="copy-msg">✓ Copiado com sucesso!</span>
+            </div>
+            <textarea id="raw-0" class="raw-code" readonly></textarea>
         </div>
-        <div class="actions-row">
-            <button class="copy-btn" onclick="copySignature('sig-0', 'msg-0')">📋 Copiar Assinatura Formatada</button>
-            <span id="msg-0" class="copy-msg">✓ Copiado! Basta colar no Webmail.</span>
-        </div>
-        <textarea id="raw-0" class="raw-code" readonly></textarea>
-    </div>
 
-    <!-- ==========================================
-         OPÇÃO 2: INSTITUCIONAL CORPORATIVA (OUTLOOK BULLETPROOF)
-         ========================================== -->
-    <div id="tab-1" class="tab-content">
-        <div class="model-description">Ideal para contas gerais (info@ / comercial@): foco absoluto na mesa de negócios e intermediação comercial de excelências italianas.</div>
-        <div class="signature-card" id="sig-1">
-            <!-- INÍCIO OPÇÃO 2 -->
-            <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 600px; width: 100%;">
-                <tr>
-                    <td valign="top" width="70" style="width: 70px; max-width: 70px; padding: 0 16px 0 0; text-align: center;">
-                        <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: block;">
-                            <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
-                                 onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
-                                 alt="Frignani's Import &amp; Export" 
-                                 width="68" 
-                                 height="86" 
-                                 style="display: block; width: 68px; max-width: 68px; height: 86px; max-height: 86px; border: 0; outline: none; text-decoration: none; margin: 0 auto;" />
-                        </a>
-                    </td>
+        <!-- ==========================================
+             OPÇÃO 2: INSTITUCIONAL CORPORATIVA (RESPONSIVA)
+             ========================================== -->
+        <div id="tab-1" class="tab-content">
+            <div class="model-description">Foco institucional: representação e intermediação internacional com visual que se adapta a telas pequenas sem quebrar os contatos.</div>
+            <div class="signature-card" id="sig-1">
+                <!-- INÍCIO ASSINATURA 2 -->
+                <table class="frignanis-resp-table" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 580px; width: 100%;">
+                    <tr>
+                        <td class="frignanis-stack-col frignanis-logo-col" valign="top" width="72" style="width: 72px; padding: 0 16px 0 0; text-align: center;">
+                            <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: inline-block;">
+                                <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
+                                     onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
+                                     alt="Frignani's Import &amp; Export" 
+                                     width="68" 
+                                     height="86" 
+                                     style="display: block; width: 68px; max-width: 68px; height: 86px; max-height: 86px; border: 0; outline: none; text-decoration: none; margin: 0;" />
+                            </a>
+                        </td>
 
-                    <!-- DIVISOR DEDICADO 2PX -->
-                    <td valign="top" width="2" style="width: 2px; min-width: 2px; max-width: 2px; background-color: #A8843A; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;" aria-hidden="true">&nbsp;</td>
+                        <td class="frignanis-divider-col" valign="top" width="2" style="width: 2px; min-width: 2px; max-width: 2px; background-color: #A8843A; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;" aria-hidden="true">&nbsp;</td>
 
-                    <td valign="top" style="padding: 0 0 0 18px;">
-                        <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
-                            <tr>
-                                <td style="padding-bottom: 2px;">
-                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold; letter-spacing: 1.5px; color: #14294A; text-transform: uppercase;">
-                                        FRIGNANI’S
-                                    </span>
-                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: normal; letter-spacing: 2px; color: #A8843A; text-transform: uppercase; margin-left: 6px;">
-                                        IMPORT &amp; EXPORT
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 6px;">
-                                    <span style="font-size: 11.5px; font-style: italic; color: #666666; font-family: Georgia, 'Times New Roman', serif;">
-                                        A ponte entre a Itália e o mundo &middot; Luxembourg
-                                    </span>
-                                </td>
-                            </tr>
-                            <!-- FAIXA TRICOLOR BLINDADA -->
-                            <tr>
-                                <td style="padding-bottom: 8px;">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 140px; height: 2px; max-height: 2px; line-height: 2px; font-size: 1px; mso-line-height-rule: exactly; border-collapse: collapse;">
-                                        <tr>
-                                            <td width="46" style="background-color: #2E7D4F; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
-                                            <td width="48" style="background-color: #A8843A; width: 48px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
-                                            <td width="46" style="background-color: #B3261E; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #333333; padding-bottom: 6px;">
-                                    <strong style="color: #14294A;">Mesa de Negócios &amp; Representação Comercial</strong><br />
-                                    📍 <strong>Sede:</strong> Luxemburgo &middot; Europa<br />
-                                    📞 <strong>Telefone &amp; WhatsApp:</strong> 
-                                    <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
-                                        +352 621 766 684
-                                    </a><br />
-                                    ✉️ <strong>E-mail:</strong> 
-                                    <a href="mailto:info@frignanis.com" style="color: #A8843A; text-decoration: none; font-weight: 600;">
-                                        info@frignanis.com
-                                    </a> &nbsp;|&nbsp; 
-                                    🌐 <strong>Website:</strong> 
-                                    <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 600;">
-                                        www.frignanis.com
-                                    </a><br />
-                                    📸 <strong>Instagram:</strong> 
-                                    <a href="https://www.instagram.com/frignanis_import_export" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none;">
-                                        @frignanis_import_export
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-top: 6px; border-top: 1px solid #EFEAE0; font-size: 11px; font-style: italic; color: #777777; font-family: Georgia, 'Times New Roman', serif;">
-                                    &ldquo;Não vendemos produtos. Conectamos excelências.&rdquo;
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <!-- FIM OPÇÃO 2 -->
+                        <td class="frignanis-stack-col" valign="top" style="padding: 0 0 0 18px;">
+                            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                                <tr>
+                                    <td style="padding-bottom: 2px;">
+                                        <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold; letter-spacing: 1.5px; color: #14294A; text-transform: uppercase;">
+                                            FRIGNANI’S
+                                        </span>
+                                        <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: normal; letter-spacing: 2px; color: #A8843A; text-transform: uppercase; margin-left: 6px;">
+                                            IMPORT &amp; EXPORT
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 6px;">
+                                        <span style="font-size: 11.5px; font-style: italic; color: #666666; font-family: Georgia, 'Times New Roman', serif;">
+                                            A ponte entre a Itália e o mundo &middot; Luxembourg
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 8px;">
+                                        <table cellpadding="0" cellspacing="0" border="0" style="width: 140px; height: 2px; max-height: 2px; line-height: 2px; font-size: 1px; mso-line-height-rule: exactly; border-collapse: collapse;">
+                                            <tr>
+                                                <td width="46" style="background-color: #2E7D4F; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
+                                                <td width="48" style="background-color: #A8843A; width: 48px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
+                                                <td width="46" style="background-color: #B3261E; width: 46px; height: 2px; max-height: 2px; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; padding: 0;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 19px; color: #333333; padding-bottom: 6px;">
+                                        <strong style="color: #14294A;">Mesa de Negócios &amp; Representação Comercial</strong><br />
+                                        📍 <strong>Sede:</strong> Luxemburgo &middot; Europa<br />
+                                        📞 <strong>Telefone &amp; WhatsApp:</strong> 
+                                        <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
+                                            +352 621 766 684
+                                        </a><br />
+                                        ✉️ <strong>E-mail:</strong> 
+                                        <a href="mailto:info@frignanis.com" style="color: #A8843A; text-decoration: none; font-weight: 600;">
+                                            info@frignanis.com
+                                        </a> &nbsp;|&nbsp; 
+                                        🌐 <strong>Website:</strong> 
+                                        <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 600;">
+                                            www.frignanis.com
+                                        </a><br />
+                                        📸 <strong>Instagram:</strong> 
+                                        <a href="https://www.instagram.com/frignanis_import_export" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none;">
+                                            @frignanis_import_export
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 6px; border-top: 1px solid #EFEAE0; font-size: 11px; font-style: italic; color: #777777; font-family: Georgia, 'Times New Roman', serif;">
+                                        &ldquo;Não vendemos produtos. Conectamos excelências.&rdquo;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIM ASSINATURA 2 -->
+            </div>
+            <div class="actions-row">
+                <button class="copy-btn" onclick="copySignature('sig-1', 'msg-1')">📋 Copiar Assinatura Formatada</button>
+                <span id="msg-1" class="copy-msg">✓ Copiado com sucesso!</span>
+            </div>
+            <textarea id="raw-1" class="raw-code" readonly></textarea>
         </div>
-        <div class="actions-row">
-            <button class="copy-btn" onclick="copySignature('sig-1', 'msg-1')">📋 Copiar Assinatura Formatada</button>
-            <span id="msg-1" class="copy-msg">✓ Copiado! Basta colar no Webmail.</span>
-        </div>
-        <textarea id="raw-1" class="raw-code" readonly></textarea>
-    </div>
 
-    <!-- ==========================================
-         OPÇÃO 3: NOBLESSE CARD COM BOTÃO BULLETPROOF
-         ========================================== -->
-    <div id="tab-2" class="tab-content">
-        <div class="model-description">Cartão nobre com fundo Marfim (#FBF9F4), moldura dourada superior e botão de ação direta que não quebra no Outlook.</div>
-        <div class="signature-card" id="sig-2">
-            <!-- INÍCIO OPÇÃO 3 -->
-            <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 590px; width: 100%; background-color: #FBF9F4; border: 1px solid #E5DFD3; border-top: 3px solid #A8843A;">
-                <tr>
-                    <td style="padding: 18px 20px;">
-                        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                            <tr>
-                                <!-- LOGO COM TRAVAS -->
-                                <td valign="middle" width="70" style="width: 70px; max-width: 70px; text-align: center; padding: 0 16px 0 0; border-right: 1px solid #E5DFD3;">
-                                    <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: block;">
-                                        <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
-                                             onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
-                                             alt="Frignani's Logo" 
-                                             width="64" 
-                                             height="81" 
-                                             style="display: block; width: 64px; max-width: 64px; height: 81px; max-height: 81px; border: 0; outline: none; margin: 0 auto;" />
-                                    </a>
-                                </td>
+        <!-- ==========================================
+             OPÇÃO 3: NOBLESSE CARD COM BOTÃO (RESPONSIVA)
+             ========================================== -->
+        <div id="tab-2" class="tab-content">
+            <div class="model-description">Cartão nobre Marfim: no smartphone, o cartão preenche a tela perfeitamente e o botão do Folder ganha largura total para toque fácil.</div>
+            <div class="signature-card" id="sig-2">
+                <!-- INÍCIO ASSINATURA 3 -->
+                <table class="frignanis-resp-table" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 580px; width: 100%; background-color: #FBF9F4; border: 1px solid #E5DFD3; border-top: 3px solid #A8843A;">
+                    <tr>
+                        <td style="padding: 18px 20px;">
+                            <table class="frignanis-resp-table" cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                <tr>
+                                    <td class="frignanis-stack-col frignanis-logo-col" valign="middle" width="70" style="width: 70px; text-align: center; padding: 0 16px 0 0;">
+                                        <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: inline-block;">
+                                            <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
+                                                 onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
+                                                 alt="Frignani's Logo" 
+                                                 width="64" 
+                                                 height="81" 
+                                                 style="display: block; width: 64px; max-width: 64px; height: 81px; max-height: 81px; border: 0; outline: none; margin: 0 auto;" />
+                                        </a>
+                                    </td>
 
-                                <!-- DADOS & BOTÃO BULLETPROOF -->
-                                <td valign="top" style="padding: 0 0 0 18px;">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                        <tr>
-                                            <td style="padding-bottom: 2px;">
-                                                <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold; color: #14294A; letter-spacing: 0.5px;">
-                                                    Guilherme Frignani
-                                                </span>
-                                                <span style="font-size: 11.5px; color: #A8843A; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-left: 6px;">
-                                                    &bull; Luxembourg
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding-bottom: 8px;">
-                                                <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; color: #14294A; letter-spacing: 1.2px; text-transform: uppercase;">
-                                                    FRIGNANI’S IMPORT &amp; EXPORT
-                                                </span>
-                                                <br />
-                                                <span style="font-size: 11px; color: #64748b; font-style: italic; font-family: Georgia, 'Times New Roman', serif;">
-                                                    Intermediação Comercial &amp; Vinhos de Terroir
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #334155; padding-bottom: 10px;">
-                                                📞 
-                                                <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
-                                                    +352 621 766 684
-                                                </a> 
-                                                &nbsp;&bull;&nbsp; 
-                                                ✉️ 
-                                                <a href="mailto:info@frignanis.com" style="color: #14294A; text-decoration: none;">
-                                                    info@frignanis.com
-                                                </a>
-                                                <br />
-                                                🌐 
-                                                <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 600;">
-                                                    www.frignanis.com
-                                                </a> 
-                                                &nbsp;&bull;&nbsp; 
-                                                📸 
-                                                <a href="https://www.instagram.com/frignanis_import_export" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none;">
-                                                    @frignanis_import_export
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <!-- BOTÃO RETANGULAR BULLETPROOF (ESTILO LITMUS/CAMPAIGN MONITOR) -->
-                                        <tr>
-                                            <td>
-                                                <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                    <tr>
-                                                        <td align="center" style="background-color: #14294A; padding: 6px 14px; mso-padding-alt: 0;">
-                                                            <a href="https://www.frignanis.com/contact/" target="_blank" rel="noopener" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #FFFFFF; font-weight: bold; text-decoration: none; letter-spacing: 0.5px; display: inline-block;">
-                                                                <!--[if mso]>&nbsp;&nbsp;<![endif]-->📄 Solicitar Folder Institucional<!--[if mso]>&nbsp;&nbsp;<![endif]-->
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <!-- FIM OPÇÃO 3 -->
+                                    <td class="frignanis-stack-col" valign="top" style="padding: 0 0 0 16px; border-left: 1px solid #E5DFD3;">
+                                        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                            <tr>
+                                                <td style="padding-bottom: 2px;">
+                                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold; color: #14294A; letter-spacing: 0.5px;">
+                                                        Guilherme Frignani
+                                                    </span>
+                                                    <span style="font-size: 11.5px; color: #A8843A; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-left: 6px;">
+                                                        &bull; Luxembourg
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-bottom: 8px;">
+                                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold; color: #14294A; letter-spacing: 1.2px; text-transform: uppercase;">
+                                                        FRIGNANI’S IMPORT &amp; EXPORT
+                                                    </span>
+                                                    <br />
+                                                    <span style="font-size: 11px; color: #64748b; font-style: italic; font-family: Georgia, 'Times New Roman', serif;">
+                                                        Intermediação Comercial &amp; Vinhos de Terroir
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #334155; padding-bottom: 10px;">
+                                                    📞 
+                                                    <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
+                                                        +352 621 766 684
+                                                    </a> 
+                                                    &nbsp;&bull;&nbsp; 
+                                                    ✉️ 
+                                                    <a href="mailto:info@frignanis.com" style="color: #14294A; text-decoration: none;">
+                                                        info@frignanis.com
+                                                    </a>
+                                                    <br />
+                                                    🌐 
+                                                    <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 600;">
+                                                        www.frignanis.com
+                                                    </a> 
+                                                    &nbsp;&bull;&nbsp; 
+                                                    📸 
+                                                    <a href="https://www.instagram.com/frignanis_import_export" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none;">
+                                                        @frignanis_import_export
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <!-- BOTÃO RETANGULAR BULLETPROOF -->
+                                            <tr>
+                                                <td>
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tr>
+                                                            <td align="center" style="background-color: #14294A; padding: 6px 14px; border-radius: 4px;">
+                                                                <a href="https://www.frignanis.com/contact/" target="_blank" rel="noopener" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #FFFFFF; font-weight: bold; text-decoration: none; letter-spacing: 0.5px; display: inline-block;">
+                                                                    <!--[if mso]>&nbsp;&nbsp;<![endif]-->📄 Solicitar Folder Institucional<!--[if mso]>&nbsp;&nbsp;<![endif]-->
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIM ASSINATURA 3 -->
+            </div>
+            <div class="actions-row">
+                <button class="copy-btn" onclick="copySignature('sig-2', 'msg-2')">📋 Copiar Assinatura Formatada</button>
+                <span id="msg-2" class="copy-msg">✓ Copiado com sucesso!</span>
+            </div>
+            <textarea id="raw-2" class="raw-code" readonly></textarea>
         </div>
-        <div class="actions-row">
-            <button class="copy-btn" onclick="copySignature('sig-2', 'msg-2')">📋 Copiar Assinatura Formatada</button>
-            <span id="msg-2" class="copy-msg">✓ Copiado! Basta colar no Webmail.</span>
-        </div>
-        <textarea id="raw-2" class="raw-code" readonly></textarea>
-    </div>
 
-    <!-- ==========================================
-         OPÇÃO 4: MINIMALISTA EUROPEU CLEAN (OUTLOOK BULLETPROOF)
-         ========================================== -->
-    <div id="tab-3" class="tab-content">
-        <div class="model-description">Estilo moderno e horizontal compacto: altura reduzida, leitura imediata em smartphones e sem qualquer risco de quebra no Outlook.</div>
-        <div class="signature-card" id="sig-3">
-            <!-- INÍCIO OPÇÃO 4 -->
-            <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 580px; width: 100%;">
-                <tr>
-                    <!-- LOGO COMPACTO -->
-                    <td valign="middle" width="54" style="width: 54px; max-width: 54px; padding: 0 14px 0 0;">
-                        <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: block;">
-                            <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
-                                 onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
-                                 alt="Frignani's Logo" 
-                                 width="50" 
-                                 height="63" 
-                                 style="display: block; width: 50px; max-width: 50px; height: 63px; max-height: 63px; border: 0; outline: none; margin: 0 auto;" />
-                        </a>
-                    </td>
+        <!-- ==========================================
+             OPÇÃO 4: MINIMALISTA EUROPEU CLEAN (RESPONSIVA)
+             ========================================== -->
+        <div id="tab-3" class="tab-content">
+            <div class="model-description">Ultra-leve e compacta: cabe perfeitamente em telas de 320px a 400px sem quebra feia de layout.</div>
+            <div class="signature-card" id="sig-3">
+                <!-- INÍCIO ASSINATURA 4 -->
+                <table class="frignanis-resp-table" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1.4; color: #14294A; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 580px; width: 100%;">
+                    <tr>
+                        <td valign="middle" width="52" style="width: 52px; max-width: 52px; padding: 0 14px 0 0;">
+                            <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="text-decoration: none; display: block;">
+                                <img src="https://www.frignanis.com/wp-content/themes/frignanis/assets/logo/logo-fundo-claro-web.png" 
+                                     onerror="this.onerror=null; this.src='assets/logo/logo-fundo-claro-web.png';"
+                                     alt="Frignani's Logo" 
+                                     width="50" 
+                                     height="63" 
+                                     style="display: block; width: 50px; max-width: 50px; height: 63px; max-height: 63px; border: 0; outline: none; margin: 0 auto;" />
+                            </a>
+                        </td>
 
-                    <!-- DADOS EM LINHA -->
-                    <td valign="middle" style="padding: 0;">
-                        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                            <tr>
-                                <td style="padding-bottom: 2px;">
-                                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: bold; color: #14294A; letter-spacing: 0.5px;">
-                                        FRIGNANI’S IMPORT &amp; EXPORT
-                                    </span>
-                                    <span style="font-size: 11px; color: #A8843A; font-weight: bold; text-transform: uppercase; margin-left: 6px;">
-                                        &middot; Luxembourg
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 4px; font-size: 11px; color: #64748b; font-family: Georgia, 'Times New Roman', serif; font-style: italic;">
-                                    &ldquo;A ponte entre a Itália e o mundo&rdquo;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 6px; font-family: Arial, Helvetica, sans-serif; font-size: 11.5px; color: #334155;">
-                                    <strong>WhatsApp &amp; Tel:</strong> 
-                                    <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
-                                        +352 621 766 684
-                                    </a> 
-                                    &nbsp;|&nbsp; 
-                                    <strong>E-mail:</strong> 
-                                    <a href="mailto:info@frignanis.com" style="color: #A8843A; text-decoration: none; font-weight: 500;">
-                                        info@frignanis.com
-                                    </a> 
-                                    &nbsp;|&nbsp; 
-                                    <strong>Web:</strong> 
-                                    <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 500;">
-                                        frignanis.com
-                                    </a>
-                                </td>
-                            </tr>
-                            <!-- TAGS DE CATEGORIA DA MARCA -->
-                            <tr>
-                                <td style="font-size: 10px; color: #78716c; letter-spacing: 0.3px; padding-top: 4px; border-top: 1px dashed #d6d3d1;">
-                                    <span style="color: #2E7D4F;">●</span> Vinhos de Terroir &nbsp;&bull;&nbsp; 
-                                    <span style="color: #A8843A;">●</span> Iguarias Gourmet &amp; Biológicas &nbsp;&bull;&nbsp; 
-                                    <span style="color: #B3261E;">●</span> Art Decor / Cooking Supreme
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <!-- FIM OPÇÃO 4 -->
+                        <td valign="middle" style="padding: 0;">
+                            <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                <tr>
+                                    <td style="padding-bottom: 2px;">
+                                        <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: bold; color: #14294A; letter-spacing: 0.5px;">
+                                            FRIGNANI’S IMPORT &amp; EXPORT
+                                        </span>
+                                        <span style="font-size: 11px; color: #A8843A; font-weight: bold; text-transform: uppercase; margin-left: 6px;">
+                                            &middot; Luxembourg
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 4px; font-size: 11px; color: #64748b; font-family: Georgia, 'Times New Roman', serif; font-style: italic;">
+                                        &ldquo;A ponte entre a Itália e o mundo&rdquo;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 6px; font-family: Arial, Helvetica, sans-serif; font-size: 11.5px; color: #334155;">
+                                        <strong>WhatsApp &amp; Tel:</strong> 
+                                        <a href="https://wa.me/352621766684" target="_blank" rel="noopener" style="color: #14294A; text-decoration: none; font-weight: 600;">
+                                            +352 621 766 684
+                                        </a> 
+                                        &nbsp;|&nbsp; 
+                                        <strong>E-mail:</strong> 
+                                        <a href="mailto:info@frignanis.com" style="color: #A8843A; text-decoration: none; font-weight: 500;">
+                                            info@frignanis.com
+                                        </a> 
+                                        &nbsp;|&nbsp; 
+                                        <strong>Web:</strong> 
+                                        <a href="https://www.frignanis.com" target="_blank" rel="noopener" style="color: #A8843A; text-decoration: none; font-weight: 500;">
+                                            frignanis.com
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 10px; color: #78716c; letter-spacing: 0.3px; padding-top: 4px; border-top: 1px dashed #d6d3d1;">
+                                        <span style="color: #2E7D4F;">●</span> Vinhos de Terroir &nbsp;&bull;&nbsp; 
+                                        <span style="color: #A8843A;">●</span> Iguarias Gourmet &amp; Biológicas &nbsp;&bull;&nbsp; 
+                                        <span style="color: #B3261E;">●</span> Art Decor / Cooking Supreme
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIM ASSINATURA 4 -->
+            </div>
+            <div class="actions-row">
+                <button class="copy-btn" onclick="copySignature('sig-3', 'msg-3')">📋 Copiar Assinatura Formatada</button>
+                <span id="msg-3" class="copy-msg">✓ Copiado com sucesso!</span>
+            </div>
+            <textarea id="raw-3" class="raw-code" readonly></textarea>
         </div>
-        <div class="actions-row">
-            <button class="copy-btn" onclick="copySignature('sig-3', 'msg-3')">📋 Copiar Assinatura Formatada</button>
-            <span id="msg-3" class="copy-msg">✓ Copiado! Basta colar no Webmail.</span>
-        </div>
-        <textarea id="raw-3" class="raw-code" readonly></textarea>
-    </div>
+
+    </div> <!-- /preview-wrapper -->
 
 </div>
 
@@ -585,6 +671,23 @@
         document.querySelectorAll('.tab-content').forEach((c, i) => {
             c.classList.toggle('active', i === index);
         });
+    }
+
+    function setDeviceView(mode) {
+        const wrapper = document.getElementById('preview-wrapper');
+        const btnDesk = document.getElementById('btn-view-desktop');
+        const btnMob = document.getElementById('btn-view-mobile');
+        if (mode === 'mobile') {
+            wrapper.classList.remove('desktop-view');
+            wrapper.classList.add('mobile-view');
+            btnMob.classList.add('active');
+            btnDesk.classList.remove('active');
+        } else {
+            wrapper.classList.remove('mobile-view');
+            wrapper.classList.add('desktop-view');
+            btnDesk.classList.add('active');
+            btnMob.classList.remove('active');
+        }
     }
 
     // Carrega os códigos brutos de cada modelo
